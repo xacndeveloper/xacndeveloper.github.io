@@ -6,7 +6,7 @@
   <link href="https://xacndeveloper.github.io/atom.xml" rel="self"/>
   
   <link href="https://xacndeveloper.github.io/"/>
-  <updated>2025-02-15T18:01:54.347Z</updated>
+  <updated>2025-02-16T12:40:00.469Z</updated>
   <id>https://xacndeveloper.github.io/</id>
   
   <author>
@@ -15,6 +15,42 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux terminalini tarayıcı olarak kullanma</title>
+    <link href="https://xacndeveloper.github.io/2025/02/16/Linux-terminalini-tarayici-olarak-kullanma/"/>
+    <id>https://xacndeveloper.github.io/2025/02/16/Linux-terminalini-tarayici-olarak-kullanma/</id>
+    <published>2025-02-16T15:34:48.000Z</published>
+    <updated>2025-02-16T12:40:00.469Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Giris"><a href="#Giris" class="headerlink" title="Giriş"></a>Giriş</h2><p>Selam arkadaşlar, bugün sizlere sadece Linux terminali üzerinden nasıl internette gezinebilirsiniz bunu çok kısa bir şekilde anlatacağım.</p><h2 id="Kurulum"><a href="#Kurulum" class="headerlink" title="Kurulum"></a>Kurulum</h2><p>Ubuntu&#x2F;Debian için kurulum:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt update &amp;&amp; <span class="built_in">sudo</span> apt install w3m w3m-img -y</span><br></pre></td></tr></table></figure><p>Arch için kurulum:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> pacman -S w3m w3m-img</span><br></pre></td></tr></table></figure><p>Fedora için kurulum:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> dnf install w3m w3m-img -y</span><br></pre></td></tr></table></figure><p>Termux için kurulum:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pkg update &amp;&amp; pkg upgrade</span><br><span class="line">pkg install w3m</span><br></pre></td></tr></table></figure><h2 id="Baslatma"><a href="#Baslatma" class="headerlink" title="Başlatma"></a>Başlatma</h2><p>Google arama motoru:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">w3m https://google.com</span><br></pre></td></tr></table></figure><p>DuckDuck GO için:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">w3m https://duckduckgo.com</span><br></pre></td></tr></table></figure><h2 id="Cikis"><a href="#Cikis" class="headerlink" title="Çıkış"></a>Çıkış</h2><p>Çıkmak için: q+y</p><p>Evet bu rehberde bukadardı. İyi günler dilerim.</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;Giris&quot;&gt;&lt;a href=&quot;#Giris&quot; class=&quot;headerlink&quot; title=&quot;Giriş&quot;&gt;&lt;/a&gt;Giriş&lt;/h2&gt;&lt;p&gt;Selam arkadaşlar, bugün sizlere sadece Linux terminali üze</summary>
+      
+    
+    
+    
+    <category term="Rehber" scheme="https://xacndeveloper.github.io/categories/Rehber/"/>
+    
+    
+    <category term="Rehber" scheme="https://xacndeveloper.github.io/tags/Rehber/"/>
+    
+    <category term="Linux" scheme="https://xacndeveloper.github.io/tags/Linux/"/>
+    
+    <category term="Ubuntu" scheme="https://xacndeveloper.github.io/tags/Ubuntu/"/>
+    
+    <category term="Arch" scheme="https://xacndeveloper.github.io/tags/Arch/"/>
+    
+    <category term="Fedora" scheme="https://xacndeveloper.github.io/tags/Fedora/"/>
+    
+    <category term="Android" scheme="https://xacndeveloper.github.io/tags/Android/"/>
+    
+    <category term="Termux" scheme="https://xacndeveloper.github.io/tags/Termux/"/>
+    
+  </entry>
   
   <entry>
     <title>Termux üzerinden MCPE sunucusu kurulum rehberi</title>
@@ -36,13 +72,13 @@
     <category term="Rehber" scheme="https://xacndeveloper.github.io/categories/Rehber/"/>
     
     
-    <category term="MCPE" scheme="https://xacndeveloper.github.io/tags/MCPE/"/>
+    <category term="Android" scheme="https://xacndeveloper.github.io/tags/Android/"/>
     
     <category term="Termux" scheme="https://xacndeveloper.github.io/tags/Termux/"/>
     
-    <category term="Nukkit" scheme="https://xacndeveloper.github.io/tags/Nukkit/"/>
+    <category term="MCPE" scheme="https://xacndeveloper.github.io/tags/MCPE/"/>
     
-    <category term="Android" scheme="https://xacndeveloper.github.io/tags/Android/"/>
+    <category term="Nukkit" scheme="https://xacndeveloper.github.io/tags/Nukkit/"/>
     
   </entry>
   

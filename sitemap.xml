@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://xacndeveloper.github.io/2025/02/16/Linux-terminalini-tarayici-olarak-kullanma/</loc>
+    
+    <lastmod>2025-02-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://xacndeveloper.github.io/2025/02/15/Termux-uzerinden-MCPE-sunucusu-kurulum-rehberi/</loc>
     
     <lastmod>2025-02-15</lastmod>
@@ -38,7 +47,42 @@
 
   
   <url>
-    <loc>https://xacndeveloper.github.io/tags/MCPE/</loc>
+    <loc>https://xacndeveloper.github.io/tags/Rehber/</loc>
+    <lastmod>2025-02-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://xacndeveloper.github.io/tags/Linux/</loc>
+    <lastmod>2025-02-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://xacndeveloper.github.io/tags/Ubuntu/</loc>
+    <lastmod>2025-02-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://xacndeveloper.github.io/tags/Arch/</loc>
+    <lastmod>2025-02-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://xacndeveloper.github.io/tags/Fedora/</loc>
+    <lastmod>2025-02-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://xacndeveloper.github.io/tags/Android/</loc>
     <lastmod>2025-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -52,14 +96,14 @@
   </url>
   
   <url>
-    <loc>https://xacndeveloper.github.io/tags/Nukkit/</loc>
+    <loc>https://xacndeveloper.github.io/tags/MCPE/</loc>
     <lastmod>2025-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://xacndeveloper.github.io/tags/Android/</loc>
+    <loc>https://xacndeveloper.github.io/tags/Nukkit/</loc>
     <lastmod>2025-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
