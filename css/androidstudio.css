@@ -1,0 +1,192 @@
+pre code.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
+  font-family: Consolas, Monaco, 'Andale Mono', monospace;
+  font-size: 0.9em;
+  line-height: 1.4;
+}
+code.hljs {
+  padding: 3px 5px;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+figure.highlight {
+  margin: 1.5em 0;
+  overflow: auto;
+  position: relative;
+  font-size: 0.9em;
+}
+figure.highlight table {
+  width: 100%;
+  border-spacing: 0;
+  margin: 0;
+}
+figure.highlight .gutter {
+  width: 2.5em;
+  user-select: none;
+  position: relative;
+}
+figure.highlight .gutter pre {
+  text-align: right;
+  padding: 0 0.7em 0 0;
+  color: #6c6c6c;
+}
+figure.highlight .code {
+  width: calc(100% - 2.5em);
+  padding-left: 0.7em;
+}
+figure.highlight .code pre {
+  margin: 0;
+}
+figure.highlight .gutter::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  border-left: 1px solid rgba(255,255,255,0.1);
+}
+@media (max-width: 768px) {
+  figure.highlight .gutter {
+    width: 2em;
+  }
+  figure.highlight .gutter::after {
+    left: 2em;
+  }
+  figure.highlight .code {
+    width: calc(100% - 2em);
+  }
+}
+/*
+Date: 24 Fev 2015
+Author: Pedro Oliveira <kanytu@gmail . com>
+*/
+.hljs,
+.highlight {
+  color: #a9b7c6;
+  background: #282b2e;
+  position: relative;
+  border-radius: 10px;
+}
+.hljs pre,
+.highlight pre {
+  padding: 8px 0;
+  line-height: 1.3;
+}
+.hljs .number,
+.highlight .number,
+.hljs .literal,
+.highlight .literal,
+.hljs .symbol,
+.highlight .symbol,
+.hljs .bullet,
+.highlight .bullet,
+.hljs .hljs-number,
+.highlight .hljs-number,
+.hljs .hljs-literal,
+.highlight .hljs-literal,
+.hljs .hljs-symbol,
+.highlight .hljs-symbol,
+.hljs .hljs-bullet,
+.highlight .hljs-bullet {
+  color: #6897bb;
+}
+.hljs .keyword,
+.highlight .keyword,
+.hljs .selector-tag,
+.highlight .selector-tag,
+.hljs .deletion,
+.highlight .deletion,
+.hljs .heighlight-keyword,
+.highlight .heighlight-keyword,
+.hljs .highlight-deletion,
+.highlight .highlight-deletion,
+.hljs .highlight-selector-tag,
+.highlight .highlight-selector-tag {
+  color: #cc7832;
+}
+.hljs .variable,
+.highlight .variable,
+.hljs .template-variable,
+.highlight .template-variable,
+.hljs .link,
+.highlight .link,
+.hljs .hljs-variable,
+.highlight .hljs-variable,
+.hljs .hljs-template-variable,
+.highlight .hljs-template-variable,
+.hljs .hljs-link,
+.highlight .hljs-link {
+  color: #629755;
+}
+.hljs .comment,
+.highlight .comment,
+.hljs .quote,
+.highlight .quote,
+.hljs .hljs-comment,
+.highlight .hljs-comment,
+.hljs .hljs-quote,
+.highlight .hljs-quote {
+  color: #808080;
+}
+.hljs .meta,
+.highlight .meta,
+.hljs .hljs-meta,
+.highlight .hljs-meta {
+  color: #bbb529;
+}
+.hljs .string,
+.highlight .string,
+.hljs .attribute,
+.highlight .attribute,
+.hljs .addition,
+.highlight .addition,
+.hljs .hljs-string,
+.highlight .hljs-string,
+.hljs .hljs-attribute,
+.highlight .hljs-attribute,
+.hljs .hljs-addition,
+.highlight .hljs-addition {
+  color: #6a8759;
+}
+.hljs .section,
+.highlight .section,
+.hljs .title,
+.highlight .title,
+.hljs .type,
+.highlight .type,
+.hljs .hljs-section,
+.highlight .hljs-section,
+.hljs .hljs-title,
+.highlight .hljs-title,
+.hljs .hljs-type,
+.highlight .hljs-type {
+  color: #ffc66d;
+}
+.hljs .name,
+.highlight .name,
+.hljs .selector-id,
+.highlight .selector-id,
+.hljs .selector-class,
+.highlight .selector-class,
+.hljs .hljs-name,
+.highlight .hljs-name,
+.hljs .hljs-selector-id,
+.highlight .hljs-selector-id,
+.hljs .hljs-selector-class,
+.highlight .hljs-selector-class {
+  color: #e8bf6a;
+}
+.hljs .emphasis,
+.highlight .emphasis,
+.hljs .hljs-emphasis,
+.highlight .hljs-emphasis {
+  font-style: italic;
+}
+.hljs .strong,
+.highlight .strong,
+.hljs .hljs-strong,
+.highlight .hljs-strong {
+  font-weight: bold;
+}

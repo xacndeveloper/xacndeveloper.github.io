@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html class="dark" lang="tr" prefix="og: http://ogp.me/ns# 
+fb: http://ogp.me/ns/fb#
+article: http://ogp.me/ns/article#">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords" content="">
+
+<title>Hello World || Xacn Blog</title>
+<link rel="icon" href="https://xacndeveloper.github.io/favicon.ico" type="image/x-icon">
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<meta property="og:title" content="Hello World">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://xacndeveloper.github.io/2025/03/21/hello-world/index.html">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="Xacn Blog">
+<meta property="og:author" content="Görkem Çalışkan">
+
+  
+  
+  
+  <meta name="description" content="WelcometoHexo!Thisisyourveryfirstpost.Checkdocumentationformoreinfo.IfyougetanyproblemswhenusingHexo,youcanfindtheanswerintroubleshootingoryoucanaskmeonGit">
+
+
+<script src="/js/wang.js"></script>
+
+<link rel="stylesheet" href="/css/wang.css">
+<link
+rel="stylesheet"
+href="https://unpkg.com/@waline/client@v3/dist/waline.css"
+/>
+<script> console.log("Hello hexo-theme-wang"); </script>
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="Xacn Blog" type="application/atom+xml">
+</head>
+<body>
+<main>
+    <div id="agplAlert" style="z-index: 9999;">
+    <strong>请遵守AGPL 3.0协议</strong> 本主题已开源于<a target="_blank" rel="noopener" href="https://github.com/xingwangzhe/hexo-theme-wang">hexo-theme-wang</a>
+</div>
+    <div class="header-trigger" style="position: fixed; top: 0; left: 0; right: 0; height: 20px;"></div>
+<div class="nav-toggle">
+    <img src="/images/menu_ico/arrow.svg" alt="Toggle Menu">
+</div>
+<header>
+    <nav>
+        <ul>
+            
+                <li>
+                    <a href="/" rel="noopener">
+                        
+                            <img src="/images/menu_ico/home.svg" class="menu-icon" alt="Ana Sayfa">
+                        
+                        Ana Sayfa
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/archives" rel="noopener">
+                        
+                            <img src="/images/menu_ico/archives.svg" class="menu-icon" alt="Arşivler">
+                        
+                        Arşivler
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/categories" rel="noopener">
+                        
+                            <img src="/images/menu_ico/categories.svg" class="menu-icon" alt="Kategoriler">
+                        
+                        Kategoriler
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/tags" rel="noopener">
+                        
+                            <img src="/images/menu_ico/tags.svg" class="menu-icon" alt="Etiketler">
+                        
+                        Etiketler
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://xacndeveloper.github.io/links" rel="noopener">
+                        
+                            <img src="/images/menu_ico/links.svg" class="menu-icon" alt="Bağlantılar">
+                        
+                        Bağlantılar
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/atom.xml" rel="noopener">
+                        
+                            <img src="/images/menu_ico/rss.svg" class="menu-icon" alt="RSS">
+                        
+                        RSS
+                    </a>
+                </li>
+            
+            
+                <li>
+                    <button class="search-toggle-btn" aria-label="Aramayı Aç">
+                        <img src="/images/menu_ico/search.svg" class="menu-icon" alt="search">
+                        Ara
+                    </button>
+                </li>
+            
+        </ul>
+    </nav>
+</header>
+
+<script src="/js/header.js"></script>
+
+    
+<script src="/js/search.js"></script>
+
+
+    
+        <!-- 搜索模态框 -->
+        <div id="search-modal" class="search-modal">
+          <div class="search-modal-content">
+            <div class="search-header">
+              <form class="search-form" action="#" onsubmit="return false;">
+                <input type="text" id="search-input" placeholder="Makalelerde ara" autocomplete="off">
+                <button type="button" class="search-close-btn" aria-label="Kapat">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                  </svg>
+                </button>
+              </form>
+            </div>
+            <div id="search-results"></div>
+          </div>
+        </div>
+
+        <script>
+        // 向全局对象添加i18n数据，以便search.js使用
+        window.WANG_THEME = window.WANG_THEME || {};
+        window.WANG_THEME.i18n = {
+          search: {
+            noResults: 'Sonuç bulunamadı',
+            loading: 'Yükleniyor...',
+            placeholder: 'Makalelerde ara',
+            close: 'Kapat',
+            shortcut_tip: 'Kapatmak için ESC tuşuna basın',
+            toggle_search: 'Aramayı Aç',
+            error_loading: 'Arama verileri yüklenemedi'
+          }
+        };
+        </script>
+    
+    <aside class="sidebar-container sidebar-left">
+    <div class="sidebar-bg">
+        <h2 class="site-title">Xacn Blog</h2>
+        <img class="avatar avatar-round" src="https://i.hizliresim.com/mke3n5y.png?_gl=1*azgqyc*_ga*MzMyNzA1MzQzLjE3MzYzNDIxODI.*_ga_M9ZRXYS2YN*MTczOTYzMTg2OS4xMS4xLjE3Mzk2MzE5MTguMTEuMC4w" style="width:50px;" alt="网站头像">
+        <h2 class="site-author">Görkem Çalışkan</h2>
+        <h3 class="site-subtitle"></h3>
+    </div>
+    <div class="sidebar-bg">
+        <ul class="social_links">
+            
+                <li>
+                    <a target="_blank" rel="noopener" href="https://github.com/xacndeveloper" aria-label="Github的链接">
+                        
+                            <div style="display: flex; margin-left: auto; margin-left: auto; justify-content: center;">
+                                <img src="/images/social_links/github.svg" class="icon" alt="Github的图标"><p>Github</p>
+                            </div>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="mailto:xacnteam@gmx.com" aria-label="Email的链接">
+                        
+                            <div style="display: flex; margin-left: auto; margin-left: auto; justify-content: center;">
+                                <img src="/images/social_links/envelope.svg" class="icon" alt="Email的图标"><p>Email</p>
+                            </div>
+                        
+                    </a>
+                </li>
+            
+        </ul>
+    </div>
+</aside>
+<div class="post-container">
+  <article class="post">
+    <h1 class="post-title">Hello World</h1>
+    
+    <div class="post-meta">
+      <span class="post-date">Yayınlanma Tarihi <time datetime="2025-03-21T17:11:27.726Z">2025-03-21</time></span>
+      
+      
+        <span class="post-updated">
+          Son Güncelleme <time datetime="2025-03-21T17:11:27.726Z">2025-03-21</time>
+        </span>
+      
+      <span style="margin-left:10px;">👁<span id="busuanzi_value_page_pv"></span></span>
+    </div>
+    <div class="post-content">
+      <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+
+    </div>
+  </article>
+  <div class="ccbyncsa">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="copyright">
+                    <div class="author">
+                        <p>Yazar</p>
+                        <p>Görkem Çalışkan</p>
+                    </div>
+                    <div class="title">
+                        <p>Başlık</p>
+                        <p>Hello World</p>
+                    </div>
+                        <div class="publish">
+                            <p>Yayınlandı</p>
+                            <p>2025-03-21</p>
+                        </div>
+                    <div class="ccbyncsa-icon">
+                        <p>CC-BY-NC-SA 4.0</p>
+                        <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                        <p class="ccbyncsa-icon-imgs" style="display: flex;">
+                        <img src="/images/cc.svg" alt="cc">
+                        <img src="/images/by.svg" alt="by">
+                        <img src="/images/nc.svg" alt="nc">
+                        <img src="/images/sa.svg" alt="sa">
+                        </p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  <nav class="post-pagination">
+    
+    
+      <div class="post-next">
+        <span class="nav-label">Sonraki Makale</span>
+        <a href="/2024/06/22/Teknofest-2025-Yarismalari-icin-basvurular-basladi/">Teknofest 2025 Yarışmaları İçin Başvurular Başladı</a>
+      </div>
+    
+  </nav>
+  
+<div class="comments-container night">
+    <div id="disqus_thread"></div>
+</div>
+
+<style>
+    /* Temel Responsive Yapı */
+    .comments-container {
+        max-width: 800px;
+        margin: 2rem auto;
+        padding: 1.5rem;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+    }
+
+    /* Dark Mode Variables */
+    .night.comments-container {
+        background: rgba(17, 24, 39, 0.8);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Light Mode Variables */
+    .comments-container:not(.night) {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    /* Disqus Özel Stiller */
+    #disqus_thread iframe {
+        background-color: transparent !important;
+    }
+
+    /* Mobil Uyum */
+    @media (max-width: 768px) {
+        .comments-container {
+            margin: 1rem;
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        #disqus_thread {
+            padding: 0 0.5rem;
+        }
+    }
+
+    /* Modern Scrollbar */
+    #disqus_thread ::-webkit-scrollbar {
+        width: 6px;
+    }
+    #disqus_thread ::-webkit-scrollbar-thumb {
+        background: rgba(136, 136, 136, 0.5);
+        border-radius: 4px;
+    }
+</style>
+
+<script>
+    (function() {
+        var disqus_config = function () {
+            this.page.url = 'https://xacndeveloper.github.io';
+            this.page.identifier = '2025/03/21/hello-world/';
+            this.page.title = 'Hello World';
+            
+            // Dark Mode Detection
+            if(document.documentElement.classList.contains('dark')) {
+                this.callbacks.onReady = [function(ready) {
+                    DISQUSWIDGETS.getDisplay({}).textColor = '#FFFFFF';
+                    DISQUSWIDGETS.getDisplay({}).backgroundColor = 'transparent';
+                }];
+            }
+        };
+        
+        var d = document, s = d.createElement('script');
+        s.src = 'https://xacn-blog.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        s.setAttribute('data-color-scheme', 'dark');
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Lütfen JavaScript'i etkinleştirerek yorumları görüntüleyin.</noscript>
+
+</div>
+
+<script src="/js/copy.js"></script>
+
+<aside class="sidebar-container sidebar-right">
+    <div class="sidebar-bg">
+        <p id="date"></p>
+<script>
+  function updateDate() {
+    var now = new Date();
+    var dateString = now.toISOString().slice(0, 10);
+    document.getElementById('date').textContent = dateString;
+  }
+
+  window.addEventListener('load', function() {
+    updateDate();
+    // 更新频率为每5分钟更新一次，减少不必要的更新
+    setInterval(updateDate, 300000);
+  });
+</script>
+        
+    <script>
+      let currentTime = new Date();
+      let hours = currentTime.getHours();
+      let minutes = currentTime.getMinutes();
+      let seconds = currentTime.getSeconds();
+
+      function formatTime(unit) {
+        return unit < 10 ? '0' + unit : unit;
+      }
+
+      function updateClock() {
+        const now = new Date();
+        if (now.getSeconds() !== seconds) {
+          seconds = now.getSeconds();
+          seconds = formatTime(seconds);
+          document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+        }
+        if (now.getMinutes() !== minutes) {
+          minutes = now.getMinutes();
+          minutes = formatTime(minutes);
+          document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+        }
+        if (now.getHours() !== hours) {
+          hours = now.getHours();
+          hours = hours < 10 ? '0' + hours : hours;
+          document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+        }
+
+        requestAnimationFrame(updateClock);
+      }
+
+      window.onload = updateClock;
+    </script>
+    <p id="clock" role="timer" aria-live="polite"></p>
+  
+    </div>
+    <div class="sidebar-bg">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+    </div>
+    <div class="sidebar-bg">
+        <div class="card-tags">
+            
+        </div>
+    </div>
+    <div>
+        <div class="categories-list">
+            
+        </div>
+    </div>
+</aside>
+
+    <!-- No categories available -->
+
+
+    <footer>
+    <span id="busuanzi_container_site_pv" style="display: inline;"></span>
+    <span>👁<span id="busuanzi_value_site_pv"></span></span>
+    <div class="padding border border-sub border-dotted fadein-right">
+        <span style="color:aliceblue">👤<span id="busuanzi_value_site_uv"></span></span>
+    </div>
+    <span>
+        <a target="_blank" rel="noopener" href="https://hexo.io" alt="Hexo">
+            <p class="hover-underline night" style="display: inline;">Hexo</p>
+        </a> tarafından desteklenmektedir
+        <p style="display: inline; color: red;">❤</p>
+        <a target="_blank" rel="noopener" href="https://github.com/xingwangzhe/hexo-theme-wang" alt="Wang">
+            <p class="hover-underline night" style="display: inline;">Wang</p>
+        </a> Teması ile oluşturulmuştur
+    </span>
+    
+    <!-- 带图片的链接 -->
+    <div class="footer-links">
+        
+    </div>
+
+    <!-- 纯文本链接 -->
+    <div class="footer-text-links">
+        
+            
+                <a href="" target="_blank" rel="noopener">
+                    文字链接
+                </a>
+            
+        
+    </div>
+</footer>
+    
+<script src="/js/background.js"></script>
+    
+        
+<script src="/js/search.js"></script>
+    
+</main>
+</body>
+</html>
