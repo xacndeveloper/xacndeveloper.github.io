@@ -43,6 +43,9 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://xacndeveloper.github.io">
     
+    <!-- RSS Feed -->
+    <link rel="alternate" type="application/rss+xml" title="Xacn Blog RSS Feed" href="https://xacndeveloper.github.io/rss.xml">
+    
     <!-- Stylesheets -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
@@ -74,6 +77,12 @@
             <a href="#"><i class="fab fa-youtube"></i></a>
             <a href="#"><i class="fab fa-github"></i></a>
         </div>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Makalelerde ara..." class="search-input">
+            <button id="searchButton" class="search-button">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
         <hr class="divider">
         <div id="posts-list">
             
@@ -84,7 +93,60 @@
             
         </div>
         <hr class="divider">
-        <footer><p>Tüm Hakları Saklıdır</p></footer>
+        <footer>
+            <p>Tüm Hakları Saklıdır</p>
+            <p><a href="rss.xml" class="rss-link"><i class="fas fa-rss"></i> RSS</a></p>
+        </footer>
     </div>
+    
+    <script>
+        // Arama fonksiyonalitesi
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('searchInput');
+            const searchButton = document.getElementById('searchButton');
+            const postsList = document.getElementById('posts-list');
+            const allPosts = Array.from(postsList.querySelectorAll('.post-link'));
+            
+            function performSearch() {
+                const searchTerm = searchInput.value.toLowerCase().trim();
+                
+                if (searchTerm === '') {
+                    // Tüm postları göster
+                    allPosts.forEach(post => {
+                        post.style.display = 'block';
+                    });
+                    return;
+                }
+                
+                allPosts.forEach(post => {
+                    const title = post.querySelector('h2').textContent.toLowerCase();
+                    const description = post.querySelector('p').textContent.toLowerCase();
+                    
+                    if (title.includes(searchTerm) || description.includes(searchTerm)) {
+                        post.style.display = 'block';
+                    } else {
+                        post.style.display = 'none';
+                    }
+                });
+            }
+            
+            // Arama butonuna tıklama
+            searchButton.addEventListener('click', performSearch);
+            
+            // Enter tuşuna basma
+            searchInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    performSearch();
+                }
+            });
+            
+            // Gerçek zamanlı arama (isteğe bağlı)
+            searchInput.addEventListener('input', function() {
+                // Kısa bir gecikme ile arama yap
+                clearTimeout(this.searchTimeout);
+                this.searchTimeout = setTimeout(performSearch, 300);
+            });
+        });
+    </script>
 </body>
 </html>
