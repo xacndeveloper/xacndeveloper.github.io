@@ -104,11 +104,11 @@
 <p><strong>BU İŞLEMLER SADECE ESKİ VE GARANTİSİ BİTMİŞ CİHAZLAR İÇİN ÖNERİLİR!</strong></p>
 
 <ul>
-<li>📵 <strong>Garanti Kaybı:</strong> Custom ROM kurulumu cihaz garantisini iptal eder (Samsung Knox gibi)</li>
-<li>🔒 <strong>Güvenlik Riskleri:</strong> Resmi olmayan yazılımlar potansiyel risk taşır</li>
-<li>💾 <strong>Veri Kaybı:</strong> Tüm verileriniz silinebilir, mutlaka yedek alın</li>
-<li>🚫 <strong>Cihaz Hasarları:</strong> Yanlış işlemler cihazınızı tamamen bozabilir (hard brick)</li>
-<li>📱 <strong>Donanım Uyumsuzlukları:</strong> Kamera, parmak izi okuyucu gibi özellikler çalışmayabilir</li>
+<li>📵 <strong>Garanti Kaybı:</strong> Custom ROM kurulumu cihaz garantisini iptal eder (örn. Samsung Knox).</li>
+<li>🔒 <strong>Güvenlik Riskleri:</strong> Resmi olmayan yazılımlar güvenlik riski taşır.</li>
+<li>💾 <strong>Veri Kaybı:</strong> Tüm veriler silinebilir; mutlaka yedek alın.</li>
+<li>🚫 <strong>Cihaz Hasarları:</strong> Yanlış işlemler cihazı kullanılamaz hâle getirebilir (hard brick).</li>
+<li>📱 <strong>Donanım Uyumsuzlukları:</strong> Kamera, parmak izi, NFC gibi modüller çalışmayabilir.</li>
 </ul>
 
 <hr>
@@ -134,383 +134,349 @@
 
 <p><a id="hazirlik-ve-onlemler"></a><br><h2 id="🛠️ Hazırlık ve Önlemler">🛠️ Hazırlık ve Önlemler</h2></p>
 
-<h3 id="Gereken Yazılımlar:">Gereken Yazılımlar:</h3>
+<h3 id="Gereken Yazılımlar ve Kurulum (özet)">Gereken Yazılımlar ve Kurulum (özet)</h3>
 
-<p><strong>Windows (ADB & Fastboot kurulumu adımları - komut değil; yönerge):</strong><br><ol><br><li>Platform-Tools paketini indirin: https://developer.android.com/studio/releases/platform-tools</li><br><li>ZIP'i açın ve <code>platform-tools</code> klasörünü <code>C:\</code> sürücüsüne taşıyın (örnek yol: <code>C:\platform-tools</code>)</li><br><li>Sistem ortam değişkenlerine <code>C:\platform-tools</code> yolunu ekleyin (Denetim Masası > Sistem > Gelişmiş sistem ayarları > Ortam Değişkenleri)</li><br><li>Komut istemcisini/PowerShell'i kapatıp tekrar açın, <code>adb</code> ve <code>fastboot</code> komutlarının çalıştığını doğrulayın (<code>adb version</code>, <code>fastboot --version</code>)</li><br></ol></p>
+<p><strong>Windows (yönerge — komut değil):</strong></p>
+
+<ol>
+<li>Platform-Tools paketini indirin: <a href="https://developer.android.com/studio/releases/platform-tools" target="_blank">Platform-Tools — Android Developers</a></li>
+<li>ZIP'i açın ve <code>platform-tools</code> klasörünü <code>C:\</code> sürücüsüne taşıyın (örnek: <code>C:\platform-tools</code>).</li>
+<li>Sistem ortam değişkenlerine <code>C:\platform-tools</code> yolunu ekleyin (Denetim Masası → Sistem → Gelişmiş sistem ayarları → Ortam Değişkenleri).</li>
+<li>Komut İstemi/PowerShell'i kapatıp tekrar açın; <code>adb version</code> ve <code>fastboot --version</code> ile doğrulayın.</li>
+</ol>
 
 <p><strong>Linux (terminal komutu):</strong><br><pre><code class="language-bash">sudo apt update &amp;&amp; sudo apt install android-tools-adb android-tools-fastboot</code></pre></p>
 
 <p><strong>macOS (Homebrew ile):</strong><br><pre><code class="language-bash">brew install android-platform-tools</code></pre></p>
 
-<hr>
+<blockquote>Not: Windows için ADB/Fastboot paketini PowerShell veya CMD üzerinden doğrudan paket yöneticisi ile yükleme adımı yoktur; yukarıdaki yönergeyi manuel uygulayın.</blockquote>
 
-<h3 id="Ön Hazırlık Kontrol Listesi:">Ön Hazırlık Kontrol Listesi:</h3>
+<h3 id="Ön Hazırlık Kontrol Listesi">Ön Hazırlık Kontrol Listesi</h3>
 <ul>
-<li>Cihaz şarjı en az %70</li>
-<li>Tüm kişisel veriler yedeklendi (fotoğraflar, dosyalar, kişiler)</li>
-<li>Uygulama yedekleri alındı (Titanium Backup, Swift Backup)</li>
-<li>Orijinal firmware indirildi (SamMobile, Xiaomi Firmware Updater)</li>
-<li>USB sürücüleri yüklendi (üretici web sitesinden)</li>
-<li>Model kodu doğrulandı (Ayarlar > Telefon hakkında > Model numarası)</li>
-<li>USB hata ayıklama etkinleştirildi</li>
-<li>OEM kilidi etkinleştirildi</li>
+<li>Cihaz şarjı en az %70.</li>
+<li>Tüm kişisel veriler yedeklendi (fotoğraflar, dosyalar, kişiler).</li>
+<li>Uygulama yedekleri alındı (Titanium Backup, Swift Backup).</li>
+<li>Orijinal firmware indirildi (örn. <a href="https://www.sammobile.com/" target="_blank">SamMobile</a>, <a href="https://xiaomifirmwareupdater.com/" target="_blank">Xiaomi Firmware Updater</a>).</li>
+<li>USB sürücüleri yüklendi (üretici sitesinden).</li>
+<li>Model kodu doğrulandı (Ayarlar → Telefon hakkında → Model numarası).</li>
+<li>USB hata ayıklama etkinleştirildi.</li>
+<li>OEM kilidi (Geliştirici seçeneklerinde) etkinleştirildi (gerekliyse).</li>
 </ul>
 
-<h3 id="Geliştirici Seçeneklerini Etkinleştirme:">Geliştirici Seçeneklerini Etkinleştirme:</h3>
+<h3 id="Geliştirici Seçeneklerini Etkinleştirme">Geliştirici Seçeneklerini Etkinleştirme</h3>
 <ol>
-<li>Ayarlar > Telefon hakkında > Yapım numarası'na 7 kez dokunun</li>
-<li>Geri dönün > Sistem > Geliştirici seçenekleri</li>
-<li>USB hata ayıklamayı etkinleştirin</li>
-<li>OEM kilidini etkinleştirin (varsa)</li>
+<li>Ayarlar → Telefon hakkında → Yapım numarası'na 7 kez dokunun.</li>
+<li>Geri dönün → Sistem → Geliştirici seçenekleri.</li>
+<li>USB hata ayıklamayı etkinleştirin.</li>
+<li>OEM kilidini etkinleştirin (varsa).</li>
 </ol>
 
 <hr>
 
 <p><a id="bootloader-kilidi-acma"></a><br><h2 id="🔓 Bootloader Kilidi Açma">🔓 Bootloader Kilidi Açma</h2></p>
 
-<h3 id="Genel Adımlar:">Genel Adımlar:</h3>
+<h3 id="Genel Adımlar">Genel Adımlar</h3>
 <ol>
 <li>Cihazı USB ile bilgisayara bağlayın.</li>
-<li>Terminal / Komut İstemi:</li>
+<li>Komutları çalıştırın:</li>
 </ol>
-<pre><code class="language-bash">adb devices        # Cihazın bağlandığını doğrula
+<pre><code class="language-bash">adb devices        # cihazın bağlandığını doğrulayın
 adb reboot bootloader</code></pre>
 <ol>
-<li>Bootloader moduna geldikten sonra:</li>
+<li>Bootloader modunda:</li>
 </ol>
-<pre><code class="language-bash">fastboot devices   # Cihazın fastboot ile göründüğünü doğrula
+<pre><code class="language-bash">fastboot devices   # fastboot ile göründüğünü doğrulayın
 fastboot flashing unlock
 # veya bazı cihazlarda:
 fastboot oem unlock</code></pre>
 <ol>
-<li>Cihaz yeniden başlatılır. Yeniden başlatma sonrası cihaz sıfırlanmış olur.</li>
+<li>Cihaz fabrika ayarlarına dönebilir; işlemi onaylayın ve cihazı yeniden başlatın.</li>
 </ol>
 
-<h3 id="Markaya Özel Notlar:">Markaya Özel Notlar:</h3>
+<h3 id="Markaya Özel Notlar">Markaya Özel Notlar</h3>
 <ul>
-<li><strong>Samsung:</strong> Download Mode (Volume Down + Power + Home veya Volume Down + Power) ve Odin kullanılır. (Knox tetiklenirse geri dönüş yok)</li>
-<li><strong>Xiaomi:</strong> Mi Unlock Tool gerektirir; Mi hesabı ve bekleme süresi olabilir (7-15 gün).</li>
-<li><strong>Google Pixel:</strong> <code>fastboot flashing unlock</code> genellikle doğrudan çalışır.</li>
-<li><strong>OnePlus:</strong> <code>fastboot oem unlock</code> ile açılır.</li>
-<li><strong>Huawei (eski modeller):</strong> Resmi kod/servis gerekebilir; güncel politikalar değişti.</li>
+<li><strong>Samsung:</strong> Download Mode (+Odin) kullanılır. Knox tetiklenirse bazı güvenlik fonksiyonları kalıcı olarak devre dışı kalır.</li>
+<li><strong>Xiaomi:</strong> Resmi <a href="https://en.miui.com/unlock/" target="_blank">Mi Unlock Tool</a> gerekir; hesap ve bekleme süresi (7–15 gün) istenebilir.</li>
+<li><strong>Google Pixel:</strong> <code>fastboot flashing unlock</code> genelde doğrudan çalışır.</li>
+<li><strong>OnePlus:</strong> <code>fastboot oem unlock</code> veya <code>fastboot flashing unlock</code>.</li>
+<li><strong>Huawei (eski modeller):</strong> Resmi unlock kodları/servisleri zamanla değişti — güncel bilgi kontrol edin.</li>
 </ul>
 
 <hr>
 
 <p><a id="custom-recovery-kurulumu"></a><br><h2 id="📲 Custom Recovery Kurulumu">📲 Custom Recovery Kurulumu</h2></p>
 
-<h3 id="Popüler Recovery'ler:">Popüler Recovery'ler:</h3>
+<h3 id="Popüler Recovery'ler">Popüler Recovery'ler</h3>
 <ul>
-<li><strong>TWRP (Team Win Recovery Project)</strong> — En yaygın ve geniş cihaz desteği</li>
-<li><strong>OrangeFox</strong> — Modern arayüz, gelişmiş özellikler</li>
-<li><strong>PitchBlack</strong> — Özelleştirilebilir tema desteği</li>
+<li><strong>TWRP (Team Win Recovery Project)</strong> — en yaygın.</li>
+<li><strong>OrangeFox</strong> — modern arayüz, ekstra özellikler.</li>
+<li><strong>PitchBlack</strong> — tema desteği.</li>
 </ul>
 
-<h3 id="Doğru Recovery Bulma:">Doğru Recovery Bulma:</h3>
+<h3 id="Nereden Bulunur">Nereden Bulunur</h3>
 <ul>
-<li>Resmi TWRP Sitesi: https://twrp.me</li>
-<li>XDA Developers: Cihaz sayfası ve cihaz tabanlı kılavuzlar</li>
-<li>Telegram/Reddit cihaz toplulukları (dikkat: doğrulayın)</li>
+<li>Resmi TWRP: <a href="https://twrp.me" target="_blank">TWRP — Team Win</a></li>
+<li>XDA Developers: <a href="https://forum.xda-developers.com/" target="_blank">XDA Developers Forum</a></li>
+<li>Topluluk kanalları (Telegram/Reddit) — doğruluğunu kontrol edin.</li>
 </ul>
 
-<h3 id="Kurulum Adımları:">Kurulum Adımları:</h3>
+<h3 id="Kurulum Adımları">Kurulum Adımları</h3>
 <ol>
-<li>Cihaza uygun recovery <code>.img</code> dosyasını indirin.</li>
-<li>Fastboot moduna geçin:</li>
+<li>Cihaza uygun <code>twrp.img</code> dosyasını indirin.</li>
+<li>Fastboot'a geçin:</li>
 </ol>
 <pre><code class="language-bash">adb reboot bootloader</code></pre>
 <ol>
-<li>Recovery yazdırma:</li>
+<li>Recovery yazdırma veya geçici başlatma:</li>
 </ol>
 <pre><code class="language-bash">fastboot flash recovery twrp.img
-# Bazı cihazlarda alternatif:
-fastboot boot twrp.img   # Geçici olarak çalıştırmak için</code></pre>
+# Geçici çalıştırmak için:
+fastboot boot twrp.img</code></pre>
 <ol>
-<li>İlk açılışta <code>Allow System Modifications</code> gibi izinleri verin (TWRP).</li>
+<li>İlk açılışta TWRP'de "Allow System Modification" veya benzeri izinleri verin.</li>
 </ol>
 
 <hr>
 
 <p><a id="yedekleme-islemleri"></a><br><h2 id="💾 Yedekleme İşlemleri">💾 Yedekleme İşlemleri</h2></p>
 
-<h3 id="TWRP ile Tam Yedek (NANDROID):">TWRP ile Tam Yedek (NANDROID):</h3>
+<h3 id="TWRP ile Tam Yedek (Nandroid)">TWRP ile Tam Yedek (Nandroid)</h3>
 <ol>
-<li>TWRP > Backup</li>
-<li>Yedeklenecek bölümleri seçin:</li>
-</ol>
-<ul>
-<li>Boot</li>
-<li>System</li>
-<li>Data</li>
-<li>EFS (ÇOK ÖNEMLİ — IMEI bilgileri)</li>
-<li>Persist / Modem (gerekiyorsa)</li>
-</ul>
-<ol>
-<li><code>Swipe to Backup</code> ile başlatın.</li>
-<li>Yedek dosyasını harici karta veya bilgisayara kopyalayın.</li>
+<li>TWRP → <strong>Backup</strong>.</li>
+<li>Yedeklenecek bölümler: <code>Boot</code>, <code>System</code>, <code>Data</code>, <code>EFS</code> (ÇOK ÖNEMLİ — IMEI), gerekirse <code>Persist</code>/<code>Modem</code>.</li>
+<li><code>Swipe to Backup</code> ile işlemi başlatın.</li>
+<li>Yedekleri harici SD karta veya bilgisayara kopyalayın.</li>
 </ol>
 
-<h3 id="EFS / IMEI Yedekleme (Örnek adb ile):">EFS / IMEI Yedekleme (Örnek adb ile):</h3>
+<h3 id="EFS / IMEI Yedekleme (örnek)">EFS / IMEI Yedekleme (örnek)</h3>
 <pre><code class="language-bash">adb shell
 su
 dd if=/dev/block/bootdevice/by-name/efs of=/sdcard/efs-backup.img
 exit
 adb pull /sdcard/efs-backup.img</code></pre>
+<blockquote>Not: EFS yolu cihaza göre değişebilir. Cihazınıza özel yolu araştırın; yanlış dd kullanımı tehlikelidir.</blockquote>
 
-<h3 id="Kişisel Veri Yedekleme:">Kişisel Veri Yedekleme:</h3>
+<h3 id="Kişisel Veri Yedekleme">Kişisel Veri Yedekleme</h3>
 <ul>
-<li>SMS/Çağrı: SMS Backup & Restore</li>
-<li>Kişiler: Google Hesabına senkronize et</li>
-<li>Fotoğraflar/Dosyalar: Google Drive veya bilgisayara yedekle</li>
-<li>Uygulama verileri: Titanium Backup (root gerektirir) veya Swift Backup</li>
+<li>SMS/Çağrı: SMS Backup & Restore.</li>
+<li>Kişiler: Google hesabına senkronize edin.</li>
+<li>Fotoğraflar/dosyalar: Google Drive veya bilgisayara kopyalama.</li>
+<li>Uygulama verileri: Titanium Backup (root gerektirir) veya Swift Backup.</li>
 </ul>
 
 <hr>
 
 <p><a id="custom-rom-kurulumu"></a><br><h2 id="🔄 Custom ROM Kurulumu">🔄 Custom ROM Kurulumu</h2></p>
 
-<h3 id="ROM Türleri ve Kaynakları:">ROM Türleri ve Kaynakları:</h3>
-<table>
-<thead><tr>
-<th>ROM Türü</th>
-<th>Özellikler</th>
-<th>Kaynak</th>
-</tr></thead>
-<tbody>
-<tr>
-<td>LineageOS</td>
-<td>AOSP tabanlı, stabil</td>
-<td>https://download.lineageos.org/</td>
-</tr>
-<tr>
-<td>Pixel Experience</td>
-<td>Pixel gibi deneyim</td>
-<td>https://download.pixelexperience.org/</td>
-</tr>
-<tr>
-<td>ArrowOS</td>
-<td>Hafif, performans odaklı</td>
-<td>https://www.arrowos.net/</td>
-</tr>
-<tr>
-<td>crDroid</td>
-<td>Çok özellikli</td>
-<td>https://crdroid.net/</td>
-</tr>
-<tr>
-<td>Resmi Olmayan</td>
-<td>Deneysel, XDA'da bulunur</td>
-<td>XDA Developers</td>
-</tr>
-</tbody>
-</table>
-
-<h3 id="GApps (Google Uygulamaları):">GApps (Google Uygulamaları):</h3>
+<h3 id="Popüler ROM Kaynakları">Popüler ROM Kaynakları</h3>
 <ul>
-<li>OpenGApps: https://opengapps.org/ (Platform, Android sürümü ve variant seçimi önemli)</li>
-<li>FlameGApps / NikGApps: Alternatif paketler</li>
-<li>Öneri: Nano veya Pico variantlarıyla başlamak</li>
+<li><strong>LineageOS</strong> — <a href="https://download.lineageos.org/" target="_blank">LineageOS Downloads</a></li>
+<li><strong>Pixel Experience</strong> — <a href="https://download.pixelexperience.org/" target="_blank">Pixel Experience Downloads</a></li>
+<li><strong>ArrowOS</strong> — <a href="https://www.arrowos.net/" target="_blank">ArrowOS</a></li>
+<li><strong>crDroid</strong> — <a href="https://crdroid.net/" target="_blank">crDroid</a></li>
+<li><strong>XDA</strong> — <a href="https://forum.xda-developers.com/" target="_blank">XDA Developers Forum</a> (cihaz tabanlı, resmi olmayan derlemeler)</li>
 </ul>
 
-<h3 id="Kurulum Adımları (Clean Flash - Temiz Kurulum):">Kurulum Adımları (Clean Flash - Temiz Kurulum):</h3>
+<h3 id="GApps (Google Uygulamaları)">GApps (Google Uygulamaları)</h3>
+<ul>
+<li>OpenGApps: <a href="https://opengapps.org/" target="_blank">OpenGApps</a> (platform, Android sürümü ve variant seçimi önemli).</li>
+<li>Alternatifler: FlameGApps, NikGApps.</li>
+<li>Öneri: Başlangıç için <code>nano</code> veya <code>pico</code> varyantı.</li>
+</ul>
+
+<h3 id="Clean Flash (Temiz Kurulum) Adımları">Clean Flash (Temiz Kurulum) Adımları</h3>
 <ol>
-<li>ROM, GApps ve isteğe bağlı Magisk zip'lerini cihaz depolamasına veya SD karta kopyalayın.</li>
+<li>ROM, GApps ve (isteğe bağlı) Magisk zip'lerini cihaza veya SD karta kopyalayın.</li>
 <li>TWRP'yi başlatın.</li>
-<li>Wipe > Advanced Wipe > seçin: Dalvik/ART Cache, System, Data, Cache</li>
+<li><strong>Wipe → Advanced Wipe</strong>: <code>Dalvik/ART Cache</code>, <code>System</code>, <code>Data</code>, <code>Cache</code> seçin.</li>
 </ol>
 <ul>
-<li>NOT: <code>Data</code> silindikten sonra cihaz şifreliyse (encrypted) şifrenizi kaldırmanız gerekebilir.</li>
+<li>Not: Eğer <code>Data</code> şifreliyse (encrypted), şifreyi kaldırmanız veya uygun adımları uygulamanız gerekir.</li>
 </ul>
 <ol>
-<li>Install > ROM zip'i seçin > Swipe to confirm flash.</li>
-<li>GApps varsa hemen ardından aynı oturumda flashlayın.</li>
-<li>Magisk veya root aracı kullanılacaksa sonrasında flashlayın.</li>
-<li>Wipe cache/dalvik.</li>
-<li>Reboot System.</li>
+<li><strong>Install</strong> → ROM zip → <code>Swipe to confirm flash</code>.</li>
+<li>Hemen ardından GApps (varsa) flashlayın.</li>
+<li>Magisk (root isteniyorsa) son olarak flashlanabilir.</li>
+<li><code>Wipe cache/dalvik</code> yapın.</li>
+<li><code>Reboot System</code>.</li>
 </ol>
 
-<h3 id="Dirty Flash (Veri Silmeden Güncelleme):">Dirty Flash (Veri Silmeden Güncelleme):</h3>
+<h3 id="Dirty Flash (Veri Silmeden Güncelleme)">Dirty Flash (Veri Silmeden Güncelleme)</h3>
 <ul>
-<li>Aynı ROM ailesinin küçük güncellemelerinde kullanılabilir.</li>
-<li>Ancak önerilen yöntem her zaman <strong>clean flash</strong>'tır (özellikle major sürüm değişimlerinde).</li>
+<li>Küçük güncellemelerde işe yarar; major sürümler için <strong>clean flash</strong> önerilir.</li>
 </ul>
 
-<h3 id="İlk Açılış:">İlk Açılış:</h3>
+<h3 id="İlk Açılış">İlk Açılış</h3>
 <ul>
-<li>İlk açılış 5-15 dakika sürebilir. Sabırlı olun.</li>
-<li>Bootloop olursa recovery'ye girip cache/dalvik temizleyin veya ROM'u tekrar flashlayın.</li>
+<li>İlk açılış 5–15 dakika alabilir. Sabırlı olun. Bootloop olursa recovery'den cache temizliği veya ROM yeniden flash gerekebilir.</li>
 </ul>
 
 <hr>
 
 <p><a id="root-ve-moduller"></a><br><h2 id="🛡️ Root ve Modüller">🛡️ Root ve Modüller</h2></p>
 
-<h3 id="Magisk ile Root:">Magisk ile Root:</h3>
+<h3 id="Magisk ile Root">Magisk ile Root</h3>
 <ul>
-<li>Magisk: https://github.com/topjohnwu/Magisk/releases</li>
-<li>Kurulum yolları:</li>
+<li>Magisk: <a href="https://github.com/topjohnwu/Magisk/releases" target="_blank">Magisk GitHub Releases</a></li>
 </ul>
-<ol>
-<li>TWRP ile zip flashlama</li>
-<li>Boot image'i çekip Magisk ile patchleyip patched image'i fastboot ile flashlama</li>
-</ol>
 
-<h3 id="Boot image patch yöntemi (örnek):">Boot image patch yöntemi (örnek):</h3>
-<pre><code class="language-bash"># Telefon root gerektiriyorsa veya TWRP yoksa:
+<p><strong>TWRP ile doğrudan zip flashlama</strong> veya <strong>boot image patch yöntemi</strong> kullanılabilir.</p>
+
+<h3 id="Boot image patch yöntemi (örnek)">Boot image patch yöntemi (örnek)</h3>
+<pre><code class="language-bash"># Örnek genel adımlar (cihaz özelinde değişir):
 adb pull /dev/block/bootdevice/by-name/boot boot.img
-# Telefon üzerinde Magisk uygulaması ile boot.img'i patchettikten sonra:
+# Telefon üzerinde Magisk uygulaması ile boot.img'i patch'leyin
+# Ardından patched image'i fastboot ile flashlayın:
 fastboot flash boot magisk_patched.img</code></pre>
+<blockquote>Not: Gerçek blok yolları cihaz bazında farklılık gösterir. Yanlış blok seçimi cihazı bozabilir.</blockquote>
 
-<h3 id="Magisk Ayarları ve Modüller:">Magisk Ayarları ve Modüller:</h3>
+<h3 id="Önemli Modüller ve Ayarlar">Önemli Modüller ve Ayarlar</h3>
 <ul>
-<li>Magisk Hide / DenyList: Root tespitini engellemek için (banka uygulamaları için)</li>
-<li>Modüller: Viper4Android (ses), BusyBox (komutlar), SafetyNet fix modülleri</li>
-<li>SafetyNet: Modern bankacılık uygulamaları için önemli; her ROM/Magisk sürümünde test edin.</li>
+<li>Magisk Hide / DenyList: Root tespitini engellemeye yardımcı (bankacılık uygulamaları için).</li>
+<li>Modüller: BusyBox, Viper4Android (ses iyileştirme), SafetyNet-fix modülleri.</li>
+<li>SafetyNet: Banka ve DRM uygulamaları için test edin; her ROM/Magisk sürümünde farklı sonuçlar olabilir.</li>
 </ul>
 
 <hr>
 
 <p><a id="artilar-ve-eksiler"></a><br><h2 id="✔️ Artılar ve ❌ Eksiler">✔️ Artılar ve ❌ Eksiler</h2></p>
 
-<h3 id="✅ Artıları:">✅ Artıları:</h3>
+<h3 id="✅ Artıları">✅ Artıları</h3>
 <ul>
-<li>Güncel Android: Üretici desteği bitmiş cihazlara yeni sürüm</li>
-<li>Performans: Daha hızlı, optimize sistemler</li>
-<li>Pil Ömrü: İyileştirilmiş batarya yönetimi</li>
-<li>Özelleştirme: Çok daha fazla kişiselleştirme imkanı</li>
-<li>Gizlilik: Gereksiz uygulamalardan arınmış sistemler</li>
-<li>Hafif Sistem: OEM şişkinlikleri yok</li>
+<li>Yeni Android sürümleri üretici desteği bitmiş cihazlarda kullanılabilir.</li>
+<li>Performans ve pil ömrü genelde iyileşebilir.</li>
+<li>Gelişmiş özelleştirme imkânı.</li>
+<li>Gereksiz OEM uygulamalarından arınma.</li>
 </ul>
 
-<h3 id="❌ Eksileri:">❌ Eksileri:</h3>
+<h3 id="❌ Eksileri">❌ Eksileri</h3>
 <ul>
-<li>Garanti Kaybı (Knox tetiklenmesi geri alınamaz olabilir)</li>
-<li>Güvenlik Riskleri: Resmi olmayan ROM'lar güvenlik açıkları taşıyabilir</li>
-<li>Donanım Sorunları: Kamera, parmak izi, NFC gibi unsurlar çalışmayabilir</li>
-<li>Banka Uygulamaları/DRM: Root veya custom durumlarında çalışmayabilir</li>
-<li>Sürekli Bakım: Manuel güncelleme ve hata düzeltme gerekebilir</li>
+<li>Garanti kaybı; bazı durumlarda (Knox) geri dönüş yok.</li>
+<li>Resmi olmayan yazılımlar güvenlik riski taşıyabilir.</li>
+<li>Donanım uyumluluğu sorunları (kamera, parmak izi vb.).</li>
+<li>Banka uygulamaları ve DRM sorunları.</li>
+<li>Sürekli manuel bakım gerektirebilir.</li>
 </ul>
 
 <hr>
 
 <p><a id="sorun-giderme"></a><br><h2 id="🆘 Sorun Giderme">🆘 Sorun Giderme</h2></p>
 
-<h3 id="Bootloop (Sürekli Yeniden Başlatma):">Bootloop (Sürekli Yeniden Başlatma):</h3>
+<h3 id="Bootloop (sürekli yeniden başlatma)">Bootloop (sürekli yeniden başlatma)</h3>
 <ul>
-<li>Recovery moda geç > Wipe cache/dalvik</li>
-<li>ROM'u yeniden flashla</li>
-<li>Önceki Nandroid yedeğini geri yükle</li>
+<li>Recovery → Wipe cache/dalvik.</li>
+<li>ROM'u tekrar flashlayın.</li>
+<li>Önceki Nandroid yedeğini geri yükleyin.</li>
 </ul>
 
-<h3 id="EFS / IMEI Kaybı:">EFS / IMEI Kaybı:</h3>
+<h3 id="EFS / IMEI kaybı">EFS / IMEI kaybı</h3>
 <ul>
-<li>Önlem: EFS yedeği alınması şart</li>
-<li>Çözüm: EFS yedeğini geri yükleyin; işe yaramazsa orijinal firmware ile tam flash denenebilir</li>
-<li>Bazı durumlarda servise başvurmak gerekebilir</li>
+<li>Önlem: mutlaka EFS yedeği alın.</li>
+<li>Çözüm: EFS yedeğini geri yükleyin veya orijinal firmware ile tam flash atın.</li>
+<li>Bazı durumlarda servis gerekebilir.</li>
 </ul>
 
-<h3 id="Kamera Çalışmıyor / Kötü:">Kamera Çalışmıyor / Kötü:</h3>
+<h3 id="Donanım sorunları (kamera, sensör)">Donanım sorunları (kamera, sensör)</h3>
 <ul>
-<li>Google Camera (GCam) portları deneyin</li>
-<li>Farklı ROM veya farklı kamera HAL'ı deneyin</li>
+<li>Google Camera (GCam) portları deneyin.</li>
+<li>Farklı ROM veya kamera HAL'ı deneyin.</li>
 </ul>
 
-<h3 id="Banka Uygulamaları Çalışmıyor:">Banka Uygulamaları Çalışmıyor:</h3>
+<h3 id="Banka uygulamaları çalışmıyor">Banka uygulamaları çalışmıyor</h3>
 <ul>
-<li>Magisk DenyList / Hide kullanın</li>
-<li>SafetyNet fix modüllerini deneyin</li>
-<li>Alternatif: uygulamayı microG veya sandbox içinde çalıştırmayı deneyin (güvenlik riski vardır)</li>
+<li>Magisk DenyList / Hide seçeneklerini kullanın.</li>
+<li>SafetyNet-fix modüllerini deneyin.</li>
+<li>Gerekirse uygulamayı farklı bir profil/sandbox'ta çalıştırma gibi yöntemler araştırın (güvenlik riski olabilir).</li>
 </ul>
 
-<h3 id="WiFi / Bluetooth Sorunları:">WiFi / Bluetooth Sorunları:</h3>
+<h3 id="Wi-Fi / Bluetooth sorunları">Wi-Fi / Bluetooth sorunları</h3>
 <ul>
-<li>Doğru firmware/modem dosyalarını kullanıp yeniden flashlayın</li>
-<li>Persist ve modem yedeklerini geri yükleyin</li>
+<li>Doğru modem/firmware dosyalarını kullanarak yeniden flashlayın.</li>
+<li><code>persist</code> ve modem yedeklerini geri yükleyin.</li>
 </ul>
 
 <hr>
 
 <p><a id="markaya-ozel-rehberler"></a><br><h2 id="📝 Markaya Özel Rehberler">📝 Markaya Özel Rehberler</h2></p>
 
-<h3 id="Samsung:">Samsung:</h3>
+<h3 id="Samsung">Samsung</h3>
 <ul>
-<li>Knox uyarısı: Knox detektörü tetiklendiğinde bazı güvenlik özellikleri (Samsung Pay, Secure Folder) kalıcı olarak devre dışı kalabilir.</li>
-<li>Odin: Windows için resmi flash aracı (tar/md5 dosyalarını kullanır).</li>
-<li>Download Mode: Cihaza göre değişir (ses kısma + güç + home veya ses kısma + güç).</li>
-<li>Warranty Bitirme: Knox tripping geri alınamaz.</li>
+<li>Knox tripping: tetiklenirse bazı hizmetler kalıcı kaybolabilir (Secure Folder, Samsung Pay).</li>
+<li>Odin: Windows için resmi flash aracı (tar/md5 dosyaları).</li>
+<li>Download Mode kombinasyonları cihaz modeline göre değişir.</li>
 </ul>
 
-<h3 id="Xiaomi:">Xiaomi:</h3>
+<h3 id="Xiaomi">Xiaomi</h3>
 <ul>
-<li>Mi Unlock Tool zorunludur; bazen hesap ve bekleme süresi istenir.</li>
-<li>Anti-Rollback: Eski firmware'e dönme kısıtları olabilir (dikkatli olun).</li>
+<li>Mi Unlock Tool genelde zorunlu; hesap/haftalar arası bekleme olabilir.</li>
+<li>Anti-Rollback: Eski sürümlere dönme kısıtları olabilir — dikkatli olun.</li>
 </ul>
 
-<h3 id="Google Pixel:">Google Pixel:</h3>
+<h3 id="Google Pixel">Google Pixel</h3>
 <ul>
-<li>Bootloader açmak genelde kolaydır; <code>fastboot flashing unlock</code> kullanılır.</li>
-<li>Pixel Experience gibi ROM’lar Pixel TAR/OTA mantığına yakın olabilir.</li>
+<li>Bootloader açmak genelde kolaydır (<code>fastboot flashing unlock</code>).</li>
+<li>Pixel Experience gibi ROM'lar Pixel cihazlara iyi uyum sağlar.</li>
 </ul>
 
-<h3 id="OnePlus:">OnePlus:</h3>
+<h3 id="OnePlus">OnePlus</h3>
 <ul>
-<li>Genelde topluluk tarafından iyi desteklenir, bootloader açma kolaydır.</li>
+<li>Topluluk desteği güçlü; bootloader açma genelde kolaydır.</li>
 </ul>
 
-<h3 id="Eski Huawei:">Eski Huawei:</h3>
+<h3 id="Eski Huawei">Eski Huawei</h3>
 <ul>
-<li>Çoğu yeni modelde bootloader açma kısıtlandı; eski modellerde resmi kodlar bulunabiliyordu.</li>
-<li>DC-Unlocker vb. araçlar bazı durumlarda ücretli çözümler sunar.</li>
+<li>Yeni modellerde bootloader açma kısıtlı; eski modellerde resmi kod bulunabiliyordu.</li>
+<li>Bazı servisler/araçlar ücretli olabilir (örn. DC-Unlocker).</li>
 </ul>
 
 <hr>
 
 <p><a id="guncelleme-ve-guvenlik"></a><br><h2 id="🔒 Güvenlik ve Güncelleme">🔒 Güvenlik ve Güncelleme</h2></p>
 
-<h3 id="Güvenlik Önlemleri:">Güvenlik Önlemleri:</h3>
+<h3 id="Güvenlik Önlemleri">Güvenlik Önlemleri</h3>
 <ul>
-<li>Sadece güvenilir kaynaklardan ROM indirin (Lineage, resmi XDA derlemeleri).</li>
+<li>Sadece güvenilir kaynaklardan ROM/GApps indirin (Lineage, resmi XDA derlemeleri).</li>
 <li>İndirilen dosyaların MD5/SHA256 hash'lerini kontrol edin.</li>
-<li>Cihaz şifrelemesini etkinleştirin (veya ROM destekliyorsa yeniden şifreleyin).</li>
+<li>Cihaz şifrelemesini etkinleştirin (ROM destekliyorsa tekrar şifreleyin).</li>
 <li>Düzenli yedek alın.</li>
 </ul>
 
-<h3 id="Güncelleme Yönetimi:">Güncelleme Yönetimi:</h3>
+<h3 id="Güncelleme Yönetimi">Güncelleme Yönetimi</h3>
 <ul>
-<li>OTA desteği: LineageOS, Pixel Experience gibi ROM'lar OTA sunabilir.</li>
-<li>Manuel güncelleme: Dirty flash veya clean flash tercih edin; major sürümlerde clean flash önerilir.</li>
-<li>GApps güncellemeleri: ROM güncellemeleri sonrası GApps uyumluluğunu kontrol edin.</li>
+<li>Bazı ROM'lar OTA desteği sunar (LineageOS, Pixel Experience).</li>
+<li>Manual güncelleme: Dirty flash küçük güncellemeler için, major güncellemeler için clean flash önerilir.</li>
+<li>GApps uyumluluğunu ROM güncellemesi sonrası kontrol edin.</li>
 </ul>
 
 <hr>
 
 <p><a id="acil-durum-prosedurleri"></a><br><h2 id="📞 Acil Durum Prosedürleri">📞 Acil Durum Prosedürleri</h2></p>
 
-<h3 id="Hard Brick (Cihaz açılmıyor):">Hard Brick (Cihaz açılmıyor):</h3>
+<h3 id="Hard Brick (cihaz açılmıyor)">Hard Brick (cihaz açılmıyor)</h3>
 <ul>
-<li>Samsung: Download Mode + Odin ile kurtarma mümkündür (bazı durumlarda).</li>
-<li>Qualcomm tabanlı cihazlar: EDL Mode (Emergency Download Mode) ile kurtarma (EDL riski ve yetki gerektirir).</li>
-<li>Eğer kurtarılamıyorsa profesyonel servis veya anakart değişimi gerekebilir.</li>
+<li>Samsung: Download Mode + Odin ile kurtarma (duruma göre).</li>
+<li>Qualcomm cihazlar: EDL Mode (Emergency Download Mode) ile kurtarma (riskli ve yetki gerekebilir).</li>
+<li>Kurtarılamazsa profesyonel servis gerekebilir.</li>
 </ul>
 
-<h3 id="Soft Brick (Bootloop):">Soft Brick (Bootloop):</h3>
+<h3 id="Soft Brick (bootloop)">Soft Brick (bootloop)</h3>
 <ul>
-<li>Recovery > Nandroid yedeğini geri yükle</li>
-<li>Fastboot ile factory image flashlama (varsa)</li>
-<li>Cache/Dalvik temizliği</li>
+<li>Recovery → Nandroid yedeğini geri yükleyin.</li>
+<li>Fastboot ile factory image flashlamayı deneyin.</li>
+<li>Cache/Dalvik temizliği yapın.</li>
 </ul>
 
-<h3 id="IMEI Kaybı:">IMEI Kaybı:</h3>
+<h3 id="IMEI kaybı">IMEI kaybı</h3>
 <ul>
-<li>EFS yedeğini geri yükleyin</li>
-<li>Eğer yedeğiniz yoksa servis merkezi ile iletişime geçin (IMEI yazdırma bazı bölgelerde yasal düzenlemelere tabidir)</li>
+<li>EFS yedeğini geri yükleyin.</li>
+<li>Yedeğiniz yoksa servis merkezi ile iletişime geçin (yasal düzenlemelere dikkat).</li>
 </ul>
 
 <hr>
 
 <p><a id="son-kontrol-listesi"></a><br><h2 id="✅ Son Kontrol Listesi">✅ Son Kontrol Listesi</h2></p>
 
-<h3 id="Kurulum Öncesi:">Kurulum Öncesi:</h3>
+<h3 id="Kurulum Öncesi">Kurulum Öncesi</h3>
 <ul>
 <li>[ ] Tam yedek alındı</li>
 <li>[ ] Şarj en az %70</li>
@@ -522,9 +488,9 @@ fastboot flash boot magisk_patched.img</code></pre>
 <li>[ ] USB sürücüleri yüklü</li>
 </ul>
 
-<h3 id="Kurulum Sonrası:">Kurulum Sonrası:</h3>
+<h3 id="Kurulum Sonrası">Kurulum Sonrası</h3>
 <ul>
-<li>[ ] WiFi/Bluetooth çalışıyor</li>
+<li>[ ] Wi-Fi/Bluetooth çalışıyor</li>
 <li>[ ] Kamera çalışıyor</li>
 <li>[ ] Ses ve mikrofon çalışıyor</li>
 <li>[ ] GPS çalışıyor</li>
@@ -534,13 +500,12 @@ fastboot flash boot magisk_patched.img</code></pre>
 
 <hr>
 
-<p><a id="faydali-kaynaklar"></a><br><h2 id="🌐 Faydalı Kaynaklar">🌐 Faydalı Kaynaklar</h2><br><ul><br><li>XDA-Developers Forum: https://forum.xda-developers.com/</li><br><li>LineageOS Wiki: https://wiki.lineageos.org/</li><br><li>TWRP Resmi Site: https://twrp.me/</li><br><li>Magisk GitHub: https://github.com/topjohnwu/Magisk</li><br><li>OpenGApps: https://opengapps.org/</li><br><li>SamMobile Firmware: https://www.sammobile.com/</li><br><li>Xiaomi Firmware Updater: https://xiaomifirmwareupdater.com/</li><br></ul></p>
+<p><a id="faydali-kaynaklar"></a><br><h2 id="🌐 Faydalı Kaynaklar">🌐 Faydalı Kaynaklar</h2><br><ul><br><li><a href="https://forum.xda-developers.com/" target="_blank">XDA Developers Forum</a></li><br><li><a href="https://download.lineageos.org/" target="_blank">LineageOS Wiki & Downloads</a></li><br><li><a href="https://twrp.me" target="_blank">TWRP — Team Win</a></li><br><li><a href="https://github.com/topjohnwu/Magisk/releases" target="_blank">Magisk — GitHub Releases</a></li><br><li><a href="https://opengapps.org/" target="_blank">OpenGApps</a></li><br><li><a href="https://www.sammobile.com/" target="_blank">SamMobile</a></li><br><li><a href="https://xiaomifirmwareupdater.com/" target="_blank">Xiaomi Firmware Updater</a></li><br></ul></p>
 
 <hr>
 
 <h2 id="SON UYARI">SON UYARI</h2>
-Bu rehber sadece bilgilendirme amaçlıdır. Tüm işlemler kullanıcı sorumluluğundadır. Eski ve garantisi bitmiş cihazlarda deneyiniz. Önemli verilerinizin yedeğini almayı unutmayınız.
-```
+Bu rehber sadece bilgilendirme amaçlıdır. Tüm işlemler kullanıcı sorumluluğundadır. Lütfen <strong>önce yedek alın</strong>, adımları cihaz modelinize göre doğrulayın ve emin olmadığınız adımları atlamayın.
             </div>
         </article>
         <hr class="divider">
