@@ -113,11 +113,18 @@
     </div>
     
     <script>
-        // Gelişmiş arama fonksiyonalitesi
         document.addEventListener('DOMContentLoaded', function() {
+            const postsList = document.getElementById('posts-list');
+            
+            // YENİ EKLENEN KISIM: Postları tersine çevirerek yenilerin üste gelmesini sağlar
+            const posts = Array.from(postsList.children);
+            posts.reverse();
+            posts.forEach(post => postsList.appendChild(post));
+            // YENİ EKLENEN KISIM BİTTİ
+
+            // Gelişmiş arama fonksiyonalitesi
             const searchInput = document.getElementById('searchInput');
             const searchButton = document.getElementById('searchButton');
-            const postsList = document.getElementById('posts-list');
             const noResults = document.getElementById('no-results');
             const clearSearchBtn = document.getElementById('clearSearch');
             const allPosts = Array.from(postsList.querySelectorAll('.post-link'));
