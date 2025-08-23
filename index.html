@@ -92,6 +92,14 @@
             </a>
             
         </div>
+        <div id="no-results" class="no-results" style="display: none;">
+            <div class="no-results-content">
+                <i class="fas fa-search"></i>
+                <h3>Sonuç bulunamadı</h3>
+                <p>Aradığınız terime uygun makale bulunamadı.</p>
+                <button id="clearSearch" class="clear-search-btn">Aramayı temizle</button>
+            </div>
+        </div>
         <hr class="divider">
         <footer>
             <p>Tüm Hakları Saklıdır</p>
@@ -100,23 +108,29 @@
     </div>
     
     <script>
-        // Arama fonksiyonalitesi
+        // Gelişmiş arama fonksiyonalitesi
         document.addEventListener('DOMContentLoaded', function() {
             const searchInput = document.getElementById('searchInput');
             const searchButton = document.getElementById('searchButton');
             const postsList = document.getElementById('posts-list');
+            const noResults = document.getElementById('no-results');
+            const clearSearchBtn = document.getElementById('clearSearch');
             const allPosts = Array.from(postsList.querySelectorAll('.post-link'));
             
             function performSearch() {
                 const searchTerm = searchInput.value.toLowerCase().trim();
                 
                 if (searchTerm === '') {
-                    // Tüm postları göster
+                    // Tüm postları göster, sonuç yok mesajını gizle
                     allPosts.forEach(post => {
                         post.style.display = 'block';
                     });
+                    postsList.style.display = 'block';
+                    noResults.style.display = 'none';
                     return;
                 }
+                
+                let visibleCount = 0;
                 
                 allPosts.forEach(post => {
                     const title = post.querySelector('h2').textContent.toLowerCase();
@@ -124,14 +138,35 @@
                     
                     if (title.includes(searchTerm) || description.includes(searchTerm)) {
                         post.style.display = 'block';
+                        visibleCount++;
                     } else {
                         post.style.display = 'none';
                     }
                 });
+                
+                // Sonuç kontrolü
+                if (visibleCount === 0) {
+                    postsList.style.display = 'none';
+                    noResults.style.display = 'block';
+                } else {
+                    postsList.style.display = 'block';
+                    noResults.style.display = 'none';
+                }
             }
             
-            // Arama butonuna tıklama
+            function clearSearch() {
+                searchInput.value = '';
+                allPosts.forEach(post => {
+                    post.style.display = 'block';
+                });
+                postsList.style.display = 'block';
+                noResults.style.display = 'none';
+                searchInput.focus();
+            }
+            
+            // Event listeners
             searchButton.addEventListener('click', performSearch);
+            clearSearchBtn.addEventListener('click', clearSearch);
             
             // Enter tuşuna basma
             searchInput.addEventListener('keypress', function(e) {
@@ -140,11 +175,17 @@
                 }
             });
             
-            // Gerçek zamanlı arama (isteğe bağlı)
+            // Gerçek zamanlı arama (200ms gecikme ile)
             searchInput.addEventListener('input', function() {
-                // Kısa bir gecikme ile arama yap
                 clearTimeout(this.searchTimeout);
-                this.searchTimeout = setTimeout(performSearch, 300);
+                this.searchTimeout = setTimeout(performSearch, 200);
+            });
+            
+            // ESC tuşu ile aramayı temizle
+            searchInput.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    clearSearch();
+                }
             });
         });
     </script>

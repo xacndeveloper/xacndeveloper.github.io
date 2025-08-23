@@ -111,6 +111,58 @@ body {
     margin: 0;
 }
 
+/* Arama Sonuç Bulunamadı Stilleri */
+.no-results {
+    text-align: center;
+    padding: 60px 20px;
+    margin: 40px 0;
+}
+
+.no-results-content {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.no-results-content i {
+    font-size: 4em;
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+.no-results-content h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #666;
+}
+
+.no-results-content p {
+    color: #888;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+.clear-search-btn {
+    padding: 12px 24px;
+    font-size: 1em;
+    border: 2px solid #000;
+    border-radius: 0;
+    background: #fff;
+    color: #000;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.2s ease;
+    font-family: inherit;
+}
+
+.clear-search-btn:hover {
+    background: #000;
+    color: #fff;
+}
+
+.clear-search-btn:active {
+    transform: translateY(1px);
+}
+
 /* Post Sayfası Stilleri */
 .post-article {
     margin-top: 20px;
@@ -288,6 +340,24 @@ footer p {
     
     .post-link p {
         font-size: 1em;
+    }
+    
+    /* Mobil için sonuç bulunamadı */
+    .no-results {
+        padding: 40px 15px;
+    }
+    
+    .no-results-content i {
+        font-size: 3em;
+    }
+    
+    .no-results-content h3 {
+        font-size: 1.3em;
+    }
+    
+    .clear-search-btn {
+        width: 90%;
+        max-width: 200px;
     }
 }
 
