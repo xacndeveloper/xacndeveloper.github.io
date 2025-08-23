@@ -1,7 +1,7 @@
 {
-  "name": "Blog",
-  "short_name": "Blog",
-  "description": "Kişisel blog sitesi",
+  "name": "Xacn Blog",
+  "short_name": "Xacn Blog",
+  "description": "Teknoloji rehberleri ve makaleler",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
