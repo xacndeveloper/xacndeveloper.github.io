@@ -115,8 +115,8 @@
 
 <h2 id="📋 İçindekiler">📋 İçindekiler</h2>
 <ol>
-<li><a href="#hazırlık-ve-onlemler" target="_blank">Hazırlık ve Önlemler</a></li>
-<li><a href="#bootloader-kilidi-açma" target="_blank">Bootloader Kilidi Açma</a></li>
+<li><a href="#hazirlik-ve-onlemler" target="_blank">Hazırlık ve Önlemler</a></li>
+<li><a href="#bootloader-kilidi-acma" target="_blank">Bootloader Kilidi Açma</a></li>
 <li><a href="#custom-recovery-kurulumu" target="_blank">Custom Recovery Kurulumu</a></li>
 <li><a href="#yedekleme-islemleri" target="_blank">Yedekleme İşlemleri</a></li>
 <li><a href="#custom-rom-kurulumu" target="_blank">Custom ROM Kurulumu</a></li>
@@ -132,18 +132,17 @@
 
 <hr>
 
-<h2 id="🛠️ Hazırlık ve Önlemler">🛠️ Hazırlık ve Önlemler</h2>
+<p><a id="hazirlik-ve-onlemler"></a><br><h2 id="🛠️ Hazırlık ve Önlemler">🛠️ Hazırlık ve Önlemler</h2></p>
 
 <h3 id="Gereken Yazılımlar:">Gereken Yazılımlar:</h3>
-<pre><code class="language-bash"># ADB ve Fastboot Kurulumu (Windows)
-# 1. Platform-Tools indir: https://developer.android.com/studio/releases/platform-tools
-# 2. ZIP'i aç ve platform-tools klasörünü C:\ sürücüsüne taşı
-# 3. Ortam değişkenlerine C:\platform-tools ekle
-# 4. Komut istemini yeniden başlat
 
-<p># Linux için:<br>sudo apt update &amp;&amp; sudo apt install android-tools-adb android-tools-fastboot</p>
+<p><strong>Windows (ADB & Fastboot kurulumu adımları - komut değil; yönerge):</strong><br><ol><br><li>Platform-Tools paketini indirin: https://developer.android.com/studio/releases/platform-tools</li><br><li>ZIP'i açın ve <code>platform-tools</code> klasörünü <code>C:\</code> sürücüsüne taşıyın (örnek yol: <code>C:\platform-tools</code>)</li><br><li>Sistem ortam değişkenlerine <code>C:\platform-tools</code> yolunu ekleyin (Denetim Masası > Sistem > Gelişmiş sistem ayarları > Ortam Değişkenleri)</li><br><li>Komut istemcisini/PowerShell'i kapatıp tekrar açın, <code>adb</code> ve <code>fastboot</code> komutlarının çalıştığını doğrulayın (<code>adb version</code>, <code>fastboot --version</code>)</li><br></ol></p>
 
-<p># macOS için:<br>brew install android-platform-tools</code></pre></p>
+<p><strong>Linux (terminal komutu):</strong><br><pre><code class="language-bash">sudo apt update &amp;&amp; sudo apt install android-tools-adb android-tools-fastboot</code></pre></p>
+
+<p><strong>macOS (Homebrew ile):</strong><br><pre><code class="language-bash">brew install android-platform-tools</code></pre></p>
+
+<hr>
 
 <h3 id="Ön Hazırlık Kontrol Listesi:">Ön Hazırlık Kontrol Listesi:</h3>
 <ul>
@@ -167,7 +166,7 @@
 
 <hr>
 
-<h2 id="🔓 Bootloader Kilidi Açma">🔓 Bootloader Kilidi Açma</h2>
+<p><a id="bootloader-kilidi-acma"></a><br><h2 id="🔓 Bootloader Kilidi Açma">🔓 Bootloader Kilidi Açma</h2></p>
 
 <h3 id="Genel Adımlar:">Genel Adımlar:</h3>
 <ol>
@@ -198,7 +197,7 @@ fastboot oem unlock</code></pre>
 
 <hr>
 
-<h2 id="📲 Custom Recovery Kurulumu">📲 Custom Recovery Kurulumu</h2>
+<p><a id="custom-recovery-kurulumu"></a><br><h2 id="📲 Custom Recovery Kurulumu">📲 Custom Recovery Kurulumu</h2></p>
 
 <h3 id="Popüler Recovery'ler:">Popüler Recovery'ler:</h3>
 <ul>
@@ -224,7 +223,7 @@ fastboot oem unlock</code></pre>
 <li>Recovery yazdırma:</li>
 </ol>
 <pre><code class="language-bash">fastboot flash recovery twrp.img
-# Bazı cihazlarda:
+# Bazı cihazlarda alternatif:
 fastboot boot twrp.img   # Geçici olarak çalıştırmak için</code></pre>
 <ol>
 <li>İlk açılışta <code>Allow System Modifications</code> gibi izinleri verin (TWRP).</li>
@@ -232,7 +231,7 @@ fastboot boot twrp.img   # Geçici olarak çalıştırmak için</code></pre>
 
 <hr>
 
-<h2 id="💾 Yedekleme İşlemleri">💾 Yedekleme İşlemleri</h2>
+<p><a id="yedekleme-islemleri"></a><br><h2 id="💾 Yedekleme İşlemleri">💾 Yedekleme İşlemleri</h2></p>
 
 <h3 id="TWRP ile Tam Yedek (NANDROID):">TWRP ile Tam Yedek (NANDROID):</h3>
 <ol>
@@ -243,7 +242,7 @@ fastboot boot twrp.img   # Geçici olarak çalıştırmak için</code></pre>
 <li>Boot</li>
 <li>System</li>
 <li>Data</li>
-<li>EFS (ÇOK ÖNEMLİ — IMEI/IMEI bilgileri)</li>
+<li>EFS (ÇOK ÖNEMLİ — IMEI bilgileri)</li>
 <li>Persist / Modem (gerekiyorsa)</li>
 </ul>
 <ol>
@@ -268,7 +267,7 @@ adb pull /sdcard/efs-backup.img</code></pre>
 
 <hr>
 
-<h2 id="🔄 Custom ROM Kurulumu">🔄 Custom ROM Kurulumu</h2>
+<p><a id="custom-rom-kurulumu"></a><br><h2 id="🔄 Custom ROM Kurulumu">🔄 Custom ROM Kurulumu</h2></p>
 
 <h3 id="ROM Türleri ve Kaynakları:">ROM Türleri ve Kaynakları:</h3>
 <table>
@@ -344,7 +343,7 @@ adb pull /sdcard/efs-backup.img</code></pre>
 
 <hr>
 
-<h2 id="🛡️ Root ve Modüller">🛡️ Root ve Modüller</h2>
+<p><a id="root-ve-moduller"></a><br><h2 id="🛡️ Root ve Modüller">🛡️ Root ve Modüller</h2></p>
 
 <h3 id="Magisk ile Root:">Magisk ile Root:</h3>
 <ul>
@@ -371,7 +370,7 @@ fastboot flash boot magisk_patched.img</code></pre>
 
 <hr>
 
-<h2 id="✔️ Artılar ve ❌ Eksiler">✔️ Artılar ve ❌ Eksiler</h2>
+<p><a id="artilar-ve-eksiler"></a><br><h2 id="✔️ Artılar ve ❌ Eksiler">✔️ Artılar ve ❌ Eksiler</h2></p>
 
 <h3 id="✅ Artıları:">✅ Artıları:</h3>
 <ul>
@@ -394,7 +393,7 @@ fastboot flash boot magisk_patched.img</code></pre>
 
 <hr>
 
-<h2 id="🆘 Sorun Giderme">🆘 Sorun Giderme</h2>
+<p><a id="sorun-giderme"></a><br><h2 id="🆘 Sorun Giderme">🆘 Sorun Giderme</h2></p>
 
 <h3 id="Bootloop (Sürekli Yeniden Başlatma):">Bootloop (Sürekli Yeniden Başlatma):</h3>
 <ul>
@@ -431,7 +430,7 @@ fastboot flash boot magisk_patched.img</code></pre>
 
 <hr>
 
-<h2 id="📝 Markaya Özel Rehberler">📝 Markaya Özel Rehberler</h2>
+<p><a id="markaya-ozel-rehberler"></a><br><h2 id="📝 Markaya Özel Rehberler">📝 Markaya Özel Rehberler</h2></p>
 
 <h3 id="Samsung:">Samsung:</h3>
 <ul>
@@ -466,7 +465,7 @@ fastboot flash boot magisk_patched.img</code></pre>
 
 <hr>
 
-<h2 id="🔒 Güvenlik ve Güncelleme">🔒 Güvenlik ve Güncelleme</h2>
+<p><a id="guncelleme-ve-guvenlik"></a><br><h2 id="🔒 Güvenlik ve Güncelleme">🔒 Güvenlik ve Güncelleme</h2></p>
 
 <h3 id="Güvenlik Önlemleri:">Güvenlik Önlemleri:</h3>
 <ul>
@@ -485,7 +484,7 @@ fastboot flash boot magisk_patched.img</code></pre>
 
 <hr>
 
-<h2 id="📞 Acil Durum Prosedürleri">📞 Acil Durum Prosedürleri</h2>
+<p><a id="acil-durum-prosedurleri"></a><br><h2 id="📞 Acil Durum Prosedürleri">📞 Acil Durum Prosedürleri</h2></p>
 
 <h3 id="Hard Brick (Cihaz açılmıyor):">Hard Brick (Cihaz açılmıyor):</h3>
 <ul>
@@ -509,7 +508,7 @@ fastboot flash boot magisk_patched.img</code></pre>
 
 <hr>
 
-<h2 id="✅ Son Kontrol Listesi">✅ Son Kontrol Listesi</h2>
+<p><a id="son-kontrol-listesi"></a><br><h2 id="✅ Son Kontrol Listesi">✅ Son Kontrol Listesi</h2></p>
 
 <h3 id="Kurulum Öncesi:">Kurulum Öncesi:</h3>
 <ul>
@@ -535,16 +534,7 @@ fastboot flash boot magisk_patched.img</code></pre>
 
 <hr>
 
-<h2 id="🌐 Faydalı Kaynaklar">🌐 Faydalı Kaynaklar</h2>
-<ul>
-<li>XDA-Developers Forum: https://forum.xda-developers.com/</li>
-<li>LineageOS Wiki: https://wiki.lineageos.org/</li>
-<li>TWRP Resmi Site: https://twrp.me/</li>
-<li>Magisk GitHub: https://github.com/topjohnwu/Magisk</li>
-<li>OpenGApps: https://opengapps.org/</li>
-<li>SamMobile Firmware: https://www.sammobile.com/</li>
-<li>Xiaomi Firmware Updater: https://xiaomifirmwareupdater.com/</li>
-</ul>
+<p><a id="faydali-kaynaklar"></a><br><h2 id="🌐 Faydalı Kaynaklar">🌐 Faydalı Kaynaklar</h2><br><ul><br><li>XDA-Developers Forum: https://forum.xda-developers.com/</li><br><li>LineageOS Wiki: https://wiki.lineageos.org/</li><br><li>TWRP Resmi Site: https://twrp.me/</li><br><li>Magisk GitHub: https://github.com/topjohnwu/Magisk</li><br><li>OpenGApps: https://opengapps.org/</li><br><li>SamMobile Firmware: https://www.sammobile.com/</li><br><li>Xiaomi Firmware Updater: https://xiaomifirmwareupdater.com/</li><br></ul></p>
 
 <hr>
 
