@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - Win Yukleme Yenidenbaslat</title>
+    <title>Blog - Win Yukleme Yeniden Baslat Hatasi Cozum</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="../style.css">
 </head>
@@ -20,7 +20,7 @@
         </div>
         <hr class="divider">
         <article class="post-article">
-            <h1 class="post-title">Win Yukleme Yenidenbaslat</h1>
+            <h1 class="post-title">Win Yukleme Yeniden Baslat Hatasi Cozum</h1>
             <div class="post-meta">
                 <p><strong>Yazar:</strong> Görkem Çalışkan | 
                 <strong>Tarih:</strong> 23 Ağustos 2025 | 
@@ -72,10 +72,10 @@ Kurulum ekranında <code>Shift + F10</code> tuş kombinasyonu ile Komut İstemi'
 <p>Aşağıdaki komutları sırayla yazın (her komuttan sonra Enter'a basın ve "Komut başarıyla tamamlandı" onay mesajını aldığınızdan emin olun):</p>
 
 <pre><code class="language-cmd">net user KullanıcıAdı /add
-net localgroup administrators KullanıcıAdı /add``<code>
+net localgroup administrators KullanıcıAdı /add``<code></code></pre>
 <strong>Önemli Not:</strong> "KullanıcıAdı" yerine kendi tercih ettiğiniz bir kullanıcı adı yazın. Türkçe karakter kullanmamaya özen gösterin.
 
-<p>&gt; 📝 <strong>Kişisel Yorumum:</strong> Bu adım, kurulumun takıldığı durumlarda bile yönetici haklarına sahip bir kullanıcı oluşturmanızı sağlar. Sistem açıldığında bu hesaba giriş yapabileceksiniz.</p>
+<blockquote>📝 <strong>Kişisel Yorumum:</strong> Bu adım, kurulumun takıldığı durumlarda bile yönetici haklarına sahip bir kullanıcı oluşturmanızı sağlar. Sistem açıldığında bu hesaba giriş yapabileceksiniz.</blockquote>
 
 <h4 id="Adım 2: Kayıt Defteri Düzenleyicisi'ni Açma">Adım 2: Kayıt Defteri Düzenleyicisi'ni Açma</h4>
 Komut İstemi'ne </code>regedit<code> yazıp Enter'a basarak Kayıt Defteri Düzenleyicisi'ni açın.
@@ -86,18 +86,57 @@ Sol taraftaki dizin ağacından aşağıdaki yolu takip edin:
 
 <p>Sağ tarafta göreceğiniz aşağıdaki anahtarları bulun ve değerlerini belirtildiği şekilde değiştirin (Her anahtara çift tıklayarak değeri değiştirebilirsiniz):</p>
 
-<p>&lt;table&gt;<br>&lt;thead&gt;&lt;tr&gt;<br>&lt;th&gt;Anahtar Adı&lt;/th&gt;<br>&lt;th&gt;Orijinal Değer&lt;/th&gt;<br>&lt;th&gt;Yeni Değer&lt;/th&gt;<br>&lt;th&gt;Açıklama&lt;/th&gt;<br>&lt;/tr&gt;&lt;/thead&gt;<br>&lt;tbody&gt;<br>&lt;tr&gt;<br>&lt;td&gt;</code>SystemSetupInProgress<code>&lt;/td&gt;<br>&lt;td&gt;1&lt;/td&gt;<br>&lt;td&gt;0&lt;/td&gt;<br>&lt;td&gt;Sistem kurulumunun devam ettiğini gösterir&lt;/td&gt;<br>&lt;/tr&gt;<br>&lt;tr&gt;<br>&lt;td&gt;</code>SetupType<code>&lt;/td&gt;<br>&lt;td&gt;2&lt;/td&gt;<br>&lt;td&gt;0&lt;/td&gt;<br>&lt;td&gt;Kurulum türünü belirtir&lt;/td&gt;<br>&lt;/tr&gt;<br>&lt;tr&gt;<br>&lt;td&gt;</code>SetupSupported<code>&lt;/td&gt;<br>&lt;td&gt;1&lt;/td&gt;<br>&lt;td&gt;0&lt;/td&gt;<br>&lt;td&gt;Kurulumun desteklendiğini belirtir&lt;/td&gt;<br>&lt;/tr&gt;<br>&lt;tr&gt;<br>&lt;td&gt;</code>SetupPhase<code>&lt;/td&gt;<br>&lt;td&gt;4&lt;/td&gt;<br>&lt;td&gt;0&lt;/td&gt;<br>&lt;td&gt;Kurulum aşamasını gösterir&lt;/td&gt;<br>&lt;/tr&gt;<br>&lt;tr&gt;<br>&lt;td&gt;</code>OOBEInProgress<code>&lt;/td&gt;<br>&lt;td&gt;1&lt;/td&gt;<br>&lt;td&gt;0&lt;/td&gt;<br>&lt;td&gt;İlk açılış yapılandırmasının devam ettiğini gösterir&lt;/td&gt;<br>&lt;/tr&gt;<br>&lt;/tbody&gt;<br>&lt;/table&gt;</p>
+<table>
+<thead><tr>
+<th>Anahtar Adı</th>
+<th>Orijinal Değer</th>
+<th>Yeni Değer</th>
+<th>Açıklama</th>
+</tr></thead>
+<tbody>
+<tr>
+<td></code>SystemSetupInProgress<code></td>
+<td>1</td>
+<td>0</td>
+<td>Sistem kurulumunun devam ettiğini gösterir</td>
+</tr>
+<tr>
+<td></code>SetupType<code></td>
+<td>2</td>
+<td>0</td>
+<td>Kurulum türünü belirtir</td>
+</tr>
+<tr>
+<td></code>SetupSupported<code></td>
+<td>1</td>
+<td>0</td>
+<td>Kurulumun desteklendiğini belirtir</td>
+</tr>
+<tr>
+<td></code>SetupPhase<code></td>
+<td>4</td>
+<td>0</td>
+<td>Kurulum aşamasını gösterir</td>
+</tr>
+<tr>
+<td></code>OOBEInProgress<code></td>
+<td>1</td>
+<td>0</td>
+<td>İlk açılış yapılandırmasının devam ettiğini gösterir</td>
+</tr>
+</tbody>
+</table>
 
 <p><strong></code>InstallDriveTrusted<code> anahtarı için özel durum:</strong><br><ul><br><li>  Varsayılan değeri genellikle </code>1<code> olmalıdır.</li><br><li>  Eğer farklı bir değer atanmışsa (örneğin </code>0<code>), değeri </code>1<code> olarak değiştirin.</li><br><li>  Eğer bu anahtar kayıt defterinizde yoksa, endişelenmeyin - bu adımı geçebilirsiniz.</li><br></ul></p>
 
 <p><strong></code>CmdLine<code> dizesi için kritik düzenleme:</strong><br><ul><br><li>  Varsayılan değer: </code>oobe\windeploy.exe<code></li><br><li>  Bu değer, Windows'un kurulum sonrası yapılandırma sihirbazını çalıştırmasını söyler.</li><br><li>  Buradaki değeri <strong>tamamen silin ve boş bırakın</strong> - böylece kurulum sihirbazının tekrar çalışmasını engellersiniz.</li><br></ul></p>
 
-<p>&gt; 📝 <strong>Kişisel Yorumum:</strong> Bu kayıt defteri değişiklikleri, Windows'a "Kurulum tamamlandı, normal moda geç" komutu vermek gibidir. Özellikle </code>CmdLine` değerini temizlemek kritik öneme sahiptir.</p>
+<blockquote>📝 <strong>Kişisel Yorumum:</strong> Bu kayıt defteri değişiklikleri, Windows'a "Kurulum tamamlandı, normal moda geç" komutu vermek gibidir. Özellikle </code>CmdLine<code> değerini temizlemek kritik öneme sahiptir.</blockquote>
 
 <h4 id="Adım 4: Değişiklikleri Uygulama ve Yeniden Başlatma">Adım 4: Değişiklikleri Uygulama ve Yeniden Başlatma</h4>
 Kayıt Defteri Düzenleyicisi'nden çıkın.
 
-<p>Komut İstemi'ne aşağıdaki komutu yazın ve Enter'a basın:</code></pre>cmd<br>SHUTDOWN -R -T 0</p>
+<p>Komut İstemi'ne aşağıdaki komutu yazın ve Enter'a basın:<br></code>``cmd<br>SHUTDOWN -R -T 0</p>
 
 <p>Bu komut, bilgisayarınızı 0 saniye bekleme süresi ile anında yeniden başlatacaktır.<br>Bilgisayar yeniden başladığında, doğrudan masaüstü ekranıyla karşılaşacaksınız. Artık Windows kurulumu tamamlanmış ve kullanıma hazır hale gelmiştir.<br><h2 id="💡 Önemli Uyarılar ve Tavsiyeler">💡 Önemli Uyarılar ve Tavsiyeler</h2><br><ul><br><li>Kayıt defteri düzenlemeleri hassastır - Sadece belirtilen anahtarları değiştirin, diğer değerlerle oynamayın.</li><br><li>Kurulum medyası kalitesi - USB belleğinizin sağlam olduğundan ve doğru yazdırıldığından emin olun.</li><br><li>Donanım uyumluluğu - Özellikle eski donanımlarda, Windows sürümünün donanımınızla uyumlu olduğundan emin olun.</li><br><li>Güvenlik yazılımları - Kurulumdan önce antivirüs yazılımlarını geçici olarak devre dışı bırakın.</li><br></ul></p>
             </div>
