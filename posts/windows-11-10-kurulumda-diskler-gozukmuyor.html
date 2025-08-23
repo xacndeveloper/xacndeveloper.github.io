@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows 11 10 Kurulumda Diskler Gozukmuyor - Blog</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="">
+    <meta name="keywords" content="Windows 11 10 Kurulumda Diskler Gozukmuyor, blog, yazılım, teknoloji">
+    <meta name="author" content="Görkem Çalışkan">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="tr">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Windows 11 10 Kurulumda Diskler Gozukmuyor">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://xacndeveloper.github.io/posts/windows-11-10-kurulumda-diskler-gozukmuyor.html">
+    <meta property="og:site_name" content="Blog">
+    <meta property="og:locale" content="tr_TR">
+    <meta property="article:author" content="Görkem Çalışkan">
+    <meta property="article:published_time" content="23 Ağustos 2025">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Windows 11 10 Kurulumda Diskler Gozukmuyor">
+    <meta name="twitter:description" content="">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../android-chrome-512x512.png">
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="../manifest.json">
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#000000">
+    <meta name="msapplication-TileColor" content="#000000">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://xacndeveloper.github.io/posts/windows-11-10-kurulumda-diskler-gozukmuyor.html">
+    
+    <!-- RSS Feed -->
+    <link rel="alternate" type="application/rss+xml" title="Blog RSS Feed" href="../rss.xml">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Windows 11 10 Kurulumda Diskler Gozukmuyor",
+        "description": "",
+        "url": "https://xacndeveloper.github.io/posts/windows-11-10-kurulumda-diskler-gozukmuyor.html",
+        "datePublished": "23 Ağustos 2025",
+        "author": {
+            "@type": "Person",
+            "name": "Görkem Çalışkan"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Blog"
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://xacndeveloper.github.io/posts/windows-11-10-kurulumda-diskler-gozukmuyor.html"
+        },
+        "inLanguage": "tr"
+    }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header class="blog-header"><a href="../index.html">BLOG</a></header>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+        </div>
+        <hr class="divider">
+        <article class="post-article">
+            <h1 class="post-title">Windows 11 10 Kurulumda Diskler Gozukmuyor</h1>
+            <div class="post-meta">
+                <p><strong>Yazar:</strong> Görkem Çalışkan | 
+                <strong>Tarih:</strong> 23 Ağustos 2025 | 
+                <strong>Okuma Süresi:</strong> 5 dakika</p>
+            </div>
+            <div class="post-content">
+                <p>Windows 10 veya 11 kurulum sırasında bazı kullanıcılar <strong>“disklerin görünmemesi”</strong> sorunuyla karşılaşabiliyor. Özellikle 11. nesil ve sonrası Intel işlemcili bilgisayarlarda bu sorun oldukça yaygındır. Kullanıcılar kurulum medyasını hazırlayıp USB üzerinden Windows yüklemeye başladığında, disk seçim ekranında hiçbir sürücünün görünmediğini fark eder. Bu durum, çoğu kişi için kafa karıştırıcı olabilir. Ancak sorun basitçe sürücü (driver) eksikliğinden kaynaklanır.</p>
+
+<hr>
+
+<h2 id="Sorunun Kaynağı">Sorunun Kaynağı</h2>
+
+<ol>
+<li>nesil ve sonrası Intel işlemcilerde <strong>Intel RST (Rapid Storage Technology)</strong> ile ilişkili depolama kontrolcüleri devreye girmiştir. Bu kontrolcüler, eski kurulum medyaları veya varsayılan Windows kurulum ISO’sunda yer alan temel sürücüler tarafından tanınmaz. Yani:</li>
+</ol>
+
+<ul>
+<li>Kurulum başladığında diskler görünmez.</li>
+<li>Diskler görünse bile kurulum ilerleyemez veya hata alınır.</li>
+</ul>
+
+<p>Bunun sebebi, <strong>Intel’in VMD (Volume Management Device)</strong> adı verilen yeni depolama teknolojisini kullanmaya başlamasıdır. Bu teknoloji özellikle <strong>11. nesilden itibaren tüm modern Intel işlemcilerde</strong> devreye girmiştir.</p>
+
+<p>Normalde Intel kendi sitesinde bu sürücülere ait paketleri ZIP olarak paylaşıyordu. Ancak zamanla bu paketler resmi siteden kaldırıldı. Dolayısıyla kullanıcılar kurulum sırasında gerekli sürücüleri kolayca bulamaz hale geldi.</p>
+
+<hr>
+
+<h2 id="Çözüm: Gerekli Sürücülerin Yüklenmesi">Çözüm: Gerekli Sürücülerin Yüklenmesi</h2>
+
+<p>Sorunun çözümü için, Windows kurulum ekranında görünmeyen diskleri tanıtacak sürücüleri <strong>manuel olarak yüklemek</strong> gerekir. Bu işlem son derece basittir:</p>
+
+<ol>
+<li>Gerekli sürücü paketini indirin.</li>
+</ol>
+<ul>
+<li><strong>11. Nesil için:</strong> <a href="https://www.mediafire.com/file/87vop5wtemblbcm/11-nesil.7z/file" target="_blank">11. Nesil Intel RST Sürücüleri (7z dosyası)</a></li>
+<li><strong>12-13-14-15. Nesiller için:</strong> <a href="https://www.mediafire.com/file/hauxaz4632s4m7n/12-13-14-15-nesil.7z/file" target="_blank">12-13-14-15 Nesil Intel RST Sürücüleri (7z dosyası)</a></li>
+</ul>
+
+<blockquote>Bu linkler kötü amaçlı değildir. Tamamen insanlara yardımcı olmak için paylaşılmıştır. Dosyalar sadece gerekli Intel sürücülerini içermektedir.</blockquote>
+
+<ol>
+<li>İndirdiğiniz <strong>7z dosyasını</strong> bilgisayarınızda çıkarın.</li>
+</ol>
+
+<ol>
+<li>Çıkardığınız klasörlerin içeriğini olduğu gibi <strong>Windows kurulum USB’sinin ana dizinine</strong> atın.</li>
+</ol>
+(Örneğin: <code>X:\</code> kök dizinine kopyalayın, yani <code>Sources</code>, <code>Boot</code>, <code>EFI</code> gibi klasörlerin yanına.)
+
+<ol>
+<li>USB belleği bilgisayara takıp kurulum başlatın.</li>
+</ol>
+
+<ol>
+<li>Eğer sürücüyü otomatik tanımazsa disklerin görünmediği ekranda <strong>“Sürücü Yükle (Load Driver)”</strong> seçeneğine tıklayın.</li>
+</ol>
+
+<ol>
+<li>USB belleğinize attığınız sürücü klasörlerini seçin. Sistem otomatik olarak doğru sürücüyü bulacak ve diskinizi tanıyacaktır.</li>
+</ol>
+
+<hr>
+
+<h2 id="Önemli Noktalar">Önemli Noktalar</h2>
+
+<ul>
+<li>Bu yöntem hem <strong>Windows 10</strong> hem de <strong>Windows 11</strong> için geçerlidir.</li>
+<li>11. nesilden itibaren Intel işlemcilerde bu durum standart hale gelmiştir. Yani disklerin görünmemesi normaldir, panik yapmaya gerek yoktur.</li>
+<li>Intel resmi olarak bu sürücü paketlerini ZIP formatında sunmuyor artık. Bu nedenle kullanıcıların elinde daha önce alınmış paketler veya topluluk paylaşımları bulunuyor.</li>
+<li>Paylaşılan dosyalar tamamen kurulumun yapılabilmesi için gerekli olan sürücülerdir. Herhangi bir kötü niyet taşımamaktadır.</li>
+</ul>
+
+<hr>
+
+<h2 id="Sonuç">Sonuç</h2>
+
+<p>Eğer yeni nesil bir Intel işlemcili laptop veya masaüstü bilgisayara Windows 10/11 kurmaya çalışıyor ve <strong>disklerin görünmediğini</strong> görüyorsanız, sebebi eksik <strong>Intel RST/VMD sürücüsüdür</strong>. Yukarıda verdiğim adımları izleyerek gerekli sürücüleri kurulum USB’sine eklediğinizde bu sorun ortadan kalkacaktır.</p>
+
+<p>Artık kurulum sırasında diskleriniz sorunsuz şekilde görünecek ve Windows’u istediğiniz gibi yükleyebileceksiniz.</p>
+
+<blockquote>Unutmayın: Bu çözüm tamamen <strong>topluluk desteği</strong> amacıyla paylaşılmaktadır. Amacım, Intel’in resmi sitesinden kaldırdığı dosyaların yokluğunda kullanıcılara yardımcı olmak.</blockquote>
+
+<hr>
+            </div>
+        </article>
+        <hr class="divider">
+        <footer>
+            <p>Tüm Hakları Saklıdır</p>
+            <p><a href="../rss.xml" class="rss-link"><i class="fas fa-rss"></i> RSS</a></p>
+        </footer>
+    </div>
+</body>
+</html>
