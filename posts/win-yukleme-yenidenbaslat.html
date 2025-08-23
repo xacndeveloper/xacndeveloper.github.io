@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Win Yukleme Yenidenbaslat</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="blog-header"><a href="../index.html">BLOG</a></header>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+        </div>
+        <hr class="divider">
+        <article class="post-article">
+            <h1 class="post-title">Win Yukleme Yenidenbaslat</h1>
+            <div class="post-meta">
+                <p><strong>Yazar:</strong> Görkem Çalışkan | 
+                <strong>Tarih:</strong> 23 Ağustos 2025 | 
+                <strong>Okuma Süresi:</strong> 5 dakika</p>
+            </div>
+            <div class="post-content">
+                <p>Windows işletim sistemi kurulumu sırasında karşılaşılan "Yüklemeyi Yeniden Başlatın" hatası, birçok kullanıcının canını sıkan ve kurulumu yarıda kesen yaygın bir sorundur. Bu makalede, bu sorunun nedenlerini ve iki etkili çözüm yöntemini detaylı şekilde inceleyeceğiz.</p>
+
+<h2 id="🚨 Hatanın Arkasındaki Olası Nedenler">🚨 Hatanın Arkasındaki Olası Nedenler</h2>
+Bu hata mesajı genellikle Windows kurulumunun son aşamalarında, özellikle ilk açılış yapılandırması (OOBE) sırasında ortaya çıkar. Temel nedenleri şunlardır:
+
+<ul>
+<li>  Bozuk veya yanlış yapılandırılmış kurulum medyası</li>
+<li>  Rufus veya benzeri yazılımlarla yapılan özelleştirmelerin yol açtığı çakışmalar</li>
+<li>  Kayıt defteri ayarlarında kurulum sürecini işaret eden değerlerin sıfırlanmaması</li>
+<li>  Sistem dosyalarının eksik veya bozuk olması</li>
+</ul>
+
+<h2 id="🔧 Çözüm Yöntemleri">🔧 Çözüm Yöntemleri</h2>
+<h3 id="1. Yöntem: Temiz Kurulum Medyası Oluşturma">1. Yöntem: Temiz Kurulum Medyası Oluşturma</h3>
+Bu yöntem, hatanın en yaygın ve basit çözümüdür. Özellikle Rufus gibi yazılımlarla ISO yazdırırken "gizlilik ayarlarını atlama", "otomatik kullanıcı oluşturma" veya "yerel hesap oluşturma" gibi özelleştirmeler yaptıysanız, bu hata ile karşılaşma olasılığınız yüksektir.
+
+<p><strong>Adım adım çözüm:</strong></p>
+
+<ol>
+<li> <strong>Orijinal Windows ISO dosyasını edinin</strong> - Microsoft'un resmi sitesinden veya güvenilir bir kaynaktan temin edin.</li>
+<li> <strong>Rufus veya kullandığınız yazılımı yeniden açın</strong> - Medya oluşturma aracını çalıştırın.</li>
+<li> <strong>Tüm özelleştirmeleri devre dışı bırakın</strong> - Aşağıdaki ayarlardan kaçının:</li>
+</ol>
+<ul>
+<li>  Gizlilik ayarlarını atlama</li>
+<li>  Otomatik kullanıcı oluşturma</li>
+<li>  Windows oturum açma ayarlarını özelleştirme</li>
+<li>  Kurulum sonrası otomatik yazılım yükleme</li>
+</ul>
+<ol>
+<li> <strong>ISO'yu temiz bir şekilde yazdırın</strong> - Hiçbir özelleştirme yapmadan USB sürücünüze yazdırın.</li>
+<li> <strong>Kurulumu yeniden deneyin</strong> - Oluşturduğunuz temiz kurulum medyasıyla Windows kurulumunu tekrar başlatın.</li>
+</ol>
+
+<blockquote>📝 <strong>Kişisel Yorumum:</strong> Rufus'taki özelleştirme seçenekleri cazip gelse de, Windows'un son sürümlerinde bu ayarlar sıklıkla kurulum sürecinde çakışmalara neden oluyor. Mümkün olduğunca vanilla (sade) bir kurulum medyası oluşturmak en güvenli yoldur.</blockquote>
+
+<h3 id="2. Yöntem: Komut İstemi ve Kayıt Defteri Düzenlemesi">2. Yöntem: Komut İstemi ve Kayıt Defteri Düzenlemesi</h3>
+Bu yöntem daha teknik bilgi gerektirir ancak oldukça etkilidir. Temel olarak, Windows'un kurulum aşamasında olduğunu gösteren kayıt defteri bayraklarını sıfırlayarak sistemi normal moda geçiriyoruz.
+
+<h4 id="Adım 1: Komut İstemi'ne Erişim ve Yönetici Hesabı Oluşturma">Adım 1: Komut İstemi'ne Erişim ve Yönetici Hesabı Oluşturma</h4>
+Kurulum ekranında <code>Shift + F10</code> tuş kombinasyonu ile Komut İstemi'ni açın. Bu, kurulumun herhangi bir aşamasında çalışır.
+
+<p>Aşağıdaki komutları sırayla yazın (her komuttan sonra Enter'a basın ve "Komut başarıyla tamamlandı" onay mesajını aldığınızdan emin olun):</p>
+
+<pre><code class="language-cmd">net user KullanıcıAdı /add
+net localgroup administrators KullanıcıAdı /add``<code>
+<strong>Önemli Not:</strong> "KullanıcıAdı" yerine kendi tercih ettiğiniz bir kullanıcı adı yazın. Türkçe karakter kullanmamaya özen gösterin.
+
+<p>&gt; 📝 <strong>Kişisel Yorumum:</strong> Bu adım, kurulumun takıldığı durumlarda bile yönetici haklarına sahip bir kullanıcı oluşturmanızı sağlar. Sistem açıldığında bu hesaba giriş yapabileceksiniz.</p>
+
+<h4 id="Adım 2: Kayıt Defteri Düzenleyicisi'ni Açma">Adım 2: Kayıt Defteri Düzenleyicisi'ni Açma</h4>
+Komut İstemi'ne </code>regedit<code> yazıp Enter'a basarak Kayıt Defteri Düzenleyicisi'ni açın.
+
+<h4 id="Adım 3: Kayıt Defteri Anahtarlarını Düzenleme">Adım 3: Kayıt Defteri Anahtarlarını Düzenleme</h4>
+Sol taraftaki dizin ağacından aşağıdaki yolu takip edin:
+</code>HKEY_LOCAL_MACHINE\SYSTEM\Setup<code>
+
+<p>Sağ tarafta göreceğiniz aşağıdaki anahtarları bulun ve değerlerini belirtildiği şekilde değiştirin (Her anahtara çift tıklayarak değeri değiştirebilirsiniz):</p>
+
+<p>&lt;table&gt;<br>&lt;thead&gt;&lt;tr&gt;<br>&lt;th&gt;Anahtar Adı&lt;/th&gt;<br>&lt;th&gt;Orijinal Değer&lt;/th&gt;<br>&lt;th&gt;Yeni Değer&lt;/th&gt;<br>&lt;th&gt;Açıklama&lt;/th&gt;<br>&lt;/tr&gt;&lt;/thead&gt;<br>&lt;tbody&gt;<br>&lt;tr&gt;<br>&lt;td&gt;</code>SystemSetupInProgress<code>&lt;/td&gt;<br>&lt;td&gt;1&lt;/td&gt;<br>&lt;td&gt;0&lt;/td&gt;<br>&lt;td&gt;Sistem kurulumunun devam ettiğini gösterir&lt;/td&gt;<br>&lt;/tr&gt;<br>&lt;tr&gt;<br>&lt;td&gt;</code>SetupType<code>&lt;/td&gt;<br>&lt;td&gt;2&lt;/td&gt;<br>&lt;td&gt;0&lt;/td&gt;<br>&lt;td&gt;Kurulum türünü belirtir&lt;/td&gt;<br>&lt;/tr&gt;<br>&lt;tr&gt;<br>&lt;td&gt;</code>SetupSupported<code>&lt;/td&gt;<br>&lt;td&gt;1&lt;/td&gt;<br>&lt;td&gt;0&lt;/td&gt;<br>&lt;td&gt;Kurulumun desteklendiğini belirtir&lt;/td&gt;<br>&lt;/tr&gt;<br>&lt;tr&gt;<br>&lt;td&gt;</code>SetupPhase<code>&lt;/td&gt;<br>&lt;td&gt;4&lt;/td&gt;<br>&lt;td&gt;0&lt;/td&gt;<br>&lt;td&gt;Kurulum aşamasını gösterir&lt;/td&gt;<br>&lt;/tr&gt;<br>&lt;tr&gt;<br>&lt;td&gt;</code>OOBEInProgress<code>&lt;/td&gt;<br>&lt;td&gt;1&lt;/td&gt;<br>&lt;td&gt;0&lt;/td&gt;<br>&lt;td&gt;İlk açılış yapılandırmasının devam ettiğini gösterir&lt;/td&gt;<br>&lt;/tr&gt;<br>&lt;/tbody&gt;<br>&lt;/table&gt;</p>
+
+<p><strong></code>InstallDriveTrusted<code> anahtarı için özel durum:</strong><br><ul><br><li>  Varsayılan değeri genellikle </code>1<code> olmalıdır.</li><br><li>  Eğer farklı bir değer atanmışsa (örneğin </code>0<code>), değeri </code>1<code> olarak değiştirin.</li><br><li>  Eğer bu anahtar kayıt defterinizde yoksa, endişelenmeyin - bu adımı geçebilirsiniz.</li><br></ul></p>
+
+<p><strong></code>CmdLine<code> dizesi için kritik düzenleme:</strong><br><ul><br><li>  Varsayılan değer: </code>oobe\windeploy.exe<code></li><br><li>  Bu değer, Windows'un kurulum sonrası yapılandırma sihirbazını çalıştırmasını söyler.</li><br><li>  Buradaki değeri <strong>tamamen silin ve boş bırakın</strong> - böylece kurulum sihirbazının tekrar çalışmasını engellersiniz.</li><br></ul></p>
+
+<p>&gt; 📝 <strong>Kişisel Yorumum:</strong> Bu kayıt defteri değişiklikleri, Windows'a "Kurulum tamamlandı, normal moda geç" komutu vermek gibidir. Özellikle </code>CmdLine` değerini temizlemek kritik öneme sahiptir.</p>
+
+<h4 id="Adım 4: Değişiklikleri Uygulama ve Yeniden Başlatma">Adım 4: Değişiklikleri Uygulama ve Yeniden Başlatma</h4>
+Kayıt Defteri Düzenleyicisi'nden çıkın.
+
+<p>Komut İstemi'ne aşağıdaki komutu yazın ve Enter'a basın:</code></pre>cmd<br>SHUTDOWN -R -T 0</p>
+
+<p>Bu komut, bilgisayarınızı 0 saniye bekleme süresi ile anında yeniden başlatacaktır.<br>Bilgisayar yeniden başladığında, doğrudan masaüstü ekranıyla karşılaşacaksınız. Artık Windows kurulumu tamamlanmış ve kullanıma hazır hale gelmiştir.<br><h2 id="💡 Önemli Uyarılar ve Tavsiyeler">💡 Önemli Uyarılar ve Tavsiyeler</h2><br><ul><br><li>Kayıt defteri düzenlemeleri hassastır - Sadece belirtilen anahtarları değiştirin, diğer değerlerle oynamayın.</li><br><li>Kurulum medyası kalitesi - USB belleğinizin sağlam olduğundan ve doğru yazdırıldığından emin olun.</li><br><li>Donanım uyumluluğu - Özellikle eski donanımlarda, Windows sürümünün donanımınızla uyumlu olduğundan emin olun.</li><br><li>Güvenlik yazılımları - Kurulumdan önce antivirüs yazılımlarını geçici olarak devre dışı bırakın.</li><br></ul></p>
+            </div>
+        </article>
+        <hr class="divider">
+        <footer><p>Tüm Hakları Saklıdır</p></footer>
+    </div>
+</body>
+</html>

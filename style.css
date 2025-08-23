@@ -1,0 +1,188 @@
+/* Ana Sayfa Stilleri */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.blog-title {
+    font-size: 4em;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.blog-header a {
+    font-size: 4em;
+    font-weight: bold;
+    text-decoration: none;
+    color: inherit;
+}
+
+.blog-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.social-icons {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.social-icons a {
+    color: #000;
+    margin: 0 15px;
+    font-size: 1.8em;
+    text-decoration: none;
+}
+
+.divider {
+    border: none;
+    border-top: 2px solid #000;
+    margin: 20px 0;
+}
+
+.post-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    margin-bottom: 30px;
+}
+
+.post-link h2 {
+    font-size: 2em;
+    margin-bottom: 5px;
+}
+
+.post-link p {
+    font-size: 1.1em;
+    margin: 0;
+}
+
+/* Post Sayfası Stilleri */
+.post-article {
+    margin-top: 20px;
+}
+
+.post-title {
+    font-size: 2.5em;
+}
+
+.post-meta {
+    font-size: 0.9em;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.post-content {
+    font-size: 1.1em;
+    line-height: 1.7;
+}
+
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.post-content h4 {
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.post-content pre {
+    background: #f8f8f8;
+    padding: 20px;
+    border-radius: 8px;
+    overflow-x: auto;
+    border-left: 4px solid #007acc;
+}
+
+.post-content pre code {
+    background: none;
+    padding: 0;
+}
+
+.post-content code {
+    background: #f0f0f0;
+    padding: 3px 6px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+}
+
+.post-content blockquote {
+    border-left: 4px solid #ddd;
+    margin: 20px 0;
+    padding: 10px 20px;
+    background: #f9f9f9;
+    font-style: italic;
+}
+
+.post-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.post-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.post-content th,
+.post-content td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.post-content th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.post-content tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.post-content ul.task-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.post-content .task-list-item {
+    margin: 5px 0;
+}
+
+.post-content .task-list-item input {
+    margin-right: 8px;
+}
+
+.post-content hr {
+    border: none;
+    border-top: 2px solid #eee;
+    margin: 30px 0;
+}
+
+.post-content del {
+    color: #888;
+}
+
+.post-content a {
+    color: #007acc;
+    text-decoration: none;
+}
+
+.post-content a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+}
