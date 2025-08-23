@@ -7,7 +7,7 @@
         <language>tr</language>
         <managingEditor>Görkem Çalışkan</managingEditor>
         <webMaster>Görkem Çalışkan</webMaster>
-        <lastBuildDate>Sat, 23 Aug 2025 14:53:28 +0000</lastBuildDate>
+        <lastBuildDate>Sat, 23 Aug 2025 15:11:07 +0000</lastBuildDate>
         <atom:link href="https://xacndeveloper.github.io/rss.xml" rel="self" type="application/rss+xml" />
 
         <item>
@@ -17,6 +17,14 @@
             <author>Görkem Çalışkan</author>
             <pubDate>Sat, 23 Aug 2025 00:00:00 +0000</pubDate>
             <guid>https://xacndeveloper.github.io/posts/win-yukleme-yeniden-baslat-hatasi-cozum.html</guid>
+        </item>
+        <item>
+            <title><![CDATA[Windows 11 Baslat Menusu Acilmiyor Cozum]]></title>
+            <link>https://xacndeveloper.github.io/posts/windows-11-baslat-menusu-acilmiyor-cozum.html</link>
+            <description><![CDATA[]]></description>
+            <author>Görkem Çalışkan</author>
+            <pubDate>Sat, 23 Aug 2025 00:00:00 +0000</pubDate>
+            <guid>https://xacndeveloper.github.io/posts/windows-11-baslat-menusu-acilmiyor-cozum.html</guid>
         </item>
     </channel>
 </rss>
