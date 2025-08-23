@@ -7,9 +7,17 @@
         <language>tr</language>
         <managingEditor>Görkem Çalışkan</managingEditor>
         <webMaster>Görkem Çalışkan</webMaster>
-        <lastBuildDate>Sat, 23 Aug 2025 15:19:27 +0000</lastBuildDate>
+        <lastBuildDate>Sat, 23 Aug 2025 15:42:23 +0000</lastBuildDate>
         <atom:link href="https://xacndeveloper.github.io/rss.xml" rel="self" type="application/rss+xml" />
 
+        <item>
+            <title><![CDATA[Android Icin Custom Rom Yukleme Rehberi]]></title>
+            <link>https://xacndeveloper.github.io/posts/android-icin-custom-ROM-yukleme-rehberi.html</link>
+            <description><![CDATA[]]></description>
+            <author>Görkem Çalışkan</author>
+            <pubDate>Sat, 23 Aug 2025 00:00:00 +0000</pubDate>
+            <guid>https://xacndeveloper.github.io/posts/android-icin-custom-ROM-yukleme-rehberi.html</guid>
+        </item>
         <item>
             <title><![CDATA[Win Yukleme Yeniden Baslat Hatasi Cozum]]></title>
             <link>https://xacndeveloper.github.io/posts/win-yukleme-yeniden-baslat-hatasi-cozum.html</link>
