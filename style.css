@@ -56,11 +56,11 @@ body {
     border: 2px solid #000;
     border-radius: 0;
     background: #fff;
-    width: 300px;
-    max-width: 80%;
+    width: 300px;      /* Düzeltildi: Sabit genişlik geri getirildi */
+    max-width: 80%;    /* Düzeltildi: Maksimum genişlik geri getirildi */
     outline: none;
     font-family: inherit;
-    flex-grow: 1; /* Arama çubuğunun genişlemesini sağlar */
+    /* flex-grow: 1; kaldırıldı */
 }
 
 .search-input:focus {
@@ -325,7 +325,12 @@ footer p {
         gap: 15px;
     }
     
-    .search-input,
+    .search-input {
+        width: 100%; /* Mobil için %100 genişlik */
+        max-width: none; /* Mobil için max-width'i kaldır */
+        box-sizing: border-box; /* Kenar boşluklarını hesaba kat */
+    }
+
     .search-button {
         width: 100%;
         max-width: none;
