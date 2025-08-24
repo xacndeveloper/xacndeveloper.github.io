@@ -78,10 +78,6 @@
             <a href="#"><i class="fab fa-github"></i></a>
         </div>
         <div class="search-container">
-            <!-- YENİ: Arşiv butonu -->
-            <button id="archiveButton" class="archive-button" title="Arşiv">
-                <i class="fas fa-archive"></i>
-            </button>
             <input type="text" id="searchInput" placeholder="Makalelerde ara..." class="search-input">
             <button id="searchButton" class="search-button">
                 <i class="fas fa-search"></i>
@@ -125,20 +121,7 @@
                 <p></p>
             </a>
             
-            <!--
-                ÖNEMLİ NOT: Arşiv özelliğinin çalışması için gönderi linklerinizin (<a>)
-                içinde 'data-date' özelliği olmalıdır. Format: "YYYY-AA-GG"
-                
-                Örnek:
-                <a href="post.html" class="post-link" data-date="2025-08-24">
-                    <h2>Post Başlığı</h2>
-                    <p>Post açıklaması...</p>
-                </a>
-            -->
         </div>
-        <!-- YENİ: Arşiv görünümü için konteyner -->
-        <div id="archive-view" style="display: none;"></div>
-
         <div id="no-results" class="no-results" style="display: none;">
             <div class="no-results-content">
                 <i class="fas fa-search"></i>
@@ -158,40 +141,33 @@
         document.addEventListener('DOMContentLoaded', function() {
             const postsList = document.getElementById('posts-list');
             
-            // 1. Postları tersine çevirerek yenilerin üste gelmesini sağlar (Mevcut kodunuz korunarak geliştirildi)
+            // 1. Postları tersine çevirerek yenilerin üste gelmesini sağlar
             const posts = Array.from(postsList.children);
             posts.reverse();
-            postsList.innerHTML = '';
-            posts.forEach(post => postsList.appendChild(post));
-            
-            // Arama ve Arşiv için DOM elementleri
+            postsList.innerHTML = ''; // Listeyi temizle
+            posts.forEach(post => postsList.appendChild(post)); // Ters sırada ekle
+
+            // 2. Gelişmiş arama fonksiyonalitesi
             const searchInput = document.getElementById('searchInput');
             const searchButton = document.getElementById('searchButton');
             const noResults = document.getElementById('no-results');
             const clearSearchBtn = document.getElementById('clearSearch');
             const allPosts = Array.from(postsList.querySelectorAll('.post-link'));
-
-            // YENİ: Arşiv için DOM elementleri
-            const archiveButton = document.getElementById('archiveButton');
-            const archiveView = document.getElementById('archive-view');
             
-            // --- Gelişmiş Arama Fonksiyonları ---
             function performSearch() {
-                // Arama yapıldığında arşiv görünümünü kapat
-                if (archiveView.style.display === 'block') {
-                    toggleArchiveView(false); // arşivi gizle
-                }
-
                 const searchTerm = searchInput.value.toLowerCase().trim();
                 
                 if (searchTerm === '') {
-                    allPosts.forEach(post => post.style.display = 'block');
+                    allPosts.forEach(post => {
+                        post.style.display = 'block';
+                    });
                     postsList.style.display = 'block';
                     noResults.style.display = 'none';
                     return;
                 }
                 
                 let visibleCount = 0;
+                
                 allPosts.forEach(post => {
                     const title = post.querySelector('h2').textContent.toLowerCase();
                     const description = post.querySelector('p').textContent.toLowerCase();
@@ -214,93 +190,35 @@
             }
             
             function clearSearch() {
-                if (archiveView.style.display === 'block') {
-                    toggleArchiveView(false);
-                }
                 searchInput.value = '';
-                allPosts.forEach(post => post.style.display = 'block');
+                allPosts.forEach(post => {
+                    post.style.display = 'block';
+                });
                 postsList.style.display = 'block';
                 noResults.style.display = 'none';
                 searchInput.focus();
             }
             
-            // --- YENİ: Arşiv Fonksiyonları ---
-            
-            function generateArchiveData() {
-                const archiveData = {};
-                const monthNames = ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"];
-
-                allPosts.forEach(post => {
-                    const dateString = post.dataset.date; // "YYYY-AA-GG" formatında olmalı
-                    const title = post.querySelector('h2').textContent;
-                    const href = post.href;
-
-                    if (dateString) {
-                        const date = new Date(dateString);
-                        const year = date.getFullYear();
-                        const month = monthNames[date.getMonth()];
-
-                        if (!archiveData[year]) archiveData[year] = {};
-                        if (!archiveData[year][month]) archiveData[year][month] = [];
-                        
-                        archiveData[year][month].push({ title, href });
-                    }
-                });
-                return archiveData;
-            }
-
-            function displayArchive() {
-                const archiveData = generateArchiveData();
-                let html = '';
-                const sortedYears = Object.keys(archiveData).sort((a, b) => b - a);
-
-                if (sortedYears.length === 0) {
-                    html = '<p>Arşivlenecek gönderi bulunamadı. Gönderi linklerine `data-date="YYYY-AA-GG"` formatında tarih eklediğinizden emin olun.</p>';
-                } else {
-                    sortedYears.forEach(year => {
-                        html += `<h2>${year}</h2>`;
-                        const months = Object.keys(archiveData[year]);
-                        months.forEach(month => {
-                            html += `<h3>${month}</h3><ul>`;
-                            archiveData[year][month].forEach(post => {
-                                html += `<li><a href="${post.href}">${post.title}</a></li>`;
-                            });
-                            html += '</ul>';
-                        });
-                    });
-                }
-                archiveView.innerHTML = html;
-            }
-
-            function toggleArchiveView(forceState) {
-                const isArchiveVisible = archiveView.style.display === 'block';
-                const show = typeof forceState === 'boolean' ? forceState : !isArchiveVisible;
-
-                if (show) {
-                    displayArchive();
-                    postsList.style.display = 'none';
-                    noResults.style.display = 'none';
-                    archiveView.style.display = 'block';
-                } else {
-                    archiveView.style.display = 'none';
-                    postsList.style.display = 'block';
-                    if (searchInput.value.trim() === '') {
-                        noResults.style.display = 'none';
-                    }
-                }
-            }
-            
-            // --- Event Listeners ---
+            // Event listeners
             searchButton.addEventListener('click', performSearch);
             clearSearchBtn.addEventListener('click', clearSearch);
-            archiveButton.addEventListener('click', () => toggleArchiveView());
             
-            searchInput.addEventListener('keypress', e => e.key === 'Enter' && performSearch());
+            searchInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    performSearch();
+                }
+            });
+            
             searchInput.addEventListener('input', function() {
                 clearTimeout(this.searchTimeout);
                 this.searchTimeout = setTimeout(performSearch, 200);
             });
-            searchInput.addEventListener('keydown', e => e.key === 'Escape' && clearSearch());
+            
+            searchInput.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    clearSearch();
+                }
+            });
         });
     </script>
 </body>
