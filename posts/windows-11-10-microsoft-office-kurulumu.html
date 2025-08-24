@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows 11 10 Microsoft Office Kurulumu - Blog</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="">
+    <meta name="keywords" content="Windows 11 10 Microsoft Office Kurulumu, blog, yazılım, teknoloji">
+    <meta name="author" content="Görkem Çalışkan">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="tr">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Windows 11 10 Microsoft Office Kurulumu">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://xacndeveloper.github.io/posts/windows-11-10-microsoft-office-kurulumu.html">
+    <meta property="og:site_name" content="Blog">
+    <meta property="og:locale" content="tr_TR">
+    <meta property="article:author" content="Görkem Çalışkan">
+    <meta property="article:published_time" content="24 Ağustos 2025">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Windows 11 10 Microsoft Office Kurulumu">
+    <meta name="twitter:description" content="">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../android-chrome-512x512.png">
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="../manifest.json">
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#000000">
+    <meta name="msapplication-TileColor" content="#000000">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://xacndeveloper.github.io/posts/windows-11-10-microsoft-office-kurulumu.html">
+    
+    <!-- RSS Feed -->
+    <link rel="alternate" type="application/rss+xml" title="Blog RSS Feed" href="../rss.xml">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Windows 11 10 Microsoft Office Kurulumu",
+        "description": "",
+        "url": "https://xacndeveloper.github.io/posts/windows-11-10-microsoft-office-kurulumu.html",
+        "datePublished": "24 Ağustos 2025",
+        "author": {
+            "@type": "Person",
+            "name": "Görkem Çalışkan"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Blog"
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://xacndeveloper.github.io/posts/windows-11-10-microsoft-office-kurulumu.html"
+        },
+        "inLanguage": "tr"
+    }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header class="blog-header"><a href="../index.html">BLOG</a></header>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+        </div>
+        <hr class="divider">
+        <article class="post-article">
+            <h1 class="post-title">Windows 11 10 Microsoft Office Kurulumu</h1>
+            <div class="post-meta">
+                <p><strong>Yazar:</strong> Görkem Çalışkan | 
+                <strong>Tarih:</strong> 24 Ağustos 2025 | 
+                <strong>Okuma Süresi:</strong> 5 dakika</p>
+            </div>
+            <div class="post-content">
+                <h2 id="Özet (ne yapacağız?)">Özet (ne yapacağız?)</h2>
+1) Eski Office’leri <strong>kaldır + yeniden başlat</strong>
+2) ODT’yi indir, <strong>Masaüstü\office</strong> klasörüne çıkar
+3) <strong>config.office.com</strong>’dan ayarları oluştur, <strong>ayar.xml</strong> olarak kaydet
+4) <code>setup.exe /configure ayar.xml</code> ile kurulum (gerekirse önce <code>/download</code>)
+5) Gerekirse loglara bak, yaygın hataları düzelt
+
+<hr>
+
+<h2 id="0) Kurulumdan önce mutlaka temizlik">0) Kurulumdan önce mutlaka temizlik</h2>
+<ul>
+<li><strong>Tüm Microsoft 365/Office sürümlerini</strong> (eski Office 2010/2013/2016/2019/2021, Project/Visio dâhil) <strong>kaldırın.</strong></li>
+<li>Ayarlar ➜ Uygulamalar ➜ Yüklü Uygulamalar (veya Denetim Masası ➜ Programlar) yoluyla kaldırabilirsiniz.</li>
+<li>Zor durumlar için <strong>Microsoft Support and Recovery Assistant (SaRA)</strong> içindeki “Office’i kaldır” aracı, takılan kalıntıları da temizler.</li>
+<li><strong>Bilgisayarı yeniden başlatın.</strong> (Bu çok önemli; açık kalan bileşenler yeni kurulumu bozabiliyor.)</li>
+</ul>
+
+<hr>
+
+<h2 id="1) ODT’yi indir ve klasörü hazırla">1) ODT’yi indir ve klasörü hazırla</h2>
+<ol>
+<li>Resmî indirme: <a href="https://www.microsoft.com/en-us/download/details.aspx?id=49117" target="_blank">Office Deployment Tool (ODT)</a></li>
+<li>Masaüstünde <strong><code>office</code></strong> adlı bir klasör oluşturun:</li>
+</ol>
+<code>C:\Kullanıcılar\<kullanıcı_adın>\Masaüstü\office</code>
+<ol>
+<li>İndirdiğiniz <code>officedeploymenttool_*.exe</code> dosyasını çalıştırın ve <strong>çıkarma konumu olarak bu <code>office</code> klasörünü</strong> seçin.</li>
+<li>Klasöre <strong><code>setup.exe</code></strong> ve örnek XML’ler gelecektir. Setup.exe dışındaki XML dosyalarını isterseniz silebilirsiniz.</li>
+</ol>
+
+<hr>
+
+<h2 id="2) Office Configuration Tool ile ayar.xml oluşturma">2) Office Configuration Tool ile ayar.xml oluşturma</h2>
+<ol>
+<li><a href="https://config.office.com/deploymentsettings" target="_blank">Office Customization Tool (OCT)</a> sayfasına girin.</li>
+<li>Burada kendi kurulum profilinizi oluşturun:</li>
+</ol>
+<ul>
+<li><strong>Suite/Ürün:</strong> Microsoft 365 Apps for enterprise</li>
+<li><strong>Mimari:</strong> 64-bit</li>
+<li><strong>Kanal:</strong> Current / Monthly Enterprise</li>
+<li><strong>Diller:</strong> <code>tr-tr</code> (ve isterseniz ek dil)</li>
+<li><strong>Uygulamalar:</strong> İstemediğinizi <strong>Exclude</strong> edin (ör. Teams, OneDrive).</li>
+<li><strong>Güncellemeler:</strong> Açık/kapalı.</li>
+<li><strong>Sessiz kurulum:</strong> Display: None + AcceptEULA: TRUE.</li>
+<li><strong>Aktivasyon:</strong> AUTOACTIVATE=1.</li>
+</ul>
+<ol>
+<li><strong>Export</strong> deyip dosya adını <strong><code>ayar.xml</code></strong> yapın.</li>
+<li>Bu <strong><code>ayar.xml</code></strong> dosyasını <strong><code>Masaüstü\office</code></strong> klasöründe <strong><code>setup.exe</code></strong> ile aynı dizine koyun.</li>
+</ol>
+
+<hr>
+
+<h2 id="3) Kurulum (online)">3) Kurulum (online)</h2>
+Komut İstemi’ni yönetici olarak açın ve şu komutları girin:
+<pre><code class="language-bat">cd /d "%USERPROFILE%\Desktop\office"
+setup.exe /configure ayar.xml</code></pre>
+<h2 id="4) (İsteğe bağlı) Çevrimdışı kurulum">4) (İsteğe bağlı) Çevrimdışı kurulum</h2>
+
+<p>Yavaş/kapalı ağlarda önce içerikleri indirip sonra kurmak daha sağlıklı olur:</p>
+
+<pre><code class="language-bat">cd /d "%USERPROFILE%\Desktop\office"
+setup.exe /download ayar.xml   :: Office kurulum dosyaları SourcePath'e iner
+setup.exe /configure ayar.xml  :: Ardından kurulum başlar</code></pre>
+
+<p><strong>Not: ayar.xml içinde SourcePath tanımlamanız gerekir.</strong></p>
+
+<h2 id="5) Örnek ayar.xml">5) Örnek ayar.xml</h2>
+
+<pre><code class="language-xml">&lt;Configuration&gt;
+&lt;Add OfficeClientEdition="64" Channel="Current" AllowCdnFallback="True"&gt;
+&lt;Product ID="O365ProPlusRetail"&gt;
+&lt;Language ID="tr-tr" /&gt;
+&lt;!-- İstersen ek dil: &lt;Language ID="en-us" /&gt; --&gt;
+&lt;!-- İstemediklerini hariç bırak:
+&lt;ExcludeApp ID="Teams"/&gt;
+&lt;ExcludeApp ID="OneDrive"/&gt;
+&lt;ExcludeApp ID="Access"/&gt;
+&lt;ExcludeApp ID="Publisher"/&gt;
+--&gt;
+&lt;/Product&gt;
+&lt;/Add&gt;
+
+<p>&lt;Updates Enabled="TRUE" Channel="Current" /&gt;<br>&lt;Display Level="None" AcceptEULA="TRUE" /&gt;<br>&lt;Property Name="AUTOACTIVATE" Value="1"/&gt;<br>&lt;!-- &lt;Property Name="FORCEAPPSHUTDOWN" Value="TRUE"/&gt; --&gt;<br>&lt;!-- &lt;RemoveMSI All="True"/&gt; --&gt;<br>&lt;/Configuration&gt;<br></code></pre></p>
+
+<h2 id="6) Sık karşılaşılan durumlar">6) Sık karşılaşılan durumlar</h2>
+
+<ul>
+<li><strong>Kurulum ilerlemiyor:</strong> Proxy/firewall engellemeleri olabilir.</li>
+<li><strong>32-bit’ten 64-bit’e geçiş:</strong> <code>MigrateArch="TRUE"</code> ekleyin.</li>
+<li><strong>Eski MSI tabanlı Office’i otomatik kaldırma:</strong> <code><RemoveMSI/></code> ekleyin.</li>
+<li><strong>Sessiz kurulum:</strong> <code><Display Level="None" AcceptEULA="TRUE"/></code>.</li>
+<li><strong>Güncellemeler:</strong> <code><Updates Enabled="TRUE" Channel="Current" UpdatePath="..."></code>.</li>
+</ul>
+
+<hr>
+
+<h2 id="7) Log dosyaları">7) Log dosyaları</h2>
+
+<p>ODT/Office Setup <strong>logları <code>%TEMP%</code> klasörüne</strong> yazılır.<br>En güncel log dosyasını inceleyebilirsiniz:<br><code>Microsoft Office Setup(####).txt</code></p>
+
+<hr>
+
+<h2 id="8) Kurulum sonrası">8) Kurulum sonrası</h2>
+
+<ul>
+<li>Office uygulamalarını açıp <strong>Hesap</strong> sekmesinden sürüm/kanalı kontrol edin.</li>
+<li>Microsoft 365 ise kullanıcı oturum açınca lisans otomatik etkinleşir.</li>
+<li>Gerekirse <code>setup.exe /help</code> ile tüm parametreleri görebilirsiniz.</li>
+</ul>
+
+<hr>
+
+<h2 id="Hızlı hatırlatma">Hızlı hatırlatma</h2>
+
+<pre><code class="language-bat">cd /d "%USERPROFILE%\Desktop\office"
+setup.exe /configure ayar.xml</code></pre>
+            </div>
+        </article>
+        <hr class="divider">
+        <footer>
+            <p>Tüm Hakları Saklıdır</p>
+            <p><a href="../rss.xml" class="rss-link"><i class="fas fa-rss"></i> RSS</a></p>
+        </footer>
+    </div>
+</body>
+</html>
