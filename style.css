@@ -50,6 +50,27 @@ body {
     gap: 10px;
 }
 
+/* YENİ: Arşiv Butonu */
+.archive-button {
+    padding: 12px 16px;
+    font-size: 1.1em;
+    border: 2px solid #000;
+    border-radius: 0;
+    background: #fff;
+    color: #000;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.archive-button:hover {
+    background: #f0f0f0;
+}
+
+.archive-button:active {
+    transform: translateY(1px);
+}
+
 .search-input {
     padding: 12px 20px;
     font-size: 1.1em;
@@ -60,6 +81,7 @@ body {
     max-width: 80%;
     outline: none;
     font-family: inherit;
+    flex-grow: 1; /* Arama çubuğunun boşluğu doldurmasını sağlar */
 }
 
 .search-input:focus {
@@ -110,6 +132,46 @@ body {
     font-size: 1.1em;
     margin: 0;
 }
+
+/* YENİ: Arşiv Görünümü Stilleri */
+#archive-view {
+    padding: 20px 0;
+}
+
+#archive-view h2 {
+    font-size: 2em;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+#archive-view h3 {
+    font-size: 1.5em;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+#archive-view ul {
+    list-style: none;
+    padding-left: 10px;
+}
+
+#archive-view li {
+    margin-bottom: 10px;
+}
+
+#archive-view a {
+    text-decoration: none;
+    color: #000;
+    font-size: 1.1em;
+}
+
+#archive-view a:hover {
+    text-decoration: underline;
+    color: #007acc;
+}
+
 
 /* Arama Sonuç Bulunamadı Stilleri */
 .no-results {
@@ -163,123 +225,28 @@ body {
     transform: translateY(1px);
 }
 
-/* Post Sayfası Stilleri */
-.post-article {
-    margin-top: 20px;
-}
-
-.post-title {
-    font-size: 2.5em;
-}
-
-.post-meta {
-    font-size: 0.9em;
-    color: #555;
-    margin-bottom: 30px;
-}
-
-.post-content {
-    font-size: 1.1em;
-    line-height: 1.7;
-}
-
-.post-content h1,
-.post-content h2,
-.post-content h3,
-.post-content h4 {
-    margin-top: 30px;
-    margin-bottom: 15px;
-}
-
-.post-content pre {
-    background: #f8f8f8;
-    padding: 20px;
-    border-radius: 8px;
-    overflow-x: auto;
-    border-left: 4px solid #007acc;
-}
-
-.post-content pre code {
-    background: none;
-    padding: 0;
-}
-
-.post-content code {
-    background: #f0f0f0;
-    padding: 3px 6px;
-    border-radius: 4px;
-    font-family: 'Courier New', monospace;
-}
-
-.post-content blockquote {
-    border-left: 4px solid #ddd;
-    margin: 20px 0;
-    padding: 10px 20px;
-    background: #f9f9f9;
-    font-style: italic;
-}
-
-.post-content img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin: 20px 0;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.post-content table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-}
-
-.post-content th,
-.post-content td {
-    border: 1px solid #ddd;
-    padding: 12px;
-    text-align: left;
-}
-
-.post-content th {
-    background-color: #f2f2f2;
-    font-weight: bold;
-}
-
-.post-content tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-.post-content ul.task-list {
-    list-style: none;
-    padding-left: 0;
-}
-
-.post-content .task-list-item {
-    margin: 5px 0;
-}
-
-.post-content .task-list-item input {
-    margin-right: 8px;
-}
-
-.post-content hr {
-    border: none;
-    border-top: 2px solid #eee;
-    margin: 30px 0;
-}
-
-.post-content del {
-    color: #888;
-}
-
-.post-content a {
-    color: #007acc;
-    text-decoration: none;
-}
-
-.post-content a:hover {
-    text-decoration: underline;
-}
+/* Post Sayfası Stilleri (Değişiklik yok) */
+.post-article { margin-top: 20px; }
+.post-title { font-size: 2.5em; }
+.post-meta { font-size: 0.9em; color: #555; margin-bottom: 30px; }
+.post-content { font-size: 1.1em; line-height: 1.7; }
+.post-content h1, .post-content h2, .post-content h3, .post-content h4 { margin-top: 30px; margin-bottom: 15px; }
+.post-content pre { background: #f8f8f8; padding: 20px; border-radius: 8px; overflow-x: auto; border-left: 4px solid #007acc; }
+.post-content pre code { background: none; padding: 0; }
+.post-content code { background: #f0f0f0; padding: 3px 6px; border-radius: 4px; font-family: 'Courier New', monospace; }
+.post-content blockquote { border-left: 4px solid #ddd; margin: 20px 0; padding: 10px 20px; background: #f9f9f9; font-style: italic; }
+.post-content img { max-width: 100%; height: auto; border-radius: 8px; margin: 20px 0; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+.post-content table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+.post-content th, .post-content td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+.post-content th { background-color: #f2f2f2; font-weight: bold; }
+.post-content tr:nth-child(even) { background-color: #f9f9f9; }
+.post-content ul.task-list { list-style: none; padding-left: 0; }
+.post-content .task-list-item { margin: 5px 0; }
+.post-content .task-list-item input { margin-right: 8px; }
+.post-content hr { border: none; border-top: 2px solid #eee; margin: 30px 0; }
+.post-content del { color: #888; }
+.post-content a { color: #007acc; text-decoration: none; }
+.post-content a:hover { text-decoration: underline; }
 
 footer {
     text-align: center;
@@ -320,18 +287,16 @@ footer p {
     }
     
     .search-container {
-        flex-direction: column;
+        flex-direction: column; /* Mobil için dikey sıralama */
         gap: 15px;
     }
     
-    .search-input {
-        width: 90%;
-        max-width: none;
-    }
-    
+    .archive-button,
+    .search-input,
     .search-button {
-        width: 90%;
-        max-width: 200px;
+        width: 100%; /* Mobil için tam genişlik */
+        max-width: none;
+        box-sizing: border-box; /* Kenar ve dolgu paylarını genişliğe dahil et */
     }
     
     .post-link h2 {
@@ -356,8 +321,9 @@ footer p {
     }
     
     .clear-search-btn {
-        width: 90%;
-        max-width: 200px;
+        width: 100%;
+        max-width: none;
+        box-sizing: border-box;
     }
 }
 
