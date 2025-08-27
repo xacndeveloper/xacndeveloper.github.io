@@ -7,9 +7,17 @@
         <language>tr</language>
         <managingEditor>Görkem Çalışkan</managingEditor>
         <webMaster>Görkem Çalışkan</webMaster>
-        <lastBuildDate>Sun, 24 Aug 2025 08:20:55 +0000</lastBuildDate>
+        <lastBuildDate>Wed, 27 Aug 2025 16:21:39 +0000</lastBuildDate>
         <atom:link href="https://xacndeveloper.github.io/rss.xml" rel="self" type="application/rss+xml" />
 
+        <item>
+            <title><![CDATA[Windows 11 10 Game Streaming Kurulum]]></title>
+            <link>https://xacndeveloper.github.io/posts/windows-11-10-game-streaming-kurulum.html</link>
+            <description><![CDATA[]]></description>
+            <author>Görkem Çalışkan</author>
+            <pubDate>Wed, 27 Aug 2025 00:00:00 +0000</pubDate>
+            <guid>https://xacndeveloper.github.io/posts/windows-11-10-game-streaming-kurulum.html</guid>
+        </item>
         <item>
             <title><![CDATA[Windows 11 10 Microsoft Office Kurulumu]]></title>
             <link>https://xacndeveloper.github.io/posts/windows-11-10-microsoft-office-kurulumu.html</link>
