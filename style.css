@@ -1,9 +1,55 @@
-/* Ana Sayfa Stilleri */
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap');
+
+/* 
+==============================================
+   CSS DEĞİŞKENLERİ (TEMA YÖNETİMİ)
+==============================================
+*/
+:root {
+    /* Aydınlık Tema Renkleri */
+    --bg-color: #f8f9fa;
+    --text-color: #212529;
+    --heading-color: #111;
+    --primary-color: #007bff;
+    --border-color: #dee2e6;
+    --card-bg-color: #ffffff;
+    --shadow-color: rgba(0, 0, 0, 0.05);
+    --icon-color: #495057;
+    --icon-hover-color: #007bff;
+    --button-bg: #111;
+    --button-text: #fff;
+}
+
+[data-theme="dark"] {
+    /* Karanlık Tema Renkleri */
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --heading-color: #ffffff;
+    --primary-color: #4dabf7;
+    --border-color: #343a40;
+    --card-bg-color: #1e1e1e;
+    --shadow-color: rgba(0, 0, 0, 0.2);
+    --icon-color: #adb5bd;
+    --icon-hover-color: #4dabf7;
+    --button-bg: #e0e0e0;
+    --button-text: #121212;
+}
+
+
+/* 
+==============================================
+   GENEL STİLLER
+==============================================
+*/
 body {
-    font-family: sans-serif;
+    font-family: 'Inter', sans-serif;
     margin: 0;
-    padding: 20px;
-    line-height: 1.6;
+    padding: 40px 20px;
+    line-height: 1.7;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .container {
@@ -11,212 +57,275 @@ body {
     margin: 0 auto;
 }
 
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+hr.divider {
+    border: none;
+    border-top: 1px solid var(--border-color);
+    margin: 40px 0;
+    transition: border-color 0.3s ease;
+}
+
+
+/* 
+==============================================
+   HEADER VE NAVİGASYON
+==============================================
+*/
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
 .blog-title {
-    font-size: 4em;
+    font-size: 2.5em;
+    font-weight: 800;
     text-align: center;
-    margin-bottom: 20px;
+    margin: 0;
+    color: var(--heading-color);
 }
 
 .blog-header a {
-    font-size: 4em;
-    font-weight: bold;
     text-decoration: none;
     color: inherit;
 }
 
-.blog-header {
-    text-align: center;
-    margin-bottom: 20px;
+.theme-switcher {
+    background: none;
+    border: none;
+    color: var(--icon-color);
+    font-size: 1.5em;
+    cursor: pointer;
+    padding: 5px;
+    transition: color 0.2s ease, transform 0.3s ease;
 }
 
+.theme-switcher:hover {
+    color: var(--icon-hover-color);
+    transform: rotate(15deg);
+}
+
+
+/* 
+==============================================
+   SOSYAL İKONLAR
+==============================================
+*/
 .social-icons {
     text-align: center;
     padding-bottom: 20px;
 }
 
 .social-icons a {
-    color: #000;
-    margin: 0 15px;
-    font-size: 1.8em;
+    color: var(--icon-color);
+    margin: 0 12px;
+    font-size: 1.5em;
     text-decoration: none;
+    transition: color 0.2s ease, transform 0.2s ease;
 }
 
-/* Arama Çubuğu Stilleri */
+.social-icons a:hover {
+    color: var(--icon-hover-color);
+    transform: translateY(-2px);
+}
+
+
+/* 
+==============================================
+   ARAMA ÇUBUĞU
+==============================================
+*/
 .search-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 20px 0;
+    margin: 30px 0;
     gap: 10px;
 }
 
-/* DÜZELTME: Bu bölüm orijinal kodunuzdaki gibi ayarlandı */
 .search-input {
     padding: 12px 20px;
-    font-size: 1.1em;
-    border: 2px solid #000;
-    border-radius: 0;
-    background: #fff;
-    width: 300px;
+    font-size: 1em;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--card-bg-color);
+    color: var(--text-color);
+    width: 350px;
     max-width: 80%;
     outline: none;
     font-family: inherit;
+    transition: all 0.2s ease;
 }
 
 .search-input:focus {
-    border-color: #333;
-    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
 }
 
 .search-button {
     padding: 12px 16px;
     font-size: 1.1em;
-    border: 2px solid #000;
-    border-radius: 0;
-    background: #000;
-    color: #fff;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    background: var(--button-bg);
+    color: var(--button-text);
     cursor: pointer;
     outline: none;
     transition: all 0.2s ease;
 }
 
 .search-button:hover {
-    background: #333;
-    border-color: #333;
+    opacity: 0.85;
 }
 
-.search-button:active {
-    transform: translateY(1px);
-}
 
-.divider {
-    border: none;
-    border-top: 2px solid #000;
-    margin: 20px 0;
+/* 
+==============================================
+   MAKALE LİSTESİ (KART TASARIMI)
+==============================================
+*/
+#posts-list {
+    display: grid;
+    gap: 25px;
 }
 
 .post-link {
     display: block;
     text-decoration: none;
     color: inherit;
-    margin-bottom: 30px;
+    background-color: var(--card-bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.post-link:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px var(--shadow-color);
 }
 
 .post-link h2 {
-    font-size: 2em;
-    margin-bottom: 5px;
+    font-size: 1.8em;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: var(--heading-color);
 }
 
 .post-link p {
-    font-size: 1.1em;
+    font-size: 1.05em;
     margin: 0;
+    opacity: 0.9;
 }
 
-/* Arama Sonuç Bulunamadı Stilleri */
+
+/* 
+==============================================
+   SONUÇ BULUNAMADI
+==============================================
+*/
 .no-results {
     text-align: center;
     padding: 60px 20px;
-    margin: 40px 0;
-}
-
-.no-results-content {
-    max-width: 400px;
-    margin: 0 auto;
+    margin: 20px 0;
+    background-color: var(--card-bg-color);
+    border: 1px dashed var(--border-color);
+    border-radius: 12px;
 }
 
 .no-results-content i {
-    font-size: 4em;
-    color: #ccc;
+    font-size: 3.5em;
+    color: var(--border-color);
     margin-bottom: 20px;
 }
 
 .no-results-content h3 {
     font-size: 1.5em;
     margin-bottom: 10px;
-    color: #666;
-}
-
-.no-results-content p {
-    color: #888;
-    margin-bottom: 30px;
-    line-height: 1.5;
+    color: var(--heading-color);
 }
 
 .clear-search-btn {
     padding: 12px 24px;
     font-size: 1em;
-    border: 2px solid #000;
-    border-radius: 0;
-    background: #fff;
-    color: #000;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: transparent;
+    color: var(--text-color);
     cursor: pointer;
-    outline: none;
     transition: all 0.2s ease;
-    font-family: inherit;
 }
 
 .clear-search-btn:hover {
-    background: #000;
-    color: #fff;
+    background: var(--button-bg);
+    color: var(--button-text);
+    border-color: transparent;
 }
 
-.clear-search-btn:active {
-    transform: translateY(1px);
-}
 
-/* Post Sayfası Stilleri */
+/* 
+==============================================
+   MAKALE SAYFASI
+==============================================
+*/
 .post-article {
-    margin-top: 20px;
+    background-color: var(--card-bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 30px 40px;
 }
 
 .post-title {
-    font-size: 2.5em;
+    font-size: 2.8em;
+    font-weight: 800;
+    color: var(--heading-color);
+    line-height: 1.2;
 }
 
 .post-meta {
     font-size: 0.9em;
-    color: #555;
+    color: var(--text-color);
+    opacity: 0.8;
     margin-bottom: 30px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 15px;
 }
 
 .post-content {
     font-size: 1.1em;
-    line-height: 1.7;
 }
 
-.post-content h1,
-.post-content h2,
-.post-content h3,
-.post-content h4 {
-    margin-top: 30px;
-    margin-bottom: 15px;
+.post-content h2, .post-content h3 {
+    color: var(--heading-color);
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 5px;
+    margin-top: 40px;
 }
 
 .post-content pre {
-    background: #f8f8f8;
+    background: var(--bg-color);
     padding: 20px;
     border-radius: 8px;
+    border: 1px solid var(--border-color);
     overflow-x: auto;
-    border-left: 4px solid #007acc;
-}
-
-.post-content pre code {
-    background: none;
-    padding: 0;
-}
-
-.post-content code {
-    background: #f0f0f0;
-    padding: 3px 6px;
-    border-radius: 4px;
-    font-family: 'Courier New', monospace;
 }
 
 .post-content blockquote {
-    border-left: 4px solid #ddd;
+    border-left: 4px solid var(--primary-color);
     margin: 20px 0;
     padding: 10px 20px;
-    background: #f9f9f9;
+    background: var(--bg-color);
     font-style: italic;
 }
 
@@ -225,165 +334,66 @@ body {
     height: auto;
     border-radius: 8px;
     margin: 20px 0;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-.post-content table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-}
 
-.post-content th,
-.post-content td {
-    border: 1px solid #ddd;
-    padding: 12px;
-    text-align: left;
-}
-
-.post-content th {
-    background-color: #f2f2f2;
-    font-weight: bold;
-}
-
-.post-content tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-.post-content ul.task-list {
-    list-style: none;
-    padding-left: 0;
-}
-
-.post-content .task-list-item {
-    margin: 5px 0;
-}
-
-.post-content .task-list-item input {
-    margin-right: 8px;
-}
-
-.post-content hr {
-    border: none;
-    border-top: 2px solid #eee;
-    margin: 30px 0;
-}
-
-.post-content del {
-    color: #888;
-}
-
-.post-content a {
-    color: #007acc;
-    text-decoration: none;
-}
-
-.post-content a:hover {
-    text-decoration: underline;
-}
-
+/* 
+==============================================
+   FOOTER
+==============================================
+*/
 footer {
     text-align: center;
     margin-top: 40px;
-}
-
-footer p {
-    margin: 10px 0;
+    opacity: 0.8;
 }
 
 .rss-link {
-    color: #000;
-    text-decoration: none;
-    font-weight: bold;
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
+    font-weight: 500;
 }
 
-.rss-link:hover {
-    color: #ff6600;
-    text-decoration: underline;
+
+/* 
+==============================================
+   BAŞA DÖN DÜĞMESİ
+==============================================
+*/
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: opacity 0.3s, transform 0.3s;
+    z-index: 1000;
 }
 
-.rss-link i {
-    font-size: 1.1em;
+#back-to-top:hover {
+    opacity: 0.8;
 }
 
-/* Responsive Design */
+/* 
+==============================================
+   RESPONSIVE TASARIM
+==============================================
+*/
 @media (max-width: 768px) {
-    .blog-title {
-        font-size: 2.5em;
-    }
-    
-    .social-icons a {
-        margin: 0 10px;
-        font-size: 1.5em;
-    }
-    
-    .search-container {
-        flex-direction: column;
-        gap: 15px;
-    }
-    
-    /* DÜZELTME: Mobil uyumluluk için bu bölüm korundu */
-    .search-input {
-        width: 90%;
-        max-width: none;
-    }
-    
-    .search-button {
-        width: 90%;
-        max-width: 200px;
-    }
-    
-    .post-link h2 {
-        font-size: 1.5em;
-    }
-    
-    .post-link p {
-        font-size: 1em;
-    }
-    
-    /* Mobil için sonuç bulunamadı */
-    .no-results {
-        padding: 40px 15px;
-    }
-    
-    .no-results-content i {
-        font-size: 3em;
-    }
-    
-    .no-results-content h3 {
-        font-size: 1.3em;
-    }
-    
-    .clear-search-btn {
-        width: 90%;
-        max-width: 200px;
-    }
+    body { padding: 20px 15px; }
+    .post-title { font-size: 2.2em; }
+    .post-article { padding: 20px; }
 }
 
 @media (max-width: 480px) {
-    body {
-        padding: 10px;
-    }
-    
-    .blog-title {
-        font-size: 2em;
-    }
-    
-    .social-icons a {
-        margin: 0 8px;
-        font-size: 1.3em;
-    }
-    
-    .search-input {
-        padding: 10px 15px;
-        font-size: 1em;
-    }
-    
-    .search-button {
-        padding: 10px 14px;
-        font-size: 1em;
-    }
+    .blog-title { font-size: 2em; }
+    .search-container { flex-direction: column; }
+    .search-input, .search-button { width: 100%; max-width: none; }
+    .post-link h2 { font-size: 1.5em; }
 }
