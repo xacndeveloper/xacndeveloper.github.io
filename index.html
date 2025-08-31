@@ -1,106 +1,90 @@
 <!DOCTYPE html>
-<html lang="tr" data-theme="light">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Xacn Blog - Teknoloji rehberleri ve makaleler</title>
     
-    <!-- Meta Etiketleri -->
+    <!-- SEO Meta Tags -->
     <meta name="description" content="Teknoloji rehberleri ve makaleler">
-    <!-- Diğer meta etiketleriniz buraya -->
+    <meta name="keywords" content="teknoloji, rehber, arsiv">
+    <meta name="author" content="Görkem Çalışkan">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="tr">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Xacn Blog">
+    <meta property="og:description" content="Teknoloji rehberleri ve makaleler">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://xacndeveloper.github.io">
+    <meta property="og:site_name" content="Xacn Blog">
+    <meta property="og:locale" content="tr_TR">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Xacn Blog">
+    <meta name="twitter:description" content="Teknoloji rehberleri ve makaleler">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#000000">
+    <meta name="msapplication-TileColor" content="#000000">
+    
+    <!-- Canonical URL -->
     <link rel="canonical" href="https://xacndeveloper.github.io">
+    
+    <!-- RSS Feed -->
+    <link rel="alternate" type="application/rss+xml" title="Xacn Blog RSS Feed" href="https://xacndeveloper.github.io/rss.xml">
     
     <!-- Stylesheets -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     
-    <!-- Head içindeki diğer linkleriniz (favicon, manifest vb.) -->
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "Xacn Blog",
+        "description": "Teknoloji rehberleri ve makaleler",
+        "url": "https://xacndeveloper.github.io",
+        "author": {
+            "@type": "Person",
+            "name": "Görkem Çalışkan"
+        },
+        "inLanguage": "tr"
+    }
+    </script>
 </head>
 <body>
     <div class="container">
-        <header class="site-header">
-            <h1 class="blog-title">BLOG</h1>
-            <button id="theme-switcher" class="theme-switcher" aria-label="Temayı Değiştir">
-                <i class="fas fa-moon"></i>
-            </button>
-        </header>
-
+        <h1 class="blog-title">BLOG</h1>
         <div class="social-icons">
             <a href="#"><i class="fab fa-facebook-f"></i></a>
             <a href="#"><i class="fab fa-twitter"></i></a>
             <a href="#"><i class="fab fa-instagram"></i></a>
-            <!-- Diğer sosyal ikonlarınız -->
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
         </div>
-
         <div class="search-container">
             <input type="text" id="searchInput" placeholder="Makalelerde ara..." class="search-input">
             <button id="searchButton" class="search-button">
                 <i class="fas fa-search"></i>
             </button>
         </div>
-
         <hr class="divider">
-
         <div id="posts-list">
-            <!-- 
-                
-            <a href="posts/windows-11-KB5063878-guncellemesi-kaldirma-duzeltme.html" class="post-link">
-                <h2>Windows 11 Kb5063878 Guncellemesi Kaldirma Duzeltme</h2>
-                <p></p>
-            </a>
-            
-            <a href="posts/windows-11-10-game-streaming-kurulum.html" class="post-link">
-                <h2>Windows 11 10 Game Streaming Kurulum</h2>
-                <p></p>
-            </a>
-            
-            <a href="posts/windows-11-10-microsoft-office-kurulumu.html" class="post-link">
-                <h2>Windows 11 10 Microsoft Office Kurulumu</h2>
-                <p></p>
-            </a>
-            
-            <a href="posts/android-icin-custom-ROM-yukleme-rehberi.html" class="post-link">
-                <h2>Android Icin Custom Rom Yukleme Rehberi</h2>
-                <p></p>
-            </a>
-            
-            <a href="posts/windows-11-10-baslat-menusu-acilmiyor-cozum.html" class="post-link">
-                <h2>Windows 11 10 Baslat Menusu Acilmiyor Cozum</h2>
-                <p></p>
-            </a>
-            
-            <a href="posts/windows-11-10-kara-ekran-ve-imlec.html" class="post-link">
-                <h2>Windows 11 10 Kara Ekran Ve Imlec</h2>
-                <p></p>
-            </a>
-            
-            <a href="posts/windows-11-10-kurulumda-diskler-gozukmuyor.html" class="post-link">
-                <h2>Windows 11 10 Kurulumda Diskler Gozukmuyor</h2>
-                <p></p>
-            </a>
-            
-            <a href="posts/windows-11-10-retail-lisans-calismiyor.html" class="post-link">
-                <h2>Windows 11 10 Retail Lisans Calismiyor</h2>
-                <p></p>
-            </a>
-            
-            <a href="posts/windows-11-10-yukleme-yeniden-baslat-hatasi-cozum.html" class="post-link">
-                <h2>Windows 11 10 Yukleme Yeniden Baslat Hatasi Cozum</h2>
-                <p></p>
-            </a>
-             DEĞİŞKENİNİZ BU FORMATTA HTML OLUŞTURMALIDIR:
-
-                <a href="posts/post-url.html" class="post-link">
-                    <p class="post-card-meta">{{POST_DATE}} · {{POST_READ_TIME}}</p>
-                    <h2>{{POST_TITLE}}</h2>
-                    <p>{{POST_DESCRIPTION}}</p>
-                </a>
-                <a href="posts/post-url-2.html" class="post-link">
-                    <p class="post-card-meta">20 Ağustos 2025 · 5 dakika okuma</p>
-                    <h2>İkinci Makale Başlığı</h2>
-                    <p>Bu da ikinci makalenin kısa açıklamasıdır.</p>
-                </a>
-            -->
             
             <a href="posts/windows-11-KB5063878-guncellemesi-kaldirma-duzeltme.html" class="post-link">
                 <h2>Windows 11 Kb5063878 Guncellemesi Kaldirma Duzeltme</h2>
@@ -148,123 +132,104 @@
             </a>
             
         </div>
-        
         <div id="no-results" class="no-results" style="display: none;">
-            <h3>Sonuç bulunamadı</h3>
-            <p>Aradığınız terime uygun makale bulunamadı.</p>
+            <div class="no-results-content">
+                <i class="fas fa-search"></i>
+                <h3>Sonuç bulunamadı</h3>
+                <p>Aradığınız terime uygun makale bulunamadı.</p>
+                <button id="clearSearch" class="clear-search-btn">Aramayı temizle</button>
+            </div>
         </div>
-
         <hr class="divider">
-        
         <footer>
             <p>Tüm Hakları Saklıdır</p>
+            <p><a href="rss.xml" class="rss-link"><i class="fas fa-rss"></i> RSS</a></p>
         </footer>
     </div>
     
-    <button id="back-to-top" aria-label="Başa Dön">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-    
-    
-</body>
-</html>
-	<script>
- document.addEventListener('DOMContentLoaded', function() {
-    
-    // ===================================
-    //  TEMA DEĞİŞTİRİCİ (DARK/LIGHT MODE)
-    // ===================================
-    const themeSwitcher = document.getElementById('theme-switcher');
-    const sunIcon = '<i class="fas fa-sun"></i>';
-    const moonIcon = '<i class="fas fa-moon"></i>';
-
-    const currentTheme = localStorage.getItem('theme') || 'light';
-    document.documentElement.setAttribute('data-theme', currentTheme);
-    if (themeSwitcher) {
-        themeSwitcher.innerHTML = currentTheme === 'dark' ? sunIcon : moonIcon;
-    }
-
-    if (themeSwitcher) {
-        themeSwitcher.addEventListener('click', () => {
-            let theme = document.documentElement.getAttribute('data-theme');
-            if (theme === 'dark') {
-                theme = 'light';
-                themeSwitcher.innerHTML = moonIcon;
-            } else {
-                theme = 'dark';
-                themeSwitcher.innerHTML = sunIcon;
-            }
-            document.documentElement.setAttribute('data-theme', theme);
-            localStorage.setItem('theme', theme);
-        });
-    }
-
-    
-    // ===================================
-    //  INDEX.HTML'E ÖZGÜ FONKSİYONLAR
-    // ===================================
-    const postsList = document.getElementById('posts-list');
-    if (postsList) {
-        // Postları tersine çevir
-        const posts = Array.from(postsList.children);
-        posts.reverse();
-        postsList.innerHTML = ''; 
-        posts.forEach(post => postsList.appendChild(post));
-
-        const allPosts = Array.from(postsList.querySelectorAll('.post-link'));
-
-        // Post kartlarına kademeli animasyon gecikmesi ekle
-        allPosts.forEach((post, index) => {
-            post.style.animationDelay = `${index * 100}ms`;
-        });
-
-        // Arama fonksiyonalitesi
-        const searchInput = document.getElementById('searchInput');
-        const searchButton = document.getElementById('searchButton');
-        const noResults = document.getElementById('no-results');
-        let searchTimeout;
-
-        function performSearch() {
-            const searchTerm = searchInput.value.toLowerCase().trim();
-            let visibleCount = 0;
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const postsList = document.getElementById('posts-list');
             
-            allPosts.forEach(post => {
-                const title = post.querySelector('h2').textContent.toLowerCase();
-                const description = post.querySelector('p:last-of-type').textContent.toLowerCase();
+            // 1. Postları tersine çevirerek yenilerin üste gelmesini sağlar
+            const posts = Array.from(postsList.children);
+            posts.reverse();
+            postsList.innerHTML = ''; // Listeyi temizle
+            posts.forEach(post => postsList.appendChild(post)); // Ters sırada ekle
+
+            // 2. Gelişmiş arama fonksiyonalitesi
+            const searchInput = document.getElementById('searchInput');
+            const searchButton = document.getElementById('searchButton');
+            const noResults = document.getElementById('no-results');
+            const clearSearchBtn = document.getElementById('clearSearch');
+            const allPosts = Array.from(postsList.querySelectorAll('.post-link'));
+            
+            function performSearch() {
+                const searchTerm = searchInput.value.toLowerCase().trim();
                 
-                if (title.includes(searchTerm) || description.includes(searchTerm)) {
-                    post.style.display = 'block';
-                    visibleCount++;
+                if (searchTerm === '') {
+                    allPosts.forEach(post => {
+                        post.style.display = 'block';
+                    });
+                    postsList.style.display = 'block';
+                    noResults.style.display = 'none';
+                    return;
+                }
+                
+                let visibleCount = 0;
+                
+                allPosts.forEach(post => {
+                    const title = post.querySelector('h2').textContent.toLowerCase();
+                    const description = post.querySelector('p').textContent.toLowerCase();
+                    
+                    if (title.includes(searchTerm) || description.includes(searchTerm)) {
+                        post.style.display = 'block';
+                        visibleCount++;
+                    } else {
+                        post.style.display = 'none';
+                    }
+                });
+                
+                if (visibleCount === 0) {
+                    postsList.style.display = 'none';
+                    noResults.style.display = 'block';
                 } else {
-                    post.style.display = 'none';
+                    postsList.style.display = 'block';
+                    noResults.style.display = 'none';
+                }
+            }
+            
+            function clearSearch() {
+                searchInput.value = '';
+                allPosts.forEach(post => {
+                    post.style.display = 'block';
+                });
+                postsList.style.display = 'block';
+                noResults.style.display = 'none';
+                searchInput.focus();
+            }
+            
+            // Event listeners
+            searchButton.addEventListener('click', performSearch);
+            clearSearchBtn.addEventListener('click', clearSearch);
+            
+            searchInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    performSearch();
                 }
             });
-
-            noResults.style.display = visibleCount === 0 ? 'block' : 'none';
-        }
-
-        searchButton.addEventListener('click', performSearch);
-        searchInput.addEventListener('keypress', e => e.key === 'Enter' && performSearch());
-        searchInput.addEventListener('input', () => {
-            clearTimeout(searchTimeout);
-            searchTimeout = setTimeout(performSearch, 300);
+            
+            searchInput.addEventListener('input', function() {
+                clearTimeout(this.searchTimeout);
+                this.searchTimeout = setTimeout(performSearch, 200);
+            });
+            
+            searchInput.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    clearSearch();
+                }
+            });
         });
-    }
-
-
-    // ===================================
-    //  BAŞA DÖN DÜĞMESİ
-    // ===================================
-    const backToTopButton = document.getElementById('back-to-top');
-    if (backToTopButton) {
-        window.addEventListener('scroll', () => {
-            backToTopButton.style.display = window.pageYOffset > 300 ? 'block' : 'none';
-        });
-        backToTopButton.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    }
-});
-</script>
+    </script>
 </body>
 </html>
