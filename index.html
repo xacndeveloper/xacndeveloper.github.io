@@ -1,56 +1,23 @@
 <!DOCTYPE html>
-<html lang="tr" data-theme="light"> <!-- data-theme eklendi -->
+<html lang="tr" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Xacn Blog - Teknoloji rehberleri ve makaleler</title>
     
-    <!-- Meta Etiketleri (Değişiklik yok) -->
+    <!-- Meta Etiketleri -->
     <meta name="description" content="Teknoloji rehberleri ve makaleler">
-    <meta name="keywords" content="teknoloji, rehber, arsiv">
-    <meta name="author" content="Görkem Çalışkan">
-    <meta name="robots" content="index, follow">
-    <meta name="language" content="tr">
-    <meta property="og:title" content="Xacn Blog">
-    <meta property="og:description" content="Teknoloji rehberleri ve makaleler">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://xacndeveloper.github.io">
-    <meta property="og:site_name" content="Xacn Blog">
-    <meta property="og:locale" content="tr_TR">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Xacn Blog">
-    <meta name="twitter:description" content="Teknoloji rehberleri ve makaleler">
-    
-    <!-- Favicon (Değişiklik yok) -->
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    
-    <!-- Manifest, Theme Color, Canonical, RSS (Değişiklik yok) -->
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#ffffff"> <!-- Tema rengi değiştirilebilir -->
+    <!-- Diğer meta etiketleriniz buraya -->
     <link rel="canonical" href="https://xacndeveloper.github.io">
-    <link rel="alternate" type="application/rss+xml" title="Xacn Blog RSS Feed" href="https://xacndeveloper.github.io/rss.xml">
     
     <!-- Stylesheets -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     
-    <!-- Structured Data (Değişiklik yok) -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Blog",
-        "name": "Xacn Blog",
-        "description": "Teknoloji rehberleri ve makaleler",
-        "url": "https://xacndeveloper.github.io",
-        "author": { "@type": "Person", "name": "Görkem Çalışkan" },
-        "inLanguage": "tr"
-    }
-    </script>
+    <!-- Head içindeki diğer linkleriniz (favicon, manifest vb.) -->
 </head>
 <body>
     <div class="container">
-        <!-- YENİ: Site Başlığı ve Tema Değiştirici -->
         <header class="site-header">
             <h1 class="blog-title">BLOG</h1>
             <button id="theme-switcher" class="theme-switcher" aria-label="Temayı Değiştir">
@@ -62,18 +29,78 @@
             <a href="#"><i class="fab fa-facebook-f"></i></a>
             <a href="#"><i class="fab fa-twitter"></i></a>
             <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
-            <a href="#"><i class="fab fa-github"></i></a>
+            <!-- Diğer sosyal ikonlarınız -->
         </div>
+
         <div class="search-container">
             <input type="text" id="searchInput" placeholder="Makalelerde ara..." class="search-input">
             <button id="searchButton" class="search-button">
                 <i class="fas fa-search"></i>
             </button>
         </div>
+
         <hr class="divider">
+
         <div id="posts-list">
+            <!-- 
+                
+            <a href="posts/windows-11-KB5063878-guncellemesi-kaldirma-duzeltme.html" class="post-link">
+                <h2>Windows 11 Kb5063878 Guncellemesi Kaldirma Duzeltme</h2>
+                <p></p>
+            </a>
+            
+            <a href="posts/windows-11-10-game-streaming-kurulum.html" class="post-link">
+                <h2>Windows 11 10 Game Streaming Kurulum</h2>
+                <p></p>
+            </a>
+            
+            <a href="posts/windows-11-10-microsoft-office-kurulumu.html" class="post-link">
+                <h2>Windows 11 10 Microsoft Office Kurulumu</h2>
+                <p></p>
+            </a>
+            
+            <a href="posts/android-icin-custom-ROM-yukleme-rehberi.html" class="post-link">
+                <h2>Android Icin Custom Rom Yukleme Rehberi</h2>
+                <p></p>
+            </a>
+            
+            <a href="posts/windows-11-10-baslat-menusu-acilmiyor-cozum.html" class="post-link">
+                <h2>Windows 11 10 Baslat Menusu Acilmiyor Cozum</h2>
+                <p></p>
+            </a>
+            
+            <a href="posts/windows-11-10-kara-ekran-ve-imlec.html" class="post-link">
+                <h2>Windows 11 10 Kara Ekran Ve Imlec</h2>
+                <p></p>
+            </a>
+            
+            <a href="posts/windows-11-10-kurulumda-diskler-gozukmuyor.html" class="post-link">
+                <h2>Windows 11 10 Kurulumda Diskler Gozukmuyor</h2>
+                <p></p>
+            </a>
+            
+            <a href="posts/windows-11-10-retail-lisans-calismiyor.html" class="post-link">
+                <h2>Windows 11 10 Retail Lisans Calismiyor</h2>
+                <p></p>
+            </a>
+            
+            <a href="posts/windows-11-10-yukleme-yeniden-baslat-hatasi-cozum.html" class="post-link">
+                <h2>Windows 11 10 Yukleme Yeniden Baslat Hatasi Cozum</h2>
+                <p></p>
+            </a>
+             DEĞİŞKENİNİZ BU FORMATTA HTML OLUŞTURMALIDIR:
+
+                <a href="posts/post-url.html" class="post-link">
+                    <p class="post-card-meta">{{POST_DATE}} · {{POST_READ_TIME}}</p>
+                    <h2>{{POST_TITLE}}</h2>
+                    <p>{{POST_DESCRIPTION}}</p>
+                </a>
+                <a href="posts/post-url-2.html" class="post-link">
+                    <p class="post-card-meta">20 Ağustos 2025 · 5 dakika okuma</p>
+                    <h2>İkinci Makale Başlığı</h2>
+                    <p>Bu da ikinci makalenin kısa açıklamasıdır.</p>
+                </a>
+            -->
             
             <a href="posts/windows-11-KB5063878-guncellemesi-kaldirma-duzeltme.html" class="post-link">
                 <h2>Windows 11 Kb5063878 Guncellemesi Kaldirma Duzeltme</h2>
@@ -121,28 +148,28 @@
             </a>
             
         </div>
+        
         <div id="no-results" class="no-results" style="display: none;">
-            <div class="no-results-content">
-                <i class="fas fa-search"></i>
-                <h3>Sonuç bulunamadı</h3>
-                <p>Aradığınız terime uygun makale bulunamadı.</p>
-                <button id="clearSearch" class="clear-search-btn">Aramayı temizle</button>
-            </div>
+            <h3>Sonuç bulunamadı</h3>
+            <p>Aradığınız terime uygun makale bulunamadı.</p>
         </div>
+
         <hr class="divider">
+        
         <footer>
             <p>Tüm Hakları Saklıdır</p>
-            <p><a href="rss.xml" class="rss-link"><i class="fas fa-rss"></i> RSS</a></p>
         </footer>
     </div>
     
-    <!-- YENİ: Başa Dön Düğmesi -->
     <button id="back-to-top" aria-label="Başa Dön">
         <i class="fas fa-arrow-up"></i>
     </button>
-	<script>
     
-    document.addEventListener('DOMContentLoaded', function() {
+    
+</body>
+</html>
+	<script>
+ document.addEventListener('DOMContentLoaded', function() {
     
     // ===================================
     //  TEMA DEĞİŞTİRİCİ (DARK/LIGHT MODE)
@@ -151,14 +178,12 @@
     const sunIcon = '<i class="fas fa-sun"></i>';
     const moonIcon = '<i class="fas fa-moon"></i>';
 
-    // Sayfa yüklendiğinde kayıtlı temayı uygula
     const currentTheme = localStorage.getItem('theme') || 'light';
     document.documentElement.setAttribute('data-theme', currentTheme);
     if (themeSwitcher) {
         themeSwitcher.innerHTML = currentTheme === 'dark' ? sunIcon : moonIcon;
     }
 
-    // Düğmeye tıklandığında temayı değiştir
     if (themeSwitcher) {
         themeSwitcher.addEventListener('click', () => {
             let theme = document.documentElement.getAttribute('data-theme');
@@ -170,7 +195,7 @@
                 themeSwitcher.innerHTML = sunIcon;
             }
             document.documentElement.setAttribute('data-theme', theme);
-            localStorage.setItem('theme', theme); // Tercihi kaydet
+            localStorage.setItem('theme', theme);
         });
     }
 
@@ -180,34 +205,32 @@
     // ===================================
     const postsList = document.getElementById('posts-list');
     if (postsList) {
-        // 1. Postları tersine çevirerek yenilerin üste gelmesini sağlar
+        // Postları tersine çevir
         const posts = Array.from(postsList.children);
         posts.reverse();
-        postsList.innerHTML = ''; // Listeyi temizle
+        postsList.innerHTML = ''; 
         posts.forEach(post => postsList.appendChild(post));
 
-        // 2. Gelişmiş arama fonksiyonalitesi
+        const allPosts = Array.from(postsList.querySelectorAll('.post-link'));
+
+        // Post kartlarına kademeli animasyon gecikmesi ekle
+        allPosts.forEach((post, index) => {
+            post.style.animationDelay = `${index * 100}ms`;
+        });
+
+        // Arama fonksiyonalitesi
         const searchInput = document.getElementById('searchInput');
         const searchButton = document.getElementById('searchButton');
         const noResults = document.getElementById('no-results');
-        const clearSearchBtn = document.getElementById('clearSearch');
-        const allPosts = Array.from(postsList.querySelectorAll('.post-link'));
         let searchTimeout;
 
         function performSearch() {
             const searchTerm = searchInput.value.toLowerCase().trim();
-            
-            if (searchTerm === '') {
-                allPosts.forEach(post => post.style.display = 'block');
-                postsList.style.display = 'grid'; // grid olarak değiştirildi
-                noResults.style.display = 'none';
-                return;
-            }
-
             let visibleCount = 0;
+            
             allPosts.forEach(post => {
                 const title = post.querySelector('h2').textContent.toLowerCase();
-                const description = post.querySelector('p').textContent.toLowerCase();
+                const description = post.querySelector('p:last-of-type').textContent.toLowerCase();
                 
                 if (title.includes(searchTerm) || description.includes(searchTerm)) {
                     post.style.display = 'block';
@@ -217,29 +240,15 @@
                 }
             });
 
-            if (visibleCount === 0) {
-                postsList.style.display = 'none';
-                noResults.style.display = 'block';
-            } else {
-                postsList.style.display = 'grid'; // grid olarak değiştirildi
-                noResults.style.display = 'none';
-            }
-        }
-
-        function clearSearch() {
-            searchInput.value = '';
-            performSearch();
-            searchInput.focus();
+            noResults.style.display = visibleCount === 0 ? 'block' : 'none';
         }
 
         searchButton.addEventListener('click', performSearch);
-        clearSearchBtn.addEventListener('click', clearSearch);
         searchInput.addEventListener('keypress', e => e.key === 'Enter' && performSearch());
         searchInput.addEventListener('input', () => {
             clearTimeout(searchTimeout);
-            searchTimeout = setTimeout(performSearch, 300); // Daha yumuşak bir arama için süre ayarı
+            searchTimeout = setTimeout(performSearch, 300);
         });
-        searchInput.addEventListener('keydown', e => e.key === 'Escape' && clearSearch());
     }
 
 
@@ -249,13 +258,8 @@
     const backToTopButton = document.getElementById('back-to-top');
     if (backToTopButton) {
         window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTopButton.style.display = 'block';
-            } else {
-                backToTopButton.style.display = 'none';
-            }
+            backToTopButton.style.display = window.pageYOffset > 300 ? 'block' : 'none';
         });
-
         backToTopButton.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
