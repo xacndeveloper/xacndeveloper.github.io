@@ -99,27 +99,50 @@
             <div class="post-content">
                 <h2 id="Giriş">Giriş</h2>
 
-<p>Esenler! Bildiğiniz üzere <strong>Microsoft</strong> kısa vakit önce <strong>KB5063878</strong> adlı bir kalite güncellemesi yayınlamıştı. Fakat bu güncelleme, başta <strong>KIOXIA</strong> olmak üzere <strong>Samsung, Kıngston</strong> vb. <strong>SSD</strong> üreticilerinin <strong>bazı modellerine</strong> de etki ettiği görülmüştür. Bu etkilerden bazıları: <strong>SSD yavaşlaması, SSD'nin kalıcı bozulması, SSD'nin geçici olarak kullanılamaz hale gelmesi vb.</strong></p>
+<p>Merhaba! Bildiğiniz üzere <strong>Microsoft</strong> kısa süre önce <strong>KB5063878</strong> adlı bir kalite güncellemesi yayınladı. Ancak bu güncellemenin, başta <strong>KIOXIA</strong> olmak üzere <strong>Samsung, Kingston</strong> gibi <strong>SSD</strong> üreticilerinin bazı modellerinde sorunlara yol açtığı görülmüştür. Bu sorunlar arasında <strong>SSD yavaşlaması, kalıcı bozulma, geçici olarak kullanılamaz hale gelme</strong> gibi durumlar yer alıyor.</p>
 
-<h2 id="Peki biz ne yapacağız?">Peki biz ne yapacağız?</h2>
+<hr>
 
-<p>Şimdi öncelikle sakin olun. Bu güncelleme <strong>Windows 11 24H2'ye ait bir kalite güncellemesidir.</strong> Eğer sizde <strong>Windows 11 23H2 veya daha altı kuruluysa sizde bir sorun yok ama güncellemeleri kapatmanızı öneririm.</strong> Şimdi <strong>24H2</strong> kullananlara gelelim. Bu güncelleme genel olarak <strong>NVME</strong> ve <strong>NVME2 SSD'leri hedef almış gibi gözüküyor.</strong> Fakat şunuda unutmamak lazım. Bu güncelleme her SSD'yi bozacak diye bir şey yok! Eğer siz bir sorun, yavaşlama, kasma, yazım hızı düşme vb. durum görmediyseniz güncellemeyi kullanmaya devam edebilirsiniz. Fakat <strong>Microsoft</strong> bu sorunu düzeltecek resmi bir yama yayınlayana kadar <strong>50GB</strong> veya daha üstü <strong>SSD'ye yük bindirecek işlemlerde bulunmayın!</strong> Peki eğer sizin cihazınızda kasma, donma, SSD'nin sağlığı düşmesi vb. durumlar söz konusu ise ne yapacağız? Hemen anlatayım:</p>
+<h2 id="Ne Yapmalıyız?">Ne Yapmalıyız?</h2>
+
+<p>Öncelikle sakin olun. Bu güncelleme, <strong>Windows 11 24H2</strong> için yayınlanmış bir kalite güncellemesidir. Eğer sizde <strong>Windows 11 23H2 veya daha eski bir sürüm</strong> kuruluysa, doğrudan bir sorun yaşamazsınız; ancak güncellemeleri kapatmanız önerilir.</p>
+
+<h3 id="24H2 Kullananlar İçin:">24H2 Kullananlar İçin:</h3>
+
+<p>Bu güncelleme genel olarak <strong>NVMe ve NVMe2 SSD’leri</strong> hedef alıyor gibi gözüküyor. Ancak unutmayın: Bu güncelleme her SSD’yi bozacak diye bir şey yok. Eğer cihazınızda <strong>yavaşlama, kasma veya yazım hızı düşmesi</strong> gibi bir sorun yaşamıyorsanız, güncellemeyi kullanmaya devam edebilirsiniz.</p>
+
+<p>Fakat <strong>Microsoft</strong>, bu sorunu düzeltecek resmi bir yama yayınlayana kadar <strong>50 GB ve üzeri SSD’lere ağır yük bindiren işlemlerden kaçının.</strong></p>
+
+<p>Eğer cihazınızda kasma, donma veya SSD sağlığında düşüş gibi sorunlar varsa, aşağıdaki yolları izleyebilirsiniz:</p>
+
+<hr>
+
+<h3 id="1. Yol: Güncellemeyi Kaldırmak">1. Yol: Güncellemeyi Kaldırmak</h3>
 
 <ol>
-<li><strong>Yol:</strong></li>
+<li><strong>Ayarlar > Güncellemeler</strong> bölümüne gidin.</li>
+<li><strong>Güncellemeleri kaldır</strong> kısmından <strong>KB5063878</strong> adlı kalite güncellemesini seçip kaldırın.</li>
+<li>Bilgisayarınızı yeniden başlatın.</li>
 </ol>
 
-<p>Ayarlardan güncellemeleri kaldır bölümünden kalite güncellemeleri bölümüne gelip <strong>KB5063878 adlı güncellemeyi</strong> bilgisayarınızdan kaldırın ve yeniden başlatın. Eğer güncelleme orada gözükmüyorsa veya kaldıramıyorsanız bir yol daha var.</p>
+<blockquote>Not: Güncelleme listede görünmüyorsa veya kaldırılamıyorsa, ikinci yolu deneyin.</blockquote>
+
+<hr>
+
+<h3 id="2. Yol: Temiz Kurulum Yapmak">2. Yol: Temiz Kurulum Yapmak</h3>
 
 <ol>
-<li><strong>Yol:</strong></li>
+<li>İnternetten güvenilir bir kaynaktan <strong>Windows 11 23H2 ISO</strong> dosyasını indirin.</li>
+<li><strong>Rufus</strong> programı ile ek özelleştirme yapmadan temiz bir kurulum gerçekleştirin.</li>
+<li>Kurulumdan sonra yalnızca gerekli Windows güncellemelerini yükleyip, güncellemeleri duraklatabilirsiniz.</li>
 </ol>
 
-<p>İnternetten <strong>Windows 11 23H2</strong> sürümünün <strong>ISO</strong> imajını güvenli bir kaynaktan indirip <strong>Rufus</strong> programının yardımıyla hiçbir ek özelleştirme yapmadan temiz bir biçimde kurulumunu yapıp kullanabilirsiniz. kurulumu yaptıktan sonra da sadece gerekli <strong>Windows</strong> güncellemelerini yapıp güncellemeleri duraklatabilirsiniz.</p>
+<blockquote>Eğer kurulum sırasında diskler görünmüyorsa, aşağıdaki rehberi kullanarak sorunu çözebilirsiniz:</blockquote>
+<a href="https://xacndeveloper.github.io/posts/windows-11-10-kurulumda-diskler-gozukmuyor.html" target="_blank">Windows 11/10 Kurulumda Diskler Görünmüyor</a>
 
-<p>Eğer kurulumda diskler gözükmüyorsa aşağıdaki linkten kendi hazırladığım rehbere ulaşarak sorununuzu çözebilirsiniz:<br>[https://xacndeveloper.github.io/posts/windows-11-10-kurulumda-diskler-gozukmuyor.html] (Rehberin linki)</p>
+<hr>
 
-<p>Umarım bu rehber size yardımcı olmuştur. Bu gönderiyi arkadaşlarınız arasında veya ihtiyacı olan kişilere paylaşıp bize katkıda bulunabilirsiniz. Eğer bir sorunuz vb. varsa yorumlar kısmından belirtebilirsiniz. Elimden geldiği kadar yardımcı olmaya çalışacağım. İyi günler dilerim.</p>
+<p>Umarım bu rehber size yardımcı olur. Bu gönderiyi ihtiyacı olan arkadaşlarınızla paylaşarak katkıda bulunabilirsiniz. Herhangi bir sorunuz olursa yorumlar kısmından belirtebilirsiniz; elimden geldiğince yardımcı olacağım. İyi günler!</p>
             </div>
         </article>
 		<br>
