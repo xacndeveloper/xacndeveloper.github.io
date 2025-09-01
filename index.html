@@ -37,8 +37,8 @@
     <link rel="manifest" href="manifest.json">
     
     <!-- Theme Color -->
-    <meta name="theme-color" content="#ffffff">
-    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#000000">
+    <meta name="msapplication-TileColor" content="#000000">
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://xacndeveloper.github.io">
@@ -68,18 +68,18 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="blog-title"><a href="index.html">BLOG</a></h1>
+        <h1 class="blog-title">BLOG</h1>
         <div class="social-icons">
-            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
         </div>
         <div class="search-container">
             <input type="text" id="searchInput" placeholder="Makalelerde ara..." class="search-input">
-            <button id="searchButton" class="search-button" aria-label="Ara">
+            <button id="searchButton" class="search-button">
                 <i class="fas fa-search"></i>
             </button>
         </div>
@@ -155,14 +155,7 @@
             const posts = Array.from(postsList.children);
             posts.reverse();
             postsList.innerHTML = ''; // Listeyi temizle
-            
-            // Yeni bir div içinde postları ekle
-            posts.forEach(post => {
-                const postContainer = document.createElement('div');
-                postContainer.className = 'post-container';
-                postContainer.appendChild(post);
-                postsList.appendChild(postContainer);
-            });
+            posts.forEach(post => postsList.appendChild(post)); // Ters sırada ekle
 
             // 2. Gelişmiş arama fonksiyonalitesi
             const searchInput = document.getElementById('searchInput');
@@ -170,50 +163,48 @@
             const noResults = document.getElementById('no-results');
             const clearSearchBtn = document.getElementById('clearSearch');
             const allPosts = Array.from(postsList.querySelectorAll('.post-link'));
-            const allPostContainers = Array.from(postsList.querySelectorAll('.post-container'));
             
             function performSearch() {
                 const searchTerm = searchInput.value.toLowerCase().trim();
                 
                 if (searchTerm === '') {
-                    allPostContainers.forEach(container => {
-                        container.style.display = 'block';
+                    allPosts.forEach(post => {
+                        post.style.display = 'block';
                     });
-                    postsList.style.display = 'flex';
+                    postsList.style.display = 'block';
                     noResults.style.display = 'none';
                     return;
                 }
                 
                 let visibleCount = 0;
                 
-                allPosts.forEach((post, index) => {
+                allPosts.forEach(post => {
                     const title = post.querySelector('h2').textContent.toLowerCase();
                     const description = post.querySelector('p').textContent.toLowerCase();
-                    const container = allPostContainers[index];
                     
                     if (title.includes(searchTerm) || description.includes(searchTerm)) {
-                        container.style.display = 'block';
+                        post.style.display = 'block';
                         visibleCount++;
                     } else {
-                        container.style.display = 'none';
+                        post.style.display = 'none';
                     }
                 });
                 
                 if (visibleCount === 0) {
                     postsList.style.display = 'none';
-                    noResults.style.display = 'flex';
+                    noResults.style.display = 'block';
                 } else {
-                    postsList.style.display = 'flex';
+                    postsList.style.display = 'block';
                     noResults.style.display = 'none';
                 }
             }
             
             function clearSearch() {
                 searchInput.value = '';
-                allPostContainers.forEach(container => {
-                    container.style.display = 'block';
+                allPosts.forEach(post => {
+                    post.style.display = 'block';
                 });
-                postsList.style.display = 'flex';
+                postsList.style.display = 'block';
                 noResults.style.display = 'none';
                 searchInput.focus();
             }
