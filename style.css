@@ -15,9 +15,10 @@
     --border: #e0e0e0;
     --shadow: rgba(0, 0, 0, 0.05);
     --transition: all 0.2s ease;
-    --radius: 6px;
+    --radius: 8px;
     --max-width: 800px;
     --card-spacing: 1.2rem;
+    --card-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 html {
@@ -168,10 +169,14 @@ body {
     position: relative;
     overflow: hidden;
     background: var(--lighter);
+    box-shadow: var(--card-shadow);
+    margin-bottom: 0;
 }
 
 .post-link:hover {
     border-color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .post-link h2 {
@@ -457,19 +462,22 @@ footer p {
     opacity: 0.9;
 }
 
-/* Responsive Tasarım */
+/* Responsive Tasarım - Mobil Uygulama Hissi için Geliştirmeler */
 @media (max-width: 768px) {
     body {
-        padding: 15px;
+        padding: 0;
+        background-color: var(--lighter);
     }
     
     .container {
-        padding: 0;
+        padding: 0 1rem;
+        max-width: 100%;
     }
     
     .blog-title {
-        font-size: 2.2rem;
+        font-size: 2rem;
         margin: 1.5rem 0 1rem;
+        padding-top: 0.5rem;
     }
     
     .blog-header a {
@@ -477,38 +485,51 @@ footer p {
     }
     
     .social-icons {
-        gap: 0.8rem;
-        margin: 1.5rem 0;
+        gap: 0.6rem;
+        margin: 1.2rem 0;
     }
     
     .social-icons a {
-        width: 36px;
-        height: 36px;
+        width: 40px;
+        height: 40px;
         font-size: 1.1rem;
     }
     
     .search-container {
-        flex-direction: column;
-        gap: 0.8rem;
+        flex-direction: row;
+        gap: 0.6rem;
         margin: 1.5rem 0;
+        padding: 0 0.5rem;
     }
     
     .search-input {
         width: 100%;
         max-width: none;
+        padding: 1rem 1.2rem;
+        font-size: 16px; /* iOS zoom'u önlemek için */
+        border-radius: 50px;
+        background: var(--light);
+        border: 1px solid transparent;
     }
     
     .search-button {
-        width: 100%;
-        max-width: 200px;
+        width: auto;
+        padding: 1rem;
+        border-radius: 50%;
+        aspect-ratio: 1/1;
     }
     
     .post-link {
-        padding: 1.2rem;
+        padding: 1.5rem;
+        border-radius: 12px;
+        margin-bottom: 0.8rem;
+        border: none;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     }
     
     .post-link h2 {
         font-size: 1.3rem;
+        margin-bottom: 0.5rem;
     }
     
     .post-link p {
@@ -516,7 +537,7 @@ footer p {
     }
     
     .no-results {
-        padding: 2rem 1rem;
+        padding: 3rem 1rem;
     }
     
     .no-results-content i {
@@ -530,6 +551,8 @@ footer p {
     .clear-search-btn {
         width: 100%;
         max-width: 200px;
+        border-radius: 50px;
+        padding: 1rem;
     }
     
     .post-title {
@@ -559,16 +582,49 @@ footer p {
     .post-content pre {
         padding: 1rem;
         font-size: 0.9rem;
+        border-radius: 8px;
+    }
+    
+    /* Mobilde uygulama benzeri sabit arama çubuğu */
+    .search-container {
+        position: sticky;
+        top: 0.5rem;
+        z-index: 100;
+        background: var(--lighter);
+        padding: 0.5rem;
+        border-radius: 50px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        margin: 1rem 0;
+    }
+    
+    /* Mobilde kartlar arası boşluk */
+    #posts-list {
+        gap: 1rem;
+        padding-bottom: 1rem;
+    }
+    
+    /* Footer mobil düzenlemesi */
+    footer {
+        margin-top: 2rem;
+        padding: 1.5rem 0;
+        background: var(--light);
+        border-radius: 16px 16px 0 0;
+        margin-bottom: 0.5rem;
     }
 }
 
 @media (max-width: 480px) {
     body {
-        padding: 10px;
+        padding: 0;
+    }
+    
+    .container {
+        padding: 0 0.8rem;
     }
     
     .blog-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        margin: 1.2rem 0 0.8rem;
     }
     
     .blog-header a {
@@ -576,17 +632,17 @@ footer p {
     }
     
     .social-icons a {
-        width: 34px;
-        height: 34px;
+        width: 38px;
+        height: 38px;
         font-size: 1rem;
     }
     
     .search-input {
-        padding: 0.8rem 1rem;
+        padding: 0.9rem 1.2rem;
     }
     
     .search-button {
-        padding: 0.8rem 1rem;
+        padding: 0.9rem;
     }
     
     .post-title {
@@ -598,6 +654,32 @@ footer p {
     }
     
     :root {
-        --card-spacing: 1rem;
+        --card-spacing: 0.8rem;
     }
+    
+    /* Daha da mobil uyumlu kartlar */
+    .post-link {
+        padding: 1.2rem;
+        border-radius: 12px;
+    }
+    
+    /* Daha iyi dokunma hedefleri */
+    .social-icons a, 
+    .search-button, 
+    .clear-search-btn {
+        min-height: 44px;
+        min-width: 44px;
+    }
+}
+
+/* Arama sonrası düzgün görünüm için */
+#posts-list:has(.post-link[style*="display: flex"]) {
+    display: flex;
+    flex-direction: column;
+    gap: var(--card-spacing);
+}
+
+/* Yumuşak geçişler için */
+.post-link {
+    transition: all 0.3s ease;
 }
