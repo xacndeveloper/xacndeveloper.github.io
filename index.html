@@ -37,13 +37,8 @@
     <link rel="manifest" href="manifest.json">
     
     <!-- Theme Color -->
-    <meta name="theme-color" content="#3498db">
-    <meta name="msapplication-TileColor" content="#3498db">
-    
-    <!-- iOS Safari specifics -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-title" content="Xacn Blog">
+    <meta name="theme-color" content="#000000">
+    <meta name="msapplication-TileColor" content="#000000">
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://xacndeveloper.github.io">
@@ -51,11 +46,8 @@
     <!-- RSS Feed -->
     <link rel="alternate" type="application/rss+xml" title="Xacn Blog RSS Feed" href="https://xacndeveloper.github.io/rss.xml">
     
-    <!-- Preload critical resources -->
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"></noscript>
-    
-    <!-- Main Stylesheet -->
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     
     <!-- Structured Data -->
@@ -73,106 +65,27 @@
         "inLanguage": "tr"
     }
     </script>
-    
-    <style>
-        /* Critical CSS */
-        .loading-spinner {
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            border: 3px solid #f3f3f3;
-            border-top: 3px solid #3498db;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-        
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        body.loading * {
-            pointer-events: none;
-        }
-        
-        .post-link {
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 0.6s ease forwards;
-        }
-        
-        .post-link.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-    </style>
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1 class="blog-title">BLOG</h1>
-            <nav class="social-icons" role="navigation" aria-label="Sosyal medya bağlantıları">
-                <a href="#" aria-label="Facebook" title="Facebook'ta takip edin">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="#" aria-label="Twitter" title="Twitter'da takip edin">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="#" aria-label="Instagram" title="Instagram'da takip edin">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="#" aria-label="LinkedIn" title="LinkedIn'de bağlantı kurun">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="#" aria-label="YouTube" title="YouTube kanalımız">
-                    <i class="fab fa-youtube"></i>
-                </a>
-                <a href="#" aria-label="GitHub" title="GitHub profilimiz">
-                    <i class="fab fa-github"></i>
-                </a>
-            </nav>
-        </header>
-        
-        <section class="search-section" aria-label="Arama bölümü">
-            <div class="search-container">
-                <input 
-                    type="search" 
-                    id="searchInput" 
-                    placeholder="Makalelerde ara..." 
-                    class="search-input"
-                    autocomplete="off"
-                    spellcheck="false"
-                    aria-label="Makalelerde ara"
-                    aria-describedby="search-help"
-                >
-                <button id="searchButton" class="search-button" aria-label="Ara" title="Arama yap">
-                    <i class="fas fa-search" aria-hidden="true"></i>
-                </button>
-                <div id="search-spinner" class="search-spinner" style="display: none;">
-                    <div class="loading-spinner"></div>
-                </div>
-            </div>
-            <div id="search-help" class="search-help">
-                <small>İpucu: Başlık ve içerikte arama yapar. ESC tuşu ile temizleyebilirsiniz.</small>
-            </div>
-        </section>
-        
+        <h1 class="blog-title">BLOG</h1>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+        </div>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Makalelerde ara..." class="search-input">
+            <button id="searchButton" class="search-button">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
         <hr class="divider">
-        
-        <main>
-            <div id="search-stats" class="search-stats" style="display: none;" role="status" aria-live="polite">
-                <span id="results-count">0</span> sonuç bulundu
-            </div>
+        <div id="posts-list">
             
-            <section id="posts-list" aria-label="Blog yazıları" class="posts-grid">
-                
             <a href="posts/windows-11-KB5063878-guncellemesi-kaldirma-duzeltme.html" class="post-link">
                 <h2>Windows 11 Kb5063878 Guncellemesi Kaldirma Duzeltme</h2>
                 <p></p>
@@ -218,473 +131,104 @@
                 <p></p>
             </a>
             
-            </section>
-            
-            <div id="no-results" class="no-results" style="display: none;" role="alert" aria-live="polite">
-                <div class="no-results-content">
-                    <div class="no-results-icon">
-                        <i class="fas fa-search" aria-hidden="true"></i>
-                    </div>
-                    <h3>Sonuç bulunamadı</h3>
-                    <p>Aradığınız "<span id="search-term"></span>" terimine uygun makale bulunamadı.</p>
-                    <div class="no-results-suggestions">
-                        <p>Öneriler:</p>
-                        <ul>
-                            <li>Yazım hatası olup olmadığını kontrol edin</li>
-                            <li>Daha kısa veya genel terimler deneyin</li>
-                            <li>Farklı kelimeler kullanın</li>
-                        </ul>
-                    </div>
-                    <button id="clearSearch" class="clear-search-btn" aria-label="Aramayı temizle">
-                        <i class="fas fa-times" aria-hidden="true"></i>
-                        Aramayı temizle
-                    </button>
-                </div>
+        </div>
+        <div id="no-results" class="no-results" style="display: none;">
+            <div class="no-results-content">
+                <i class="fas fa-search"></i>
+                <h3>Sonuç bulunamadı</h3>
+                <p>Aradığınız terime uygun makale bulunamadı.</p>
+                <button id="clearSearch" class="clear-search-btn">Aramayı temizle</button>
             </div>
-            
-            <div id="loading-more" class="loading-more" style="display: none;">
-                <div class="loading-spinner"></div>
-                <span>Daha fazla makale yükleniyor...</span>
-            </div>
-        </main>
-        
+        </div>
         <hr class="divider">
-        
-        <footer role="contentinfo">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <p>&copy; 2024 <strong>Xacn Blog</strong> - Tüm Hakları Saklıdır</p>
-                </div>
-                <div class="footer-section">
-                    <nav class="footer-nav" aria-label="Alt navigasyon">
-                        <a href="privacy.html" title="Gizlilik Politikası">Gizlilik</a>
-                        <a href="terms.html" title="Kullanım Şartları">Şartlar</a>
-                        <a href="contact.html" title="İletişim">İletişim</a>
-                        <a href="rss.xml" class="rss-link" aria-label="RSS Feed" title="RSS beslemesi">
-                            <i class="fas fa-rss" aria-hidden="true"></i> 
-                            RSS
-                        </a>
-                    </nav>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>Son güncelleme: <time id="last-updated"></time></p>
-            </div>
+        <footer>
+            <p>Tüm Hakları Saklıdır</p>
+            <p><a href="rss.xml" class="rss-link"><i class="fas fa-rss"></i> RSS</a></p>
         </footer>
     </div>
     
-    <!-- Back to top button -->
-    <button id="back-to-top" class="back-to-top" aria-label="Sayfa başına dön" title="Sayfa başına dön" style="display: none;">
-        <i class="fas fa-arrow-up" aria-hidden="true"></i>
-    </button>
-    
     <script>
-        // Modern JavaScript implementation with enhanced features
-        class BlogSearch {
-            constructor() {
-                this.elements = {
-                    postsList: document.getElementById('posts-list'),
-                    searchInput: document.getElementById('searchInput'),
-                    searchButton: document.getElementById('searchButton'),
-                    searchSpinner: document.getElementById('search-spinner'),
-                    noResults: document.getElementById('no-results'),
-                    clearSearchBtn: document.getElementById('clearSearch'),
-                    searchStats: document.getElementById('search-stats'),
-                    resultsCount: document.getElementById('results-count'),
-                    searchTerm: document.getElementById('search-term'),
-                    backToTop: document.getElementById('back-to-top'),
-                    lastUpdated: document.getElementById('last-updated')
-                };
-                
-                this.allPosts = [];
-                this.searchTimeout = null;
-                this.isSearching = false;
-                this.searchHistory = [];
-                this.animationQueue = [];
-                
-                this.init();
-            }
+        document.addEventListener('DOMContentLoaded', function() {
+            const postsList = document.getElementById('posts-list');
             
-            init() {
-                this.setupPosts();
-                this.bindEvents();
-                this.addLoadingAnimations();
-                this.setupAccessibility();
-                this.setLastUpdated();
-                this.restoreSearchState();
-            }
+            // 1. Postları tersine çevirerek yenilerin üste gelmesini sağlar
+            const posts = Array.from(postsList.children);
+            posts.reverse();
+            postsList.innerHTML = ''; // Listeyi temizle
+            posts.forEach(post => postsList.appendChild(post)); // Ters sırada ekle
+
+            // 2. Gelişmiş arama fonksiyonalitesi
+            const searchInput = document.getElementById('searchInput');
+            const searchButton = document.getElementById('searchButton');
+            const noResults = document.getElementById('no-results');
+            const clearSearchBtn = document.getElementById('clearSearch');
+            const allPosts = Array.from(postsList.querySelectorAll('.post-link'));
             
-            setupPosts() {
-                // Cache all posts for search
-                this.allPosts = Array.from(this.elements.postsList.querySelectorAll('.post-link'));
-                
-                // Add loading animation delays
-                this.allPosts.forEach((post, index) => {
-                    post.style.animationDelay = `${index * 0.1}s`;
-                    post.setAttribute('data-index', index);
-                });
-                
-                console.log(`Blog initialized with ${this.allPosts.length} posts`);
-            }
-            
-            bindEvents() {
-                // Search functionality
-                this.elements.searchButton?.addEventListener('click', () => {
-                    this.performSearch();
-                });
-                
-                this.elements.clearSearchBtn?.addEventListener('click', () => {
-                    this.clearSearch();
-                });
-                
-                // Search input events
-                this.elements.searchInput?.addEventListener('keypress', (e) => {
-                    if (e.key === 'Enter') {
-                        e.preventDefault();
-                        this.performSearch();
-                    }
-                });
-                
-                // Real-time search with debounce
-                this.elements.searchInput?.addEventListener('input', () => {
-                    this.debounceSearch();
-                });
-                
-                // Keyboard shortcuts
-                document.addEventListener('keydown', (e) => {
-                    if (e.key === 'Escape') {
-                        this.clearSearch();
-                    } else if (e.ctrlKey && e.key === 'f') {
-                        e.preventDefault();
-                        this.elements.searchInput?.focus();
-                    }
-                });
-                
-                // Focus management
-                this.elements.searchInput?.addEventListener('focus', () => {
-                    this.elements.searchInput.parentElement.classList.add('focused');
-                });
-                
-                this.elements.searchInput?.addEventListener('blur', () => {
-                    setTimeout(() => {
-                        if (!this.isSearching) {
-                            this.elements.searchInput.parentElement.classList.remove('focused');
-                        }
-                    }, 100);
-                });
-                
-                // Back to top button
-                window.addEventListener('scroll', this.throttle(() => {
-                    this.handleScroll();
-                }, 100));
-                
-                this.elements.backToTop?.addEventListener('click', () => {
-                    this.scrollToTop();
-                });
-                
-                // Post click analytics
-                this.allPosts.forEach(post => {
-                    post.addEventListener('click', (e) => {
-                        this.trackPostClick(post);
-                    });
-                });
-            }
-            
-            debounceSearch() {
-                clearTimeout(this.searchTimeout);
-                this.showSpinner(true);
-                
-                this.searchTimeout = setTimeout(() => {
-                    this.performSearch();
-                    this.showSpinner(false);
-                }, 300);
-            }
-            
-            performSearch() {
-                const searchTerm = this.elements.searchInput?.value.toLowerCase().trim() || '';
-                this.isSearching = searchTerm !== '';
-                
-                // Update search term display
-                if (this.elements.searchTerm) {
-                    this.elements.searchTerm.textContent = searchTerm;
-                }
+            function performSearch() {
+                const searchTerm = searchInput.value.toLowerCase().trim();
                 
                 if (searchTerm === '') {
-                    this.showAllPosts();
+                    allPosts.forEach(post => {
+                        post.style.display = 'block';
+                    });
+                    postsList.style.display = 'block';
+                    noResults.style.display = 'none';
                     return;
                 }
                 
-                // Add to search history
-                if (!this.searchHistory.includes(searchTerm)) {
-                    this.searchHistory.unshift(searchTerm);
-                    this.searchHistory = this.searchHistory.slice(0, 10); // Keep last 10 searches
-                }
-                
-                this.filterPosts(searchTerm);
-                this.saveSearchState(searchTerm);
-            }
-            
-            filterPosts(searchTerm) {
                 let visibleCount = 0;
-                const searchWords = searchTerm.split(' ').filter(word => word.length > 0);
                 
-                this.allPosts.forEach((post, index) => {
-                    const title = post.querySelector('h2')?.textContent.toLowerCase() || '';
-                    const description = post.querySelector('p')?.textContent.toLowerCase() || '';
-                    const tags = post.dataset.tags?.toLowerCase() || '';
-                    const content = `${title} ${description} ${tags}`;
+                allPosts.forEach(post => {
+                    const title = post.querySelector('h2').textContent.toLowerCase();
+                    const description = post.querySelector('p').textContent.toLowerCase();
                     
-                    // Check if all search words are present
-                    const matches = searchWords.every(word => 
-                        content.includes(word)
-                    );
-                    
-                    if (matches) {
-                        this.showPost(post, visibleCount);
+                    if (title.includes(searchTerm) || description.includes(searchTerm)) {
+                        post.style.display = 'block';
                         visibleCount++;
                     } else {
-                        this.hidePost(post);
+                        post.style.display = 'none';
                     }
                 });
                 
-                this.updateSearchResults(visibleCount, searchTerm);
-                this.toggleNoResults(visibleCount === 0);
+                if (visibleCount === 0) {
+                    postsList.style.display = 'none';
+                    noResults.style.display = 'block';
+                } else {
+                    postsList.style.display = 'block';
+                    noResults.style.display = 'none';
+                }
             }
             
-            showPost(post, index) {
-                post.style.display = 'block';
-                post.style.opacity = '0';
-                post.style.transform = 'translateY(20px)';
-                
-                // Animate in with staggered delay
-                setTimeout(() => {
-                    post.style.opacity = '1';
-                    post.style.transform = 'translateY(0)';
-                }, index * 50);
-            }
-            
-            hidePost(post) {
-                post.style.opacity = '0';
-                post.style.transform = 'translateY(-10px)';
-                
-                setTimeout(() => {
-                    post.style.display = 'none';
-                }, 200);
-            }
-            
-            showAllPosts() {
-                this.allPosts.forEach((post) => {
+            function clearSearch() {
+                searchInput.value = '';
+                allPosts.forEach(post => {
                     post.style.display = 'block';
-                    post.style.opacity = '1';
-                    post.style.transform = 'translateY(0)';
                 });
-                
-                this.updateSearchResults(this.allPosts.length);
-                this.toggleNoResults(false);
-                this.clearSearchState();
+                postsList.style.display = 'block';
+                noResults.style.display = 'none';
+                searchInput.focus();
             }
             
-            updateSearchResults(count, searchTerm = '') {
-                if (this.elements.resultsCount) {
-                    this.elements.resultsCount.textContent = count;
+            // Event listeners
+            searchButton.addEventListener('click', performSearch);
+            clearSearchBtn.addEventListener('click', clearSearch);
+            
+            searchInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    performSearch();
                 }
-                
-                if (this.elements.searchStats) {
-                    this.elements.searchStats.style.display = searchTerm ? 'block' : 'none';
+            });
+            
+            searchInput.addEventListener('input', function() {
+                clearTimeout(this.searchTimeout);
+                this.searchTimeout = setTimeout(performSearch, 200);
+            });
+            
+            searchInput.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    clearSearch();
                 }
-            }
-            
-            toggleNoResults(show) {
-                if (show) {
-                    this.elements.postsList.style.display = 'none';
-                    this.elements.noResults.style.display = 'block';
-                } else {
-                    this.elements.postsList.style.display = 'grid';
-                    this.elements.noResults.style.display = 'none';
-                }
-            }
-            
-            clearSearch() {
-                if (this.elements.searchInput) {
-                    this.elements.searchInput.value = '';
-                }
-                this.showAllPosts();
-                this.elements.searchInput?.focus();
-                
-                // Animation feedback
-                this.elements.clearSearchBtn?.classList.add('clicked');
-                setTimeout(() => {
-                    this.elements.clearSearchBtn?.classList.remove('clicked');
-                }, 150);
-            }
-            
-            showSpinner(show) {
-                if (this.elements.searchSpinner) {
-                    this.elements.searchSpinner.style.display = show ? 'block' : 'none';
-                }
-            }
-            
-            handleScroll() {
-                const scrolled = window.pageYOffset > 300;
-                
-                if (this.elements.backToTop) {
-                    this.elements.backToTop.style.display = scrolled ? 'block' : 'none';
-                }
-                
-                // Update scroll progress
-                const scrollPercent = (window.pageYOffset / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-                document.documentElement.style.setProperty('--scroll-progress', scrollPercent + '%');
-            }
-            
-            scrollToTop() {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            }
-            
-            trackPostClick(post) {
-                const title = post.querySelector('h2')?.textContent || 'Unknown';
-                console.log(`Post clicked: ${title}`);
-                
-                // Could integrate with analytics here
-                if (typeof gtag !== 'undefined') {
-                    gtag('event', 'post_click', {
-                        'event_category': 'engagement',
-                        'event_label': title
-                    });
-                }
-            }
-            
-            setupAccessibility() {
-                // Add ARIA labels dynamically
-                this.allPosts.forEach((post, index) => {
-                    post.setAttribute('aria-label', `Makale ${index + 1}`);
-                });
-                
-                // Announce search results to screen readers
-                if (this.elements.searchStats) {
-                    this.elements.searchStats.setAttribute('aria-live', 'polite');
-                }
-            }
-            
-            addLoadingAnimations() {
-                // Intersection Observer for lazy loading animations
-                if ('IntersectionObserver' in window) {
-                    const observer = new IntersectionObserver(
-                        (entries) => {
-                            entries.forEach(entry => {
-                                if (entry.isIntersecting) {
-                                    entry.target.classList.add('visible');
-                                    observer.unobserve(entry.target);
-                                }
-                            });
-                        },
-                        { 
-                            threshold: 0.1,
-                            rootMargin: '50px 0px -100px 0px'
-                        }
-                    );
-                    
-                    this.allPosts.forEach(post => {
-                        observer.observe(post);
-                    });
-                }
-            }
-            
-            setLastUpdated() {
-                if (this.elements.lastUpdated) {
-                    const now = new Date();
-                    this.elements.lastUpdated.textContent = now.toLocaleDateString('tr-TR');
-                    this.elements.lastUpdated.setAttribute('datetime', now.toISOString());
-                }
-            }
-            
-            saveSearchState(searchTerm) {
-                // Save to URL without page reload
-                const url = new URL(window.location);
-                if (searchTerm) {
-                    url.searchParams.set('search', searchTerm);
-                } else {
-                    url.searchParams.delete('search');
-                }
-                window.history.replaceState({}, '', url);
-            }
-            
-            restoreSearchState() {
-                const urlParams = new URLSearchParams(window.location.search);
-                const searchTerm = urlParams.get('search');
-                
-                if (searchTerm && this.elements.searchInput) {
-                    this.elements.searchInput.value = searchTerm;
-                    this.performSearch();
-                }
-            }
-            
-            clearSearchState() {
-                const url = new URL(window.location);
-                url.searchParams.delete('search');
-                window.history.replaceState({}, '', url);
-            }
-            
-            // Utility functions
-            throttle(func, delay) {
-                let timeoutId;
-                let lastExecTime = 0;
-                return function (...args) {
-                    const currentTime = Date.now();
-                    
-                    if (currentTime - lastExecTime > delay) {
-                        func.apply(this, args);
-                        lastExecTime = currentTime;
-                    } else {
-                        clearTimeout(timeoutId);
-                        timeoutId = setTimeout(() => {
-                            func.apply(this, args);
-                            lastExecTime = Date.now();
-                        }, delay - (currentTime - lastExecTime));
-                    }
-                };
-            }
-        }
-        
-        // Enhanced page loading and initialization
-        const initBlog = () => {
-            document.body.classList.add('loading');
-            
-            // Initialize search functionality
-            const blogSearch = new BlogSearch();
-            
-            // Remove loading state after initialization
-            setTimeout(() => {
-                document.body.classList.remove('loading');
-                console.log('Blog initialized successfully');
-            }, 500);
-            
-            // Register service worker for PWA functionality
-            if ('serviceWorker' in navigator) {
-                navigator.serviceWorker.register('/sw.js').catch(err => {
-                    console.log('Service worker registration failed:', err);
-                });
-            }
-        };
-        
-        // Initialize when DOM is ready
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', initBlog);
-        } else {
-            initBlog();
-        }
-        
-        // Error handling for uncaught errors
-        window.addEventListener('error', (e) => {
-            console.error('Blog error:', e.error);
-        });
-        
-        // Handle unhandled promise rejections
-        window.addEventListener('unhandledrejection', (e) => {
-            console.error('Unhandled promise rejection:', e.reason);
-            e.preventDefault();
+            });
         });
     </script>
 </body>
