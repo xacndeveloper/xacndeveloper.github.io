@@ -7,15 +7,15 @@
 }
 
 :root {
-    --primary: #2d2d2d;
-    --secondary: #6b6b6b;
-    --accent: #4a6cf7;
-    --light: #f8f9fa;
+    --primary: #000000;
+    --secondary: #444444;
+    --accent: #333333;
+    --light: #f5f5f5;
     --lighter: #ffffff;
-    --border: #eaeaea;
-    --shadow: rgba(0, 0, 0, 0.05);
+    --border: #e0e0e0;
+    --shadow: rgba(0, 0, 0, 0.08);
     --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    --radius: 12px;
+    --radius: 8px;
     --max-width: 800px;
 }
 
@@ -46,9 +46,9 @@ body {
 
 /* Başlık Stilleri */
 .blog-title {
-    font-size: 3.5rem;
+    font-size: 3rem;
     text-align: center;
-    margin: 3rem 0 1.5rem;
+    margin: 2.5rem 0 1.5rem;
     font-weight: 800;
     letter-spacing: -0.5px;
     color: var(--primary);
@@ -62,6 +62,7 @@ body {
 
 .blog-title a:hover {
     color: var(--accent);
+    opacity: 0.8;
 }
 
 /* Sosyal Medya İkonları */
@@ -71,26 +72,26 @@ body {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 1.2rem;
+    gap: 1rem;
 }
 
 .social-icons a {
     color: var(--secondary);
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     text-decoration: none;
     transition: var(--transition);
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 42px;
-    height: 42px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     background: var(--light);
 }
 
 .social-icons a:hover {
-    color: var(--accent);
-    background: var(--border);
+    color: var(--primary);
+    background: #e0e0e0;
     transform: translateY(-2px);
 }
 
@@ -119,14 +120,14 @@ body {
 }
 
 .search-input:focus {
-    border-color: var(--accent);
+    border-color: var(--primary);
     box-shadow: 0 4px 8px var(--shadow);
 }
 
 .search-button {
     padding: 0.9rem 1.2rem;
     font-size: 1rem;
-    border: none;
+    border: 1px solid var(--primary);
     border-radius: var(--radius);
     background: var(--primary);
     color: var(--lighter);
@@ -139,7 +140,8 @@ body {
 }
 
 .search-button:hover {
-    background: var(--accent);
+    background: transparent;
+    color: var(--primary);
     transform: translateY(-1px);
 }
 
@@ -158,7 +160,7 @@ body {
 #posts-list {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
 .post-link {
@@ -169,9 +171,10 @@ body {
     padding: 1.5rem;
     border-radius: var(--radius);
     transition: var(--transition);
-    border: 1px solid transparent;
+    border: 1px solid var(--border);
     position: relative;
     overflow: hidden;
+    background: var(--lighter);
 }
 
 .post-link::before {
@@ -180,16 +183,15 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    height: 2px;
-    background: var(--accent);
+    height: 3px;
+    background: var(--primary);
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.3s ease;
 }
 
 .post-link:hover {
-    border-color: var(--border);
-    background-color: var(--light);
+    border-color: var(--primary);
     box-shadow: 0 4px 12px var(--shadow);
 }
 
@@ -198,7 +200,7 @@ body {
 }
 
 .post-link h2 {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     margin: 0 0 0.8rem;
     font-weight: 600;
     color: var(--primary);
@@ -228,13 +230,13 @@ body {
 }
 
 .no-results-content i {
-    font-size: 3.5rem;
+    font-size: 3rem;
     color: #ddd;
     margin-bottom: 1.5rem;
 }
 
 .no-results-content h3 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     margin-bottom: 1rem;
     color: var(--secondary);
     font-weight: 600;
@@ -249,10 +251,10 @@ body {
 .clear-search-btn {
     padding: 0.8rem 1.5rem;
     font-size: 1rem;
-    border: 1px solid var(--border);
+    border: 1px solid var(--primary);
     border-radius: var(--radius);
-    background: var(--lighter);
-    color: var(--primary);
+    background: var(--primary);
+    color: var(--lighter);
     cursor: pointer;
     outline: none;
     transition: var(--transition);
@@ -260,9 +262,8 @@ body {
 }
 
 .clear-search-btn:hover {
-    background: var(--light);
-    border-color: var(--accent);
-    color: var(--accent);
+    background: transparent;
+    color: var(--primary);
 }
 
 /* Post Sayfası Stilleri */
@@ -271,7 +272,7 @@ body {
 }
 
 .post-title {
-    font-size: 2.2rem;
+    font-size: 2rem;
     margin: 0 0 1.5rem;
     font-weight: 700;
     line-height: 1.2;
@@ -323,11 +324,11 @@ body {
 }
 
 .post-content pre {
-    background: #f8f9fa;
+    background: #f5f5f5;
     padding: 1.5rem;
     border-radius: var(--radius);
     overflow-x: auto;
-    border-left: 4px solid #6c757d;
+    border-left: 4px solid #888;
     margin: 1.5rem 0;
     font-size: 0.95rem;
 }
@@ -339,21 +340,21 @@ body {
 }
 
 .post-content code {
-    background: #f1f3f5;
+    background: #f5f5f5;
     padding: 0.2rem 0.4rem;
     border-radius: 4px;
     font-family: 'SFMono-Regular', 'Consolas', 'Liberation Mono', 'Menlo', monospace;
     font-size: 0.9em;
-    color: #e83e8c;
+    color: #444;
 }
 
 .post-content blockquote {
-    border-left: 4px solid #dee2e6;
+    border-left: 4px solid #ccc;
     margin: 1.5rem 0;
     padding: 1rem 1.5rem;
-    background: #f8f9fa;
+    background: #f9f9f9;
     font-style: italic;
-    color: #6c757d;
+    color: #555;
     border-radius: 0 var(--radius) var(--radius) 0;
 }
 
@@ -374,18 +375,18 @@ body {
 
 .post-content th,
 .post-content td {
-    border: 1px solid #dee2e6;
+    border: 1px solid #ddd;
     padding: 0.75rem;
     text-align: left;
 }
 
 .post-content th {
-    background-color: #f8f9fa;
+    background-color: #f5f5f5;
     font-weight: 600;
 }
 
 .post-content tr:nth-child(even) {
-    background-color: #f8f9fa;
+    background-color: #f9f9f9;
 }
 
 .post-content ul, 
@@ -421,14 +422,15 @@ body {
 }
 
 .post-content a {
-    color: var(--accent);
-    text-decoration: none;
+    color: var(--primary);
+    text-decoration: underline;
+    text-underline-offset: 2px;
     transition: var(--transition);
 }
 
 .post-content a:hover {
-    color: #003d82;
-    text-decoration: underline;
+    color: #444;
+    text-decoration-thickness: 2px;
 }
 
 /* Footer */
@@ -455,20 +457,36 @@ footer p {
 }
 
 .rss-link:hover {
-    color: #ff6600;
+    color: var(--primary);
+    text-decoration: underline;
 }
 
 .rss-link i {
     font-size: 1.1rem;
 }
 
-/* Özel Odak Stili (Mavi dikdörtgeni önlemek için) */
+/* Özel Odak Stili */
 *:focus {
-    outline: none;
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
 }
 
-.focused {
-    box-shadow: 0 0 0 2px var(--accent) !important;
+/* Blog Header (Post sayfası için) */
+.blog-header {
+    text-align: center;
+    margin: 2rem 0 1rem;
+}
+
+.blog-header a {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.blog-header a:hover {
+    opacity: 0.8;
 }
 
 /* Responsive Tasarım */
@@ -482,8 +500,12 @@ footer p {
     }
     
     .blog-title {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
         margin: 1.5rem 0 1rem;
+    }
+    
+    .blog-header a {
+        font-size: 2rem;
     }
     
     .social-icons {
@@ -494,7 +516,7 @@ footer p {
     .social-icons a {
         width: 38px;
         height: 38px;
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
     
     .search-container {
@@ -518,7 +540,7 @@ footer p {
     }
     
     .post-link h2 {
-        font-size: 1.4rem;
+        font-size: 1.3rem;
     }
     
     .post-link p {
@@ -543,7 +565,7 @@ footer p {
     }
     
     .post-title {
-        font-size: 1.8rem;
+        font-size: 1.7rem;
     }
     
     .post-content {
@@ -551,7 +573,7 @@ footer p {
     }
     
     .post-content h1 {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
     }
     
     .post-content h2 {
@@ -581,10 +603,14 @@ footer p {
         font-size: 2rem;
     }
     
+    .blog-header a {
+        font-size: 1.8rem;
+    }
+    
     .social-icons a {
         width: 36px;
         height: 36px;
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
     
     .search-input {
@@ -596,7 +622,7 @@ footer p {
     }
     
     .post-title {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
     }
     
     .post-meta {
