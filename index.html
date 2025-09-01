@@ -37,8 +37,8 @@
     <link rel="manifest" href="manifest.json">
     
     <!-- Theme Color -->
-    <meta name="theme-color" content="#000000">
-    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="msapplication-TileColor" content="#ffffff">
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://xacndeveloper.github.io">
@@ -46,7 +46,10 @@
     <!-- RSS Feed -->
     <link rel="alternate" type="application/rss+xml" title="Xacn Blog RSS Feed" href="https://xacndeveloper.github.io/rss.xml">
     
-    <!-- Stylesheets -->
+    <!-- Google Fonts & Stylesheets -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     
@@ -70,16 +73,16 @@
     <div class="container">
         <h1 class="blog-title">BLOG</h1>
         <div class="social-icons">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
-            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
         </div>
         <div class="search-container">
             <input type="text" id="searchInput" placeholder="Makalelerde ara..." class="search-input">
-            <button id="searchButton" class="search-button">
+            <button id="searchButton" class="search-button" aria-label="Ara">
                 <i class="fas fa-search"></i>
             </button>
         </div>
@@ -151,13 +154,13 @@
         document.addEventListener('DOMContentLoaded', function() {
             const postsList = document.getElementById('posts-list');
             
-            // 1. Postları tersine çevirerek yenilerin üste gelmesini sağlar
+            // Postları tersine çevirerek yenilerin üste gelmesini sağlar
             const posts = Array.from(postsList.children);
             posts.reverse();
-            postsList.innerHTML = ''; // Listeyi temizle
-            posts.forEach(post => postsList.appendChild(post)); // Ters sırada ekle
+            postsList.innerHTML = ''; 
+            posts.forEach(post => postsList.appendChild(post)); 
 
-            // 2. Gelişmiş arama fonksiyonalitesi
+            // Arama fonksiyonalitesi
             const searchInput = document.getElementById('searchInput');
             const searchButton = document.getElementById('searchButton');
             const noResults = document.getElementById('no-results');
@@ -168,10 +171,8 @@
                 const searchTerm = searchInput.value.toLowerCase().trim();
                 
                 if (searchTerm === '') {
-                    allPosts.forEach(post => {
-                        post.style.display = 'block';
-                    });
-                    postsList.style.display = 'block';
+                    allPosts.forEach(post => post.style.display = 'block');
+                    postsList.style.display = 'grid'; // Grid'e geri dön
                     noResults.style.display = 'none';
                     return;
                 }
@@ -194,17 +195,15 @@
                     postsList.style.display = 'none';
                     noResults.style.display = 'block';
                 } else {
-                    postsList.style.display = 'block';
+                    postsList.style.display = 'grid'; // Arama sonucunda grid olarak göster
                     noResults.style.display = 'none';
                 }
             }
             
             function clearSearch() {
                 searchInput.value = '';
-                allPosts.forEach(post => {
-                    post.style.display = 'block';
-                });
-                postsList.style.display = 'block';
+                allPosts.forEach(post => post.style.display = 'block');
+                postsList.style.display = 'grid';
                 noResults.style.display = 'none';
                 searchInput.focus();
             }
@@ -219,10 +218,13 @@
                 }
             });
             
-            searchInput.addEventListener('input', function() {
-                clearTimeout(this.searchTimeout);
-                this.searchTimeout = setTimeout(performSearch, 200);
-            });
+            searchInput.addEventListener('input', (function() {
+                let timer;
+                return function() {
+                    clearTimeout(timer);
+                    timer = setTimeout(performSearch, 300); // Kullanıcı yazmayı bıraktıktan sonra 300ms bekle
+                };
+            })());
             
             searchInput.addEventListener('keydown', function(e) {
                 if (e.key === 'Escape') {
