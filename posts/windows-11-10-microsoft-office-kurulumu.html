@@ -23,7 +23,7 @@
     <meta property="article:published_time" content="24 Ağustos 2025">
     
     <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Windows 11 10 Microsoft Office Kurulumu">
     <meta name="twitter:description" content="">
     
@@ -39,8 +39,13 @@
     <link rel="manifest" href="../manifest.json">
     
     <!-- Theme Color -->
-    <meta name="theme-color" content="#000000">
-    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="theme-color" content="#3498db">
+    <meta name="msapplication-TileColor" content="#3498db">
+    
+    <!-- iOS Safari specifics -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Blog">
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://xacndeveloper.github.io/posts/windows-11-10-microsoft-office-kurulumu.html">
@@ -48,9 +53,12 @@
     <!-- RSS Feed -->
     <link rel="alternate" type="application/rss+xml" title="Blog RSS Feed" href="../rss.xml">
     
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="../style.css">
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"></noscript>
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
     
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -79,25 +87,36 @@
 </head>
 <body>
     <div class="container">
-        <header class="blog-header"><a href="../index.html">BLOG</a></header>
+        <header class="blog-header">
+            <a href="../index.html" aria-label="Ana sayfaya dön">BLOG</a>
+        </header>
+        
         <div class="social-icons">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
-            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#" aria-label="Facebook'ta paylaş"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter'da paylaş"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram'da paylaş"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn'de paylaş"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="YouTube'da paylaş"><i class="fab fa-youtube"></i></a>
+            <a href="#" aria-label="GitHub'da paylaş"><i class="fab fa-github"></i></a>
         </div>
+        
         <hr class="divider">
-        <article class="post-article">
-            <h1 class="post-title">Windows 11 10 Microsoft Office Kurulumu</h1>
-            <div class="post-meta">
-                <p><strong>Yazar:</strong> Görkem Çalışkan | 
-                <strong>Tarih:</strong> 24 Ağustos 2025 | 
-                <strong>Okuma Süresi:</strong> 5 dakika</p>
-            </div>
-            <div class="post-content">
-                <h2 id="Özet (ne yapacağız?)">Özet (ne yapacağız?)</h2>
+        
+        <main>
+            <article class="post-article" itemscope itemtype="https://schema.org/BlogPosting">
+                <header>
+                    <h1 class="post-title" itemprop="headline">Windows 11 10 Microsoft Office Kurulumu</h1>
+                    <div class="post-meta">
+                        <p>
+                            <strong>Yazar:</strong> <span itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Görkem Çalışkan</span></span> | 
+                            <strong>Tarih:</strong> <time itemprop="datePublished" datetime="24 Ağustos 2025">24 Ağustos 2025</time> | 
+                            <strong>Okuma Süresi:</strong> <span itemprop="timeRequired">5 dakika</span>
+                        </p>
+                    </div>
+                </header>
+                
+                <div class="post-content" itemprop="articleBody">
+                    <h2 id="Özet (ne yapacağız?)">Özet (ne yapacağız?)</h2>
 1) Eski Office’leri <strong>kaldır + yeniden başlat</strong>
 2) ODT’yi indir, <strong>Masaüstü\office</strong> klasörüne çıkar
 3) <strong>config.office.com</strong>’dan ayarları oluştur, <strong>ayar.xml</strong> olarak kaydet
@@ -215,29 +234,530 @@ setup.exe /configure ayar.xml  :: Ardından kurulum başlar</code></pre>
 
 <pre><code class="language-bat">cd /d "%USERPROFILE%\Desktop\office"
 setup.exe /configure ayar.xml</code></pre>
-            </div>
-        </article>
-		<br>
-		<script src="https://giscus.app/client.js"
-        data-repo="xacndeveloper/comments"
-        data-repo-id="R_kgDOPjNEeg"
-        data-category="General"
-        data-category-id="DIC_kwDOPjNEes4Cuhyg"
-        data-mapping="pathname"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="bottom"
-        data-theme="light_protanopia"
-        data-lang="tr"
-        crossorigin="anonymous"
-        async>
-</script>
+                </div>
+            </article>
+        </main>
+        
+        <section class="comments-section" aria-label="Yorumlar">
+            <script src="https://giscus.app/client.js"
+                    data-repo="xacndeveloper/comments"
+                    data-repo-id="R_kgDOPjNEeg"
+                    data-category="General"
+                    data-category-id="DIC_kwDOPjNEes4Cuhyg"
+                    data-mapping="pathname"
+                    data-strict="0"
+                    data-reactions-enabled="1"
+                    data-emit-metadata="0"
+                    data-input-position="bottom"
+                    data-theme="light_protanopia"
+                    data-lang="tr"
+                    crossorigin="anonymous"
+                    async>
+            </script>
+        </section>
+        
         <hr class="divider">
+        
         <footer>
-            <p>Tüm Hakları Saklıdır</p>
-            <p><a href="../rss.xml" class="rss-link"><i class="fas fa-rss"></i> RSS</a></p>
+            <p>&copy; 2024 Tüm Hakları Saklıdır</p>
+            <p>
+                <a href="../rss.xml" class="rss-link" aria-label="RSS Feed">
+                    <i class="fas fa-rss" aria-hidden="true"></i> 
+                    RSS
+                </a>
+            </p>
         </footer>
     </div>
+    
+    <script>
+        // Enhanced post page functionality
+        class PostEnhancer {
+            constructor() {
+                this.init();
+            }
+            
+            init() {
+                this.enhanceContent();
+                this.addScrollProgress();
+                this.addKeyboardNavigation();
+                this.addShareFunctionality();
+                this.addReadingTime();
+                this.addTableOfContents();
+                this.addImageEnhancements();
+                this.addCodeEnhancements();
+            }
+            
+            enhanceContent() {
+                // Add smooth reveal animations for content
+                const content = document.querySelector('.post-content');
+                if (!content) return;
+                
+                // Add intersection observer for paragraphs
+                if ('IntersectionObserver' in window) {
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                entry.target.style.opacity = '1';
+                                entry.target.style.transform = 'translateY(0)';
+                            }
+                        });
+                    }, { threshold: 0.1 });
+                    
+                    content.querySelectorAll('p, h1, h2, h3, h4, h5, h6, blockquote, pre, img').forEach((el, index) => {
+                        el.style.opacity = '0';
+                        el.style.transform = 'translateY(20px)';
+                        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                        el.style.transitionDelay = `${index * 0.1}s`;
+                        observer.observe(el);
+                    });
+                }
+            }
+            
+            addScrollProgress() {
+                // Create scroll progress bar
+                const progressBar = document.createElement('div');
+                progressBar.className = 'scroll-progress';
+                progressBar.innerHTML = '<div class="scroll-progress-bar"></div>';
+                document.body.appendChild(progressBar);
+                
+                // Add CSS for progress bar
+                const style = document.createElement('style');
+                style.textContent = `
+                    .scroll-progress {
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 4px;
+                        background: rgba(0,0,0,0.1);
+                        z-index: 9999;
+                        backdrop-filter: blur(10px);
+                    }
+                    .scroll-progress-bar {
+                        height: 100%;
+                        background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+                        width: 0%;
+                        transition: width 0.1s ease;
+                        border-radius: 0 2px 2px 0;
+                    }
+                `;
+                document.head.appendChild(style);
+                
+                // Update progress on scroll
+                let ticking = false;
+                const updateProgress = () => {
+                    const scrollTop = window.pageYOffset;
+                    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                    const scrollPercent = (scrollTop / docHeight) * 100;
+                    
+                    progressBar.querySelector('.scroll-progress-bar').style.width = `${scrollPercent}%`;
+                    ticking = false;
+                };
+                
+                window.addEventListener('scroll', () => {
+                    if (!ticking) {
+                        requestAnimationFrame(updateProgress);
+                        ticking = true;
+                    }
+                });
+            }
+            
+            addKeyboardNavigation() {
+                document.addEventListener('keydown', (e) => {
+                    // ESC to go back to home
+                    if (e.key === 'Escape') {
+                        const homeLink = document.querySelector('.blog-header a');
+                        if (homeLink) {
+                            window.location.href = homeLink.href;
+                        }
+                    }
+                    
+                    // Ctrl/Cmd + Enter to share
+                    if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+                        e.preventDefault();
+                        this.sharePost();
+                    }
+                });
+            }
+            
+            addShareFunctionality() {
+                // Enhanced social sharing
+                const socialLinks = document.querySelectorAll('.social-icons a');
+                const postTitle = document.querySelector('.post-title')?.textContent || '';
+                const postUrl = window.location.href;
+                
+                socialLinks.forEach(link => {
+                    const icon = link.querySelector('i');
+                    if (!icon) return;
+                    
+                    const platform = this.getPlatformFromIcon(icon.className);
+                    if (platform) {
+                        link.href = this.getShareUrl(platform, postTitle, postUrl);
+                        link.target = '_blank';
+                        link.rel = 'noopener noreferrer';
+                    }
+                });
+                
+                // Add native share API support
+                if (navigator.share) {
+                    const shareBtn = document.createElement('button');
+                    shareBtn.className = 'native-share-btn';
+                    shareBtn.innerHTML = '<i class="fas fa-share-alt"></i> Paylaş';
+                    shareBtn.style.cssText = `
+                        position: fixed;
+                        bottom: 20px;
+                        right: 20px;
+                        padding: 12px 20px;
+                        background: var(--secondary-color);
+                        color: white;
+                        border: none;
+                        border-radius: 50px;
+                        cursor: pointer;
+                        font-family: inherit;
+                        font-size: 0.9rem;
+                        box-shadow: var(--shadow-medium);
+                        transition: var(--transition);
+                        z-index: 1000;
+                        display: flex;
+                        align-items: center;
+                        gap: 8px;
+                    `;
+                    
+                    shareBtn.addEventListener('click', () => this.sharePost());
+                    document.body.appendChild(shareBtn);
+                }
+            }
+            
+            getPlatformFromIcon(className) {
+                if (className.includes('facebook')) return 'facebook';
+                if (className.includes('twitter')) return 'twitter';
+                if (className.includes('linkedin')) return 'linkedin';
+                return null;
+            }
+            
+            getShareUrl(platform, title, url) {
+                const encodedTitle = encodeURIComponent(title);
+                const encodedUrl = encodeURIComponent(url);
+                
+                switch (platform) {
+                    case 'facebook':
+                        return `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`;
+                    case 'twitter':
+                        return `https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}`;
+                    case 'linkedin':
+                        return `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`;
+                    default:
+                        return '#';
+                }
+            }
+            
+            async sharePost() {
+                const title = document.querySelector('.post-title')?.textContent || '';
+                const url = window.location.href;
+                
+                if (navigator.share) {
+                    try {
+                        await navigator.share({
+                            title: title,
+                            url: url
+                        });
+                    } catch (err) {
+                        this.fallbackShare(url);
+                    }
+                } else {
+                    this.fallbackShare(url);
+                }
+            }
+            
+            fallbackShare(url) {
+                // Copy to clipboard
+                if (navigator.clipboard) {
+                    navigator.clipboard.writeText(url).then(() => {
+                        this.showToast('Link kopyalandı!');
+                    });
+                }
+            }
+            
+            showToast(message) {
+                const toast = document.createElement('div');
+                toast.textContent = message;
+                toast.style.cssText = `
+                    position: fixed;
+                    bottom: 80px;
+                    right: 20px;
+                    background: var(--primary-color);
+                    color: white;
+                    padding: 12px 20px;
+                    border-radius: var(--border-radius);
+                    z-index: 10000;
+                    animation: slideIn 0.3s ease;
+                `;
+                
+                document.body.appendChild(toast);
+                setTimeout(() => {
+                    toast.style.animation = 'slideOut 0.3s ease';
+                    setTimeout(() => toast.remove(), 300);
+                }, 2000);
+            }
+            
+            addReadingTime() {
+                // Enhanced reading time calculation
+                const content = document.querySelector('.post-content');
+                if (!content) return;
+                
+                const text = content.textContent;
+                const wordsPerMinute = 200;
+                const words = text.trim().split(/\s+/).length;
+                const readTime = Math.ceil(words / wordsPerMinute);
+                
+                const readTimeElement = document.querySelector('.post-meta');
+                if (readTimeElement) {
+                    // Add reading progress
+                    const progressElement = document.createElement('div');
+                    progressElement.className = 'reading-progress';
+                    progressElement.innerHTML = `<div class="progress-text">Okundu: <span id="read-percent">0%</span></div>`;
+                    readTimeElement.appendChild(progressElement);
+                    
+                    // Update reading progress
+                    let lastKnownScrollPosition = 0;
+                    let ticking = false;
+                    
+                    const updateReadingProgress = () => {
+                        const contentTop = content.offsetTop;
+                        const contentHeight = content.offsetHeight;
+                        const windowHeight = window.innerHeight;
+                        const scrollTop = window.pageYOffset;
+                        
+                        const contentVisible = Math.max(0, Math.min(windowHeight, contentTop + contentHeight - scrollTop) - Math.max(0, contentTop - scrollTop));
+                        const readPercent = Math.round((contentVisible / Math.min(contentHeight, windowHeight)) * 100);
+                        
+                        document.getElementById('read-percent').textContent = `${readPercent}%`;
+                        ticking = false;
+                    };
+                    
+                    window.addEventListener('scroll', () => {
+                        if (!ticking) {
+                            requestAnimationFrame(updateReadingProgress);
+                            ticking = true;
+                        }
+                    });
+                }
+            }
+            
+            addTableOfContents() {
+                const content = document.querySelector('.post-content');
+                if (!content) return;
+                
+                const headings = content.querySelectorAll('h1, h2, h3, h4');
+                if (headings.length < 3) return; // Only show TOC if there are enough headings
+                
+                const toc = document.createElement('div');
+                toc.className = 'table-of-contents';
+                toc.innerHTML = '<h4>İçindekiler</h4><ul></ul>';
+                
+                const tocList = toc.querySelector('ul');
+                
+                headings.forEach((heading, index) => {
+                    const id = `heading-${index}`;
+                    heading.id = id;
+                    
+                    const li = document.createElement('li');
+                    li.className = `toc-${heading.tagName.toLowerCase()}`;
+                    li.innerHTML = `<a href="#${id}">${heading.textContent}</a>`;
+                    tocList.appendChild(li);
+                });
+                
+                // Add TOC styles
+                const tocStyle = document.createElement('style');
+                tocStyle.textContent = `
+                    .table-of-contents {
+                        background: var(--bg-secondary);
+                        padding: 1.5rem;
+                        border-radius: var(--border-radius);
+                        margin: 2rem 0;
+                        border-left: 4px solid var(--secondary-color);
+                    }
+                    .table-of-contents h4 {
+                        margin: 0 0 1rem 0;
+                        color: var(--text-color);
+                    }
+                    .table-of-contents ul {
+                        list-style: none;
+                        margin: 0;
+                        padding: 0;
+                    }
+                    .table-of-contents li {
+                        margin: 0.5rem 0;
+                    }
+                    .table-of-contents a {
+                        color: var(--text-light);
+                        text-decoration: none;
+                        transition: var(--transition);
+                    }
+                    .table-of-contents a:hover {
+                        color: var(--secondary-color);
+                    }
+                    .toc-h2 { padding-left: 1rem; }
+                    .toc-h3 { padding-left: 2rem; }
+                    .toc-h4 { padding-left: 3rem; }
+                `;
+                document.head.appendChild(tocStyle);
+                
+                // Insert TOC after the first paragraph or heading
+                const firstParagraph = content.querySelector('p');
+                if (firstParagraph) {
+                    firstParagraph.parentNode.insertBefore(toc, firstParagraph.nextSibling);
+                }
+                
+                // Smooth scrolling for TOC links
+                tocList.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const target = document.querySelector(link.getAttribute('href'));
+                        if (target) {
+                            target.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    });
+                });
+            }
+            
+            addImageEnhancements() {
+                const images = document.querySelectorAll('.post-content img');
+                
+                images.forEach(img => {
+                    // Add loading animation
+                    img.addEventListener('load', () => {
+                        img.style.opacity = '1';
+                        img.style.transform = 'scale(1)';
+                    });
+                    
+                    img.style.opacity = '0';
+                    img.style.transform = 'scale(0.95)';
+                    img.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    
+                    // Add click to expand functionality
+                    img.style.cursor = 'zoom-in';
+                    img.addEventListener('click', () => {
+                        this.expandImage(img);
+                    });
+                });
+            }
+            
+            expandImage(img) {
+                // Create modal overlay
+                const overlay = document.createElement('div');
+                overlay.style.cssText = `
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0,0,0,0.9);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    z-index: 10000;
+                    cursor: zoom-out;
+                    backdrop-filter: blur(10px);
+                `;
+                
+                const expandedImg = img.cloneNode(true);
+                expandedImg.style.cssText = `
+                    max-width: 90%;
+                    max-height: 90%;
+                    object-fit: contain;
+                    border-radius: var(--border-radius);
+                    box-shadow: var(--shadow-heavy);
+                `;
+                
+                overlay.appendChild(expandedImg);
+                document.body.appendChild(overlay);
+                
+                // Close on click or ESC
+                overlay.addEventListener('click', () => overlay.remove());
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape') overlay.remove();
+                }, { once: true });
+            }
+            
+            addCodeEnhancements() {
+                const codeBlocks = document.querySelectorAll('.post-content pre code');
+                
+                codeBlocks.forEach(block => {
+                    const pre = block.parentElement;
+                    
+                    // Add copy button
+                    const copyBtn = document.createElement('button');
+                    copyBtn.innerHTML = '<i class="fas fa-copy"></i>';
+                    copyBtn.className = 'copy-code-btn';
+                    copyBtn.style.cssText = `
+                        position: absolute;
+                        top: 1rem;
+                        right: 1rem;
+                        background: var(--bg-color);
+                        border: 1px solid var(--border-color);
+                        border-radius: 6px;
+                        padding: 8px;
+                        cursor: pointer;
+                        opacity: 0.7;
+                        transition: var(--transition);
+                    `;
+                    
+                    copyBtn.addEventListener('click', async () => {
+                        try {
+                            await navigator.clipboard.writeText(block.textContent);
+                            copyBtn.innerHTML = '<i class="fas fa-check"></i>';
+                            setTimeout(() => {
+                                copyBtn.innerHTML = '<i class="fas fa-copy"></i>';
+                            }, 2000);
+                        } catch (err) {
+                            console.error('Copy failed:', err);
+                        }
+                    });
+                    
+                    pre.style.position = 'relative';
+                    pre.appendChild(copyBtn);
+                });
+            }
+        }
+        
+        // Initialize post enhancements when DOM is ready
+        const initPost = () => {
+            new PostEnhancer();
+            
+            // Add smooth page transition
+            document.body.style.opacity = '0';
+            document.body.style.transform = 'translateY(20px)';
+            
+            setTimeout(() => {
+                document.body.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                document.body.style.opacity = '1';
+                document.body.style.transform = 'translateY(0)';
+            }, 100);
+        };
+        
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initPost);
+        } else {
+            initPost();
+        }
+        
+        // Add custom CSS animations
+        const animations = document.createElement('style');
+        animations.textContent = `
+            @keyframes slideIn {
+                from { transform: translateX(100%); opacity: 0; }
+                to { transform: translateX(0); opacity: 1; }
+            }
+            @keyframes slideOut {
+                from { transform: translateX(0); opacity: 1; }
+                to { transform: translateX(100%); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(animations);
+    </script>
 </body>
 </html>

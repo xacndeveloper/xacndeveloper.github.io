@@ -1,122 +1,264 @@
-/* Ana Sayfa Stilleri */
-body {
-    font-family: sans-serif;
+/* Modern Blog CSS - Kaliteli ve Optimize Tasarım */
+* {
     margin: 0;
-    padding: 20px;
-    line-height: 1.6;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --text-color: #2c3e50;
+    --text-light: #7f8c8d;
+    --bg-color: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --border-color: #e9ecef;
+    --shadow-light: 0 2px 10px rgba(0,0,0,0.1);
+    --shadow-medium: 0 4px 20px rgba(0,0,0,0.15);
+    --shadow-heavy: 0 8px 30px rgba(0,0,0,0.2);
+    --border-radius: 12px;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-light);
+}
+
+/* Selection Styling */
+::selection {
+    background: var(--secondary-color);
+    color: white;
+}
+
+/* Container */
 .container {
     max-width: 800px;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
-.blog-title {
-    font-size: 4em;
+/* Blog Header */
+.blog-title, .blog-header a {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
     text-align: center;
-    margin-bottom: 20px;
-}
-
-.blog-header a {
-    font-size: 4em;
-    font-weight: bold;
+    margin-bottom: 2rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     text-decoration: none;
-    color: inherit;
+    display: block;
+    transition: var(--transition);
+    letter-spacing: -0.02em;
 }
 
-.blog-header {
-    text-align: center;
-    margin-bottom: 20px;
+.blog-header a:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
 }
 
+/* Social Icons */
 .social-icons {
-    text-align: center;
-    padding-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
 }
 
 .social-icons a {
-    color: #000;
-    margin: 0 15px;
-    font-size: 1.8em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: var(--bg-secondary);
+    color: var(--text-color);
+    border-radius: 50%;
     text-decoration: none;
+    font-size: 1.2rem;
+    transition: var(--transition);
+    border: 2px solid transparent;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
 }
 
-/* Arama Çubuğu Stilleri */
+.social-icons a:hover {
+    background: var(--secondary-color);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-medium);
+}
+
+.social-icons a:active {
+    transform: translateY(-1px);
+    transition: all 0.1s ease;
+}
+
+/* Search Container */
 .search-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px 0;
-    gap: 10px;
+    max-width: 500px;
+    margin: 0 auto 3rem;
+    background: var(--bg-secondary);
+    border-radius: var(--border-radius);
+    padding: 4px;
+    box-shadow: var(--shadow-light);
+    transition: var(--transition);
 }
 
-/* DÜZELTME: Bu bölüm orijinal kodunuzdaki gibi ayarlandı */
+.search-container:focus-within {
+    box-shadow: var(--shadow-medium);
+    transform: translateY(-2px);
+}
+
 .search-input {
-    padding: 12px 20px;
-    font-size: 1.1em;
-    border: 2px solid #000;
-    border-radius: 0;
-    background: #fff;
-    width: 300px;
-    max-width: 80%;
+    flex: 1;
+    padding: 16px 20px;
+    border: none;
+    background: transparent;
+    font-size: 1rem;
+    color: var(--text-color);
     outline: none;
+    border-radius: calc(var(--border-radius) - 4px);
     font-family: inherit;
+    -webkit-tap-highlight-color: transparent;
 }
 
-.search-input:focus {
-    border-color: #333;
-    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+.search-input::placeholder {
+    color: var(--text-light);
 }
 
 .search-button {
-    padding: 12px 16px;
-    font-size: 1.1em;
-    border: 2px solid #000;
-    border-radius: 0;
-    background: #000;
-    color: #fff;
+    padding: 16px 20px;
+    background: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: calc(var(--border-radius) - 4px);
     cursor: pointer;
-    outline: none;
-    transition: all 0.2s ease;
+    font-size: 1rem;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 60px;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
 }
 
 .search-button:hover {
-    background: #333;
-    border-color: #333;
+    background: var(--primary-color);
+    transform: scale(1.05);
 }
 
 .search-button:active {
-    transform: translateY(1px);
+    transform: scale(0.98);
+    transition: all 0.1s ease;
 }
 
+/* Divider */
 .divider {
     border: none;
-    border-top: 2px solid #000;
-    margin: 20px 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border-color), transparent);
+    margin: 3rem 0;
+}
+
+/* Posts List */
+#posts-list {
+    display: grid;
+    gap: 2rem;
+    margin-bottom: 3rem;
 }
 
 .post-link {
     display: block;
     text-decoration: none;
     color: inherit;
-    margin-bottom: 30px;
+    background: var(--bg-color);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    box-shadow: var(--shadow-light);
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.post-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+    transform: scaleX(0);
+    transition: var(--transition);
+}
+
+.post-link:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-heavy);
+    border-color: var(--secondary-color);
+}
+
+.post-link:hover::before {
+    transform: scaleX(1);
+}
+
+.post-link:active {
+    transform: translateY(-2px);
+    transition: all 0.1s ease;
 }
 
 .post-link h2 {
-    font-size: 2em;
-    margin-bottom: 5px;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+    line-height: 1.3;
 }
 
 .post-link p {
-    font-size: 1.1em;
+    color: var(--text-light);
+    font-size: 1rem;
+    line-height: 1.5;
     margin: 0;
 }
 
-/* Arama Sonuç Bulunamadı Stilleri */
+/* No Results */
 .no-results {
     text-align: center;
-    padding: 60px 20px;
-    margin: 40px 0;
+    padding: 4rem 2rem;
+    margin: 2rem 0;
 }
 
 .no-results-content {
@@ -125,265 +267,318 @@ body {
 }
 
 .no-results-content i {
-    font-size: 4em;
-    color: #ccc;
-    margin-bottom: 20px;
+    font-size: 4rem;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    opacity: 0.5;
 }
 
 .no-results-content h3 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-    color: #666;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+    font-weight: 600;
 }
 
 .no-results-content p {
-    color: #888;
-    margin-bottom: 30px;
+    color: var(--text-light);
+    margin-bottom: 2rem;
     line-height: 1.5;
 }
 
 .clear-search-btn {
     padding: 12px 24px;
-    font-size: 1em;
-    border: 2px solid #000;
-    border-radius: 0;
-    background: #fff;
-    color: #000;
+    background: var(--bg-secondary);
+    color: var(--text-color);
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius);
     cursor: pointer;
-    outline: none;
-    transition: all 0.2s ease;
+    font-size: 1rem;
     font-family: inherit;
+    transition: var(--transition);
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
 }
 
 .clear-search-btn:hover {
-    background: #000;
-    color: #fff;
+    background: var(--secondary-color);
+    color: white;
+    border-color: var(--secondary-color);
+    transform: translateY(-2px);
 }
 
 .clear-search-btn:active {
-    transform: translateY(1px);
+    transform: translateY(0);
+    transition: all 0.1s ease;
 }
 
-/* Post Sayfası Stilleri */
+/* Post Page Styles */
 .post-article {
-    margin-top: 20px;
+    margin-top: 2rem;
 }
 
 .post-title {
-    font-size: 2.5em;
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: var(--text-color);
 }
 
 .post-meta {
-    font-size: 0.9em;
-    color: #555;
-    margin-bottom: 30px;
+    background: var(--bg-secondary);
+    padding: 1rem 1.5rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    border-left: 4px solid var(--secondary-color);
 }
 
 .post-content {
-    font-size: 1.1em;
+    font-size: 1.1rem;
     line-height: 1.7;
+    color: var(--text-color);
 }
 
 .post-content h1,
 .post-content h2,
 .post-content h3,
 .post-content h4 {
-    margin-top: 30px;
-    margin-bottom: 15px;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.post-content h1 { font-size: 2rem; }
+.post-content h2 { font-size: 1.75rem; }
+.post-content h3 { font-size: 1.5rem; }
+.post-content h4 { font-size: 1.25rem; }
+
+.post-content p {
+    margin-bottom: 1.5rem;
 }
 
 .post-content pre {
-    background: #f8f8f8;
-    padding: 20px;
-    border-radius: 8px;
+    background: var(--bg-secondary);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
     overflow-x: auto;
-    border-left: 4px solid #007acc;
+    border-left: 4px solid var(--secondary-color);
+    margin: 1.5rem 0;
+    font-size: 0.9rem;
 }
 
 .post-content pre code {
     background: none;
     padding: 0;
+    color: var(--text-color);
 }
 
 .post-content code {
-    background: #f0f0f0;
-    padding: 3px 6px;
-    border-radius: 4px;
-    font-family: 'Courier New', monospace;
+    background: var(--bg-secondary);
+    padding: 0.25rem 0.5rem;
+    border-radius: 6px;
+    font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+    font-size: 0.9em;
+    color: var(--accent-color);
 }
 
 .post-content blockquote {
-    border-left: 4px solid #ddd;
-    margin: 20px 0;
-    padding: 10px 20px;
-    background: #f9f9f9;
+    border-left: 4px solid var(--secondary-color);
+    margin: 2rem 0;
+    padding: 1rem 1.5rem;
+    background: var(--bg-secondary);
+    border-radius: var(--border-radius);
     font-style: italic;
 }
 
 .post-content img {
     max-width: 100%;
     height: auto;
-    border-radius: 8px;
-    margin: 20px 0;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: var(--border-radius);
+    margin: 2rem 0;
+    box-shadow: var(--shadow-medium);
 }
 
 .post-content table {
     width: 100%;
     border-collapse: collapse;
-    margin: 20px 0;
+    margin: 2rem 0;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-light);
 }
 
 .post-content th,
 .post-content td {
-    border: 1px solid #ddd;
-    padding: 12px;
+    padding: 1rem;
     text-align: left;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .post-content th {
-    background-color: #f2f2f2;
-    font-weight: bold;
+    background: var(--bg-secondary);
+    font-weight: 600;
+    color: var(--text-color);
 }
 
-.post-content tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-.post-content ul.task-list {
-    list-style: none;
-    padding-left: 0;
-}
-
-.post-content .task-list-item {
-    margin: 5px 0;
-}
-
-.post-content .task-list-item input {
-    margin-right: 8px;
-}
-
-.post-content hr {
-    border: none;
-    border-top: 2px solid #eee;
-    margin: 30px 0;
-}
-
-.post-content del {
-    color: #888;
+.post-content tr:hover {
+    background: var(--bg-secondary);
 }
 
 .post-content a {
-    color: #007acc;
+    color: var(--secondary-color);
     text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: var(--transition);
 }
 
 .post-content a:hover {
-    text-decoration: underline;
+    border-bottom-color: var(--secondary-color);
 }
 
+/* Footer */
 footer {
     text-align: center;
-    margin-top: 40px;
+    margin-top: 4rem;
+    padding: 2rem 0;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-light);
 }
 
 footer p {
-    margin: 10px 0;
+    margin: 0.5rem 0;
 }
 
 .rss-link {
-    color: #000;
+    color: var(--text-light);
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
     display: inline-flex;
     align-items: center;
-    gap: 5px;
+    gap: 0.5rem;
+    transition: var(--transition);
+    -webkit-tap-highlight-color: transparent;
 }
 
 .rss-link:hover {
-    color: #ff6600;
-    text-decoration: underline;
-}
-
-.rss-link i {
-    font-size: 1.1em;
+    color: var(--accent-color);
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .blog-title {
-        font-size: 2.5em;
+    .container {
+        padding: 0 15px;
+    }
+    
+    .social-icons {
+        gap: 1rem;
     }
     
     .social-icons a {
-        margin: 0 10px;
-        font-size: 1.5em;
+        width: 44px;
+        height: 44px;
+        font-size: 1.1rem;
     }
     
     .search-container {
         flex-direction: column;
-        gap: 15px;
+        gap: 0;
     }
     
-    /* DÜZELTME: Mobil uyumluluk için bu bölüm korundu */
-    .search-input {
-        width: 90%;
-        max-width: none;
+    .search-input,
+    .search-button {
+        border-radius: var(--border-radius);
     }
     
     .search-button {
-        width: 90%;
-        max-width: 200px;
+        margin-top: 8px;
+        padding: 14px;
+    }
+    
+    .post-link {
+        padding: 1.5rem;
     }
     
     .post-link h2 {
-        font-size: 1.5em;
+        font-size: 1.25rem;
     }
     
-    .post-link p {
-        font-size: 1em;
+    .post-meta {
+        padding: 0.75rem 1rem;
+        font-size: 0.85rem;
     }
     
-    /* Mobil için sonuç bulunamadı */
     .no-results {
-        padding: 40px 15px;
+        padding: 3rem 1rem;
     }
     
     .no-results-content i {
-        font-size: 3em;
-    }
-    
-    .no-results-content h3 {
-        font-size: 1.3em;
-    }
-    
-    .clear-search-btn {
-        width: 90%;
-        max-width: 200px;
+        font-size: 3rem;
     }
 }
 
 @media (max-width: 480px) {
-    body {
-        padding: 10px;
-    }
-    
-    .blog-title {
-        font-size: 2em;
+    .blog-title, .blog-header a {
+        font-size: 2.5rem;
     }
     
     .social-icons a {
-        margin: 0 8px;
-        font-size: 1.3em;
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
     }
     
-    .search-input {
-        padding: 10px 15px;
-        font-size: 1em;
+    .post-link {
+        padding: 1.25rem;
     }
     
-    .search-button {
-        padding: 10px 14px;
-        font-size: 1em;
+    .post-content {
+        font-size: 1rem;
+    }
+    
+    .post-content pre {
+        padding: 1rem;
+        font-size: 0.85rem;
     }
 }
+
+/* Dark mode support (sistem temasına göre) */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary-color: #3498db;
+        --text-color: #e9ecef;
+        --text-light: #adb5bd;
+        --bg-color: #1a1a1a;
+        --bg-secondary: #2d2d2d;
+        --border-color: #404040;
+    }
+    
+    .search-input::placeholder {
+        color: var(--text-light);
+    }
+}
+
+/* Loading animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.post-link {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.post-link:nth-child(1) { animation-delay: 0.1s; }
+.post-link:nth-child(2) { animation-delay: 0.2s; }
+.post-link:nth-child(3) { animation-delay: 0.3s; }
+.post-link:nth-child(4) { animation-delay: 0.4s; }
+.post-link:nth-child(5) { animation-delay: 0.5s; }
