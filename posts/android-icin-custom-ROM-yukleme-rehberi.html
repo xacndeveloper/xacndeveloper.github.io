@@ -523,27 +523,12 @@ Bu rehber sadece bilgilendirme amaçlıdır. Tüm işlemler kullanıcı sorumlul
         data-lang="tr"
         crossorigin="anonymous"
         async>
-</script>
+        </script>
         <hr class="divider">
         <footer>
             <p>Tüm Hakları Saklıdır</p>
             <p><a href="../rss.xml" class="rss-link"><i class="fas fa-rss"></i> RSS</a></p>
         </footer>
     </div>
-
-    <script>
-        // Tarayıcı odak çerçevesini özelleştirme
-        document.addEventListener('focus', function(e) {
-            if (e.target.matches('a, button, input, textarea, select, [tabindex]')) {
-                e.target.classList.add('focused');
-            }
-        }, true);
-
-        document.addEventListener('blur', function(e) {
-            if (e.target.matches('a, button, input, textarea, select, [tabindex]')) {
-                e.target.classList.remove('focused');
-            }
-        }, true);
-    </script>
 </body>
 </html>

@@ -13,10 +13,11 @@
     --light: #f5f5f5;
     --lighter: #ffffff;
     --border: #e0e0e0;
-    --shadow: rgba(0, 0, 0, 0.08);
-    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    --radius: 8px;
+    --shadow: rgba(0, 0, 0, 0.05);
+    --transition: all 0.2s ease;
+    --radius: 6px;
     --max-width: 800px;
+    --card-spacing: 1.2rem;
 }
 
 html {
@@ -46,7 +47,7 @@ body {
 
 /* Başlık Stilleri */
 .blog-title {
-    font-size: 3rem;
+    font-size: 2.8rem;
     text-align: center;
     margin: 2.5rem 0 1.5rem;
     font-weight: 800;
@@ -62,7 +63,7 @@ body {
 
 .blog-title a:hover {
     color: var(--accent);
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 /* Sosyal Medya İkonları */
@@ -72,27 +73,26 @@ body {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 0.8rem;
 }
 
 .social-icons a {
     color: var(--secondary);
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     text-decoration: none;
     transition: var(--transition);
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
+    width: 38px;
+    height: 38px;
     border-radius: 50%;
     background: var(--light);
 }
 
 .social-icons a:hover {
     color: var(--primary);
-    background: #e0e0e0;
-    transform: translateY(-2px);
+    background: #e8e8e8;
 }
 
 /* Arama Çubuğu */
@@ -116,12 +116,10 @@ body {
     outline: none;
     font-family: inherit;
     transition: var(--transition);
-    box-shadow: 0 2px 4px var(--shadow);
 }
 
 .search-input:focus {
     border-color: var(--primary);
-    box-shadow: 0 4px 8px var(--shadow);
 }
 
 .search-button {
@@ -142,11 +140,6 @@ body {
 .search-button:hover {
     background: var(--primary);
     color: var(--lighter);
-    transform: translateY(-1px);
-}
-
-.search-button:active {
-    transform: translateY(0);
 }
 
 /* Ayırıcı Çizgi */
@@ -160,7 +153,7 @@ body {
 #posts-list {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: var(--card-spacing);
 }
 
 .post-link {
@@ -171,25 +164,18 @@ body {
     padding: 1.5rem;
     border-radius: var(--radius);
     transition: var(--transition);
-    border: 1px solid transparent;
+    border: 1px solid var(--border);
     position: relative;
     overflow: hidden;
     background: var(--lighter);
-    box-shadow: 0 2px 8px var(--shadow);
 }
 
 .post-link:hover {
     border-color: var(--primary);
-    box-shadow: 0 4px 16px var(--shadow);
-    transform: translateY(-2px);
-}
-
-.post-link:active {
-    transform: translateY(0);
 }
 
 .post-link h2 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     margin: 0 0 0.8rem;
     font-weight: 600;
     color: var(--primary);
@@ -352,7 +338,6 @@ body {
     height: auto;
     border-radius: var(--radius);
     margin: 1.5rem 0;
-    box-shadow: 0 4px 6px var(--shadow);
 }
 
 .post-content table {
@@ -454,12 +439,6 @@ footer p {
     font-size: 1.1rem;
 }
 
-/* Özel Odak Stili */
-*:focus {
-    outline: 2px solid var(--primary);
-    outline-offset: 2px;
-}
-
 /* Blog Header (Post sayfası için) */
 .blog-header {
     text-align: center;
@@ -475,7 +454,7 @@ footer p {
 }
 
 .blog-header a:hover {
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 /* Responsive Tasarım */
@@ -503,8 +482,8 @@ footer p {
     }
     
     .social-icons a {
-        width: 38px;
-        height: 38px;
+        width: 36px;
+        height: 36px;
         font-size: 1.1rem;
     }
     
@@ -597,8 +576,8 @@ footer p {
     }
     
     .social-icons a {
-        width: 36px;
-        height: 36px;
+        width: 34px;
+        height: 34px;
         font-size: 1rem;
     }
     
@@ -616,5 +595,9 @@ footer p {
     
     .post-meta {
         font-size: 0.85rem;
+    }
+    
+    :root {
+        --card-spacing: 1rem;
     }
 }

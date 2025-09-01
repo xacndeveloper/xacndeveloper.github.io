@@ -229,19 +229,6 @@
                     clearSearch();
                 }
             });
-
-            // Tarayıcı odak çerçevesini özelleştirme
-            document.addEventListener('focus', function(e) {
-                if (e.target.matches('a, button, input, textarea, select, [tabindex]')) {
-                    e.target.classList.add('focused');
-                }
-            }, true);
-
-            document.addEventListener('blur', function(e) {
-                if (e.target.matches('a, button, input, textarea, select, [tabindex]')) {
-                    e.target.classList.remove('focused');
-                }
-            }, true);
         });
     </script>
 </body>
