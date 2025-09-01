@@ -1,33 +1,91 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <!-- Head içerikleri (meta, title, vs.) -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Xacn Blog - Teknoloji rehberleri ve makaleler</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Teknoloji rehberleri ve makaleler">
+    <meta name="keywords" content="teknoloji, rehber, arsiv">
+    <meta name="author" content="Görkem Çalışkan">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="tr">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Xacn Blog">
+    <meta property="og:description" content="Teknoloji rehberleri ve makaleler">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://xacndeveloper.github.io">
+    <meta property="og:site_name" content="Xacn Blog">
+    <meta property="og:locale" content="tr_TR">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Xacn Blog">
+    <meta name="twitter:description" content="Teknoloji rehberleri ve makaleler">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#ffffff">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://xacndeveloper.github.io">
+    
+    <!-- RSS Feed -->
+    <link rel="alternate" type="application/rss+xml" title="Xacn Blog RSS Feed" href="https://xacndeveloper.github.io/rss.xml">
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "Xacn Blog",
+        "description": "Teknoloji rehberleri ve makaleler",
+        "url": "https://xacndeveloper.github.io",
+        "author": {
+            "@type": "Person",
+            "name": "Görkem Çalışkan"
+        },
+        "inLanguage": "tr"
+    }
+    </script>
 </head>
 <body>
-    <header class="site-header" id="site-header">
-        <div class="container header-content">
-            <a href="index.html" class="blog-title-link">Xacn Blog</a>
-            <div class="header-controls">
-                <button class="control-btn" id="search-trigger" aria-label="Ara">
-                    <i class="fas fa-search"></i>
-                </button>
-                <button class="control-btn" id="theme-toggle" aria-label="Temayı değiştir">
-                    <i class="fas fa-moon"></i><i class="fas fa-sun"></i>
-                </button>
-            </div>
+    <div class="container">
+        <h1 class="blog-title"><a href="index.html">BLOG</a></h1>
+        <div class="social-icons">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
         </div>
-    </header>
-
-    <main class="container">
-        <section id="posts-list">
-             
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Makalelerde ara..." class="search-input">
+            <button id="searchButton" class="search-button" aria-label="Ara">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+        <hr class="divider">
+        <div id="posts-list">
+            
             <a href="posts/windows-11-KB5063878-guncellemesi-kaldirma-duzeltme.html" class="post-link">
                 <h2>Windows 11 Kb5063878 Guncellemesi Kaldirma Duzeltme</h2>
                 <p></p>
@@ -72,117 +130,119 @@
                 <h2>Windows 11 10 Yukleme Yeniden Baslat Hatasi Cozum</h2>
                 <p></p>
             </a>
-             <!-- Backend, her gönderiyi .post-link yapısı içinde basmalı -->
-        </section>
-    </main>
-
-    <footer class="container">
-        <p>Tüm Hakları Saklıdır.</p>
-    </footer>
-
-    <!-- ARAMA KATMANI -->
-    <div class="search-overlay" id="search-overlay" role="dialog" aria-modal="true">
-        <div class="search-dialog" role="document">
-            <div class="search-input-wrapper">
-                <i class="fas fa-search" style="color: var(--c-text-secondary); margin-right: 0.5rem;"></i>
-                <input type="text" id="search-input" placeholder="Arayın...">
-            </div>
-            <div id="search-results">
-                <!-- Arama sonuçları buraya eklenecek -->
+            
+        </div>
+        <div id="no-results" class="no-results" style="display: none;">
+            <div class="no-results-content">
+                <i class="fas fa-search"></i>
+                <h3>Sonuç bulunamadı</h3>
+                <p>Aradığınız terime uygun makale bulunamadı.</p>
+                <button id="clearSearch" class="clear-search-btn">Aramayı temizle</button>
             </div>
         </div>
+        <hr class="divider">
+        <footer>
+            <p>Tüm Hakları Saklıdır</p>
+            <p><a href="rss.xml" class="rss-link"><i class="fas fa-rss"></i> RSS</a></p>
+        </footer>
     </div>
     
-    <!-- YUKARI ÇIK BUTONU -->
-    <button id="back-to-top" class="control-btn" aria-label="Yukarı çık">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-    
     <script>
-    // Tam Kapsamlı, Modüler JavaScript Uygulaması
-    const App = {
-        config: {
-            scrollThreshold: 300
-        },
+        document.addEventListener('DOMContentLoaded', function() {
+            const postsList = document.getElementById('posts-list');
+            
+            // 1. Postları tersine çevirerek yenilerin üste gelmesini sağlar
+            const posts = Array.from(postsList.children);
+            posts.reverse();
+            postsList.innerHTML = ''; // Listeyi temizle
+            posts.forEach(post => postsList.appendChild(post)); // Ters sırada ekle
 
-        state: {
-            isSearchOpen: false
-        },
-        
-        // Ana Başlatıcı
-        init() {
-            this.setupTheme();
-            this.setupHeader();
-            this.setupBackToTop();
-            this.setupSearch();
-            console.log('Uygulama başarıyla başlatıldı.');
-        },
-        
-        // Bileşenler
-        setupTheme() { /* V3'teki gibi, değişiklik yok */ },
-        setupHeader() {
-            const header = document.getElementById('site-header');
-            const throttledScroll = this.utils.throttle(() => {
-                document.body.classList.toggle('site-header-scrolled', window.scrollY > 20);
-            }, 100);
-            window.addEventListener('scroll', throttledScroll, { passive: true });
-        },
-        setupBackToTop() {
-            const btn = document.getElementById('back-to-top');
-            btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-            const throttledScroll = this.utils.throttle(() => {
-                const isVisible = window.scrollY > this.config.scrollThreshold;
-                btn.classList.toggle('visible', isVisible);
-            }, 200);
-            window.addEventListener('scroll', throttledScroll, { passive: true });
-        },
-        setupSearch() {
-            const trigger = document.getElementById('search-trigger');
-            const overlay = document.getElementById('search-overlay');
-            const input = document.getElementById('search-input');
-
-            const openSearch = () => {
-                this.state.isSearchOpen = true;
-                overlay.classList.add('visible');
-                input.focus();
-            };
-            const closeSearch = () => {
-                this.state.isSearchOpen = false;
-                overlay.classList.remove('visible');
-            };
-
-            trigger.addEventListener('click', openSearch);
-            overlay.addEventListener('click', (e) => { if (e.target === overlay) closeSearch(); });
-            window.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && this.state.isSearchOpen) closeSearch();
-                if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
-                    e.preventDefault();
-                    this.state.isSearchOpen ? closeSearch() : openSearch();
+            // 2. Gelişmiş arama fonksiyonalitesi
+            const searchInput = document.getElementById('searchInput');
+            const searchButton = document.getElementById('searchButton');
+            const noResults = document.getElementById('no-results');
+            const clearSearchBtn = document.getElementById('clearSearch');
+            const allPosts = Array.from(postsList.querySelectorAll('.post-link'));
+            
+            function performSearch() {
+                const searchTerm = searchInput.value.toLowerCase().trim();
+                
+                if (searchTerm === '') {
+                    allPosts.forEach(post => {
+                        post.style.display = 'flex';
+                    });
+                    postsList.style.display = 'block';
+                    noResults.style.display = 'none';
+                    return;
+                }
+                
+                let visibleCount = 0;
+                
+                allPosts.forEach(post => {
+                    const title = post.querySelector('h2').textContent.toLowerCase();
+                    const description = post.querySelector('p').textContent.toLowerCase();
+                    
+                    if (title.includes(searchTerm) || description.includes(searchTerm)) {
+                        post.style.display = 'flex';
+                        visibleCount++;
+                    } else {
+                        post.style.display = 'none';
+                    }
+                });
+                
+                if (visibleCount === 0) {
+                    postsList.style.display = 'none';
+                    noResults.style.display = 'flex';
+                } else {
+                    postsList.style.display = 'block';
+                    noResults.style.display = 'none';
+                }
+            }
+            
+            function clearSearch() {
+                searchInput.value = '';
+                allPosts.forEach(post => {
+                    post.style.display = 'flex';
+                });
+                postsList.style.display = 'block';
+                noResults.style.display = 'none';
+                searchInput.focus();
+            }
+            
+            // Event listeners
+            searchButton.addEventListener('click', performSearch);
+            clearSearchBtn.addEventListener('click', clearSearch);
+            
+            searchInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    performSearch();
+                }
+            });
+            
+            searchInput.addEventListener('input', function() {
+                clearTimeout(this.searchTimeout);
+                this.searchTimeout = setTimeout(performSearch, 200);
+            });
+            
+            searchInput.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    clearSearch();
                 }
             });
 
-            // Gerçek arama mantığı buraya eklenecek
-            input.addEventListener('input', () => { /* Arama fonksiyonu tetiklenir */ });
-        },
-        
-        // Yardımcı Fonksiyonlar
-        utils: {
-            throttle(func, limit) {
-                let inThrottle;
-                return function() {
-                    const args = arguments;
-                    const context = this;
-                    if (!inThrottle) {
-                        func.apply(context, args);
-                        inThrottle = true;
-                        setTimeout(() => inThrottle = false, limit);
-                    }
-                };
-            }
-        }
-    };
-    document.addEventListener('DOMContentLoaded', () => App.init());
+            // Tarayıcı odak çerçevesini özelleştirme
+            document.addEventListener('focus', function(e) {
+                if (e.target.matches('a, button, input, textarea, select, [tabindex]')) {
+                    e.target.classList.add('focused');
+                }
+            }, true);
+
+            document.addEventListener('blur', function(e) {
+                if (e.target.matches('a, button, input, textarea, select, [tabindex]')) {
+                    e.target.classList.remove('focused');
+                }
+            }, true);
+        });
     </script>
 </body>
 </html>
