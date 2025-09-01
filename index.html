@@ -46,10 +46,7 @@
     <!-- RSS Feed -->
     <link rel="alternate" type="application/rss+xml" title="Xacn Blog RSS Feed" href="https://xacndeveloper.github.io/rss.xml">
     
-    <!-- Google Fonts & Stylesheets -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     
@@ -71,7 +68,7 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="blog-title">BLOG</h1>
+        <h1 class="blog-title"><a href="index.html">BLOG</a></h1>
         <div class="social-icons">
             <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
             <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
@@ -154,13 +151,13 @@
         document.addEventListener('DOMContentLoaded', function() {
             const postsList = document.getElementById('posts-list');
             
-            // Postları tersine çevirerek yenilerin üste gelmesini sağlar
+            // 1. Postları tersine çevirerek yenilerin üste gelmesini sağlar
             const posts = Array.from(postsList.children);
             posts.reverse();
-            postsList.innerHTML = ''; 
-            posts.forEach(post => postsList.appendChild(post)); 
+            postsList.innerHTML = ''; // Listeyi temizle
+            posts.forEach(post => postsList.appendChild(post)); // Ters sırada ekle
 
-            // Arama fonksiyonalitesi
+            // 2. Gelişmiş arama fonksiyonalitesi
             const searchInput = document.getElementById('searchInput');
             const searchButton = document.getElementById('searchButton');
             const noResults = document.getElementById('no-results');
@@ -171,8 +168,10 @@
                 const searchTerm = searchInput.value.toLowerCase().trim();
                 
                 if (searchTerm === '') {
-                    allPosts.forEach(post => post.style.display = 'block');
-                    postsList.style.display = 'grid'; // Grid'e geri dön
+                    allPosts.forEach(post => {
+                        post.style.display = 'flex';
+                    });
+                    postsList.style.display = 'block';
                     noResults.style.display = 'none';
                     return;
                 }
@@ -184,7 +183,7 @@
                     const description = post.querySelector('p').textContent.toLowerCase();
                     
                     if (title.includes(searchTerm) || description.includes(searchTerm)) {
-                        post.style.display = 'block';
+                        post.style.display = 'flex';
                         visibleCount++;
                     } else {
                         post.style.display = 'none';
@@ -193,17 +192,19 @@
                 
                 if (visibleCount === 0) {
                     postsList.style.display = 'none';
-                    noResults.style.display = 'block';
+                    noResults.style.display = 'flex';
                 } else {
-                    postsList.style.display = 'grid'; // Arama sonucunda grid olarak göster
+                    postsList.style.display = 'block';
                     noResults.style.display = 'none';
                 }
             }
             
             function clearSearch() {
                 searchInput.value = '';
-                allPosts.forEach(post => post.style.display = 'block');
-                postsList.style.display = 'grid';
+                allPosts.forEach(post => {
+                    post.style.display = 'flex';
+                });
+                postsList.style.display = 'block';
                 noResults.style.display = 'none';
                 searchInput.focus();
             }
@@ -218,13 +219,10 @@
                 }
             });
             
-            searchInput.addEventListener('input', (function() {
-                let timer;
-                return function() {
-                    clearTimeout(timer);
-                    timer = setTimeout(performSearch, 300); // Kullanıcı yazmayı bıraktıktan sonra 300ms bekle
-                };
-            })());
+            searchInput.addEventListener('input', function() {
+                clearTimeout(this.searchTimeout);
+                this.searchTimeout = setTimeout(performSearch, 200);
+            });
             
             searchInput.addEventListener('keydown', function(e) {
                 if (e.key === 'Escape') {
