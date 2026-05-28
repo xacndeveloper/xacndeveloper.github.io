@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Granny: Godot Edition — Fan-made Remake</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Disqus -->
+  <script>
+    var disqus_config = function () {
+      this.page.url = window.location.href;
+      this.page.identifier = 'granny-godot-edition';
+    };
+    (function() {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://granny-godot-edition.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0a0a;
+      --surface: #111111;
+      --border: #222222;
+      --muted: #444444;
+      --text-dim: #888888;
+      --text: #cccccc;
+      --white: #f0f0f0;
+      --accent: #ffffff;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* ── GRAIN OVERLAY ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.35;
+    }
+
+    main {
+      width: 100%;
+      max-width: 720px;
+      padding: 80px 24px 120px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+
+    /* ── COVER IMAGE ── */
+    .cover-wrap {
+      width: 100%;
+      aspect-ratio: 16/9;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cover-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: grayscale(20%);
+    }
+
+    .cover-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      color: var(--muted);
+    }
+
+    .cover-placeholder svg { opacity: 0.4; }
+    .cover-placeholder span { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; }
+
+    /* ── TITLE BLOCK ── */
+    .title-block {
+      width: 100%;
+      padding: 36px 0 6px;
+      text-align: center;
+    }
+
+    h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.4rem, 7vw, 4.2rem);
+      letter-spacing: 0.04em;
+      color: var(--accent);
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .byline {
+      margin-top: 10px;
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      color: var(--text-dim);
+      text-transform: lowercase;
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: var(--border);
+      margin: 32px 0;
+    }
+
+    /* ── BANNER ── */
+    .banner-wrap {
+      width: 100%;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--surface);
+    }
+
+    .banner-wrap img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      filter: grayscale(15%);
+    }
+
+    .banner-placeholder {
+      width: 100%;
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border: 1px dashed var(--border);
+    }
+
+    /* ── SHARE BUTTONS ── */
+    .share-row {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .share-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 18px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text);
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      transition: border-color 0.2s, color 0.2s, background 0.2s;
+    }
+
+    .share-btn:hover {
+      border-color: var(--white);
+      color: var(--white);
+      background: #1a1a1a;
+    }
+
+    .share-btn svg { flex-shrink: 0; }
+
+    /* ── ABOUT SECTION ── */
+    .about-section {
+      width: 100%;
+      margin-top: 48px;
+    }
+
+    .section-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .about-section h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      letter-spacing: 0.06em;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+
+    .about-section p {
+      font-size: 14.5px;
+      line-height: 1.8;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+
+    .features-block {
+      margin: 28px 0;
+      border-left: 1px solid var(--border);
+      padding-left: 24px;
+    }
+
+    .features-block h3 {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 16px;
+    }
+
+    .feature-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      margin-bottom: 14px;
+    }
+
+    .feature-dot {
+      width: 5px;
+      height: 5px;
+      background: var(--white);
+      flex-shrink: 0;
+      margin-top: 7px;
+    }
+
+    .feature-item strong {
+      font-weight: 500;
+      color: var(--white);
+      font-size: 14px;
+    }
+
+    .feature-item span {
+      font-size: 13.5px;
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* ── COMMENTS ── */
+    .comments-section {
+      width: 100%;
+      margin-top: 64px;
+    }
+
+    .comments-section .section-label {
+      margin-bottom: 24px;
+    }
+
+    #disqus_thread {
+      width: 100%;
+    }
+
+    /* Disqus dark theme override attempt */
+    #disqus_thread iframe {
+      color-scheme: dark;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      width: 100%;
+      max-width: 720px;
+      padding: 32px 24px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    footer span {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 480px) {
+      h1 { font-size: 2.2rem; }
+      .share-btn { font-size: 10px; padding: 8px 14px; }
+    }
+  </style>
+</head>
+<body>
+
+<main>
+
+  <!-- COVER IMAGE -->
+  <div class="cover-wrap">
+    <!-- Replace src with your actual cover image path -->
+    <img src="cover.jpg" alt="Granny Godot Edition Cover"
+         onerror="this.style.display='none'; this.parentElement.querySelector('.cover-placeholder').style.display='flex';">
+    <div class="cover-placeholder" style="display:none;">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+        <rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/>
+        <polyline points="21 15 16 10 5 21"/>
+      </svg>
+      <span>cover.jpg — replace with your image</span>
+    </div>
+  </div>
+
+  <!-- TITLE -->
+  <div class="title-block">
+    <h1>Granny: Godot Edition<br><span style="font-size:0.55em; letter-spacing:0.12em; color:#888">(Fan-made Remake)</span></h1>
+    <p class="byline">by @xacndeveloper</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- BANNER -->
+  <div class="banner-wrap">
+    <!-- Replace src with your actual banner image path -->
+    <img src="banner.jpg" alt="Game Banner"
+         onerror="this.style.display='none'; this.parentElement.querySelector('.banner-placeholder').style.display='flex';">
+    <div class="banner-placeholder" style="display:none;">banner.jpg — replace with your image</div>
+  </div>
+
+  <!-- SHARE BUTTONS -->
+  <div class="share-row">
+    <a class="share-btn" id="share-twitter" href="#" target="_blank" rel="noopener">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.259 5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+      </svg>
+      Share on X
+    </a>
+    <a class="share-btn" id="share-reddit" href="https://reddit.com/submit?title=Granny%3A+Godot+Edition+%28Fan-made+Remake%29&url=" target="_blank" rel="noopener">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/>
+      </svg>
+      Share on Reddit
+    </a>
+    <a class="share-btn" id="share-copy" href="#" onclick="copyLink(event)">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+        <rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+      </svg>
+      <span id="copy-label">Copy Link</span>
+    </a>
+  </div>
+
+  <!-- ABOUT -->
+  <div class="about-section">
+    <p class="section-label">// about the project</p>
+
+    <p>
+      This is a fan-made remake project developed with the Godot Engine. It is currently in the early stages of development (Work in Progress), focusing heavily on atmosphere, mechanics, and core gameplay.
+    </p>
+    <p>
+      Instead of a rushed map, every spotlight and light source has been placed manually, one by one, to ensure a high-quality, atmospheric, and tense environment.
+    </p>
+
+    <div class="features-block">
+      <h3>// Current Features</h3>
+
+      <div class="feature-item">
+        <div class="feature-dot"></div>
+        <div>
+          <strong>Advanced FPS Controller</strong><br>
+          <span>Smooth and responsive movement controls.</span>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-dot"></div>
+        <div>
+          <strong>Immersive Camera Mechanics</strong><br>
+          <span>Realistic camera tilts (leaning) and camera shake effects that react to your movement.</span>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-dot"></div>
+        <div>
+          <strong>Realistic Flashlight</strong><br>
+          <span>A dynamic flashlight with realistic lighting and shadows to navigate the darkness.</span>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-dot"></div>
+        <div>
+          <strong>Granny AI</strong><br>
+          <span>The core enemy AI is active and ready to hunt you down.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="features-block">
+      <h3>// What's Coming Next?</h3>
+      <p style="font-size:13.5px; margin-bottom:16px; color:var(--text);">
+        Since the project is only 5–6 days old, many features are still being worked on. In future updates, I will be adding:
+      </p>
+      <div class="feature-item">
+        <div class="feature-dot"></div>
+        <span>Full map navigation and layout.</span>
+      </div>
+      <div class="feature-item">
+        <div class="feature-dot"></div>
+        <span>Hiding mechanics (such as hiding under beds).</span>
+      </div>
+      <div class="feature-item">
+        <div class="feature-dot"></div>
+        <span>Item systems, puzzles, and escape mechanics.</span>
+      </div>
+    </div>
+
+    <p>
+      Feel free to follow the project and leave your feedback as I continue to develop.
+    </p>
+  </div>
+
+  <!-- COMMENTS -->
+  <div class="comments-section">
+    <p class="section-label">// comments & feedback</p>
+    <div id="disqus_thread"></div>
+  </div>
+
+</main>
+
+<footer>
+  <span>Granny: Godot Edition &mdash; Fan-made &mdash; Not affiliated with DVloper</span>
+</footer>
+
+<script>
+  // Set Twitter/X share URL dynamically
+  document.getElementById('share-twitter').href =
+    'https://twitter.com/intent/tweet?text=Granny%3A+Godot+Edition+%E2%80%94+Fan-made+Remake+by+%40xacndeveloper&url=' + encodeURIComponent(window.location.href);
+
+  // Update Reddit share URL
+  document.getElementById('share-reddit').href =
+    'https://reddit.com/submit?title=Granny%3A+Godot+Edition+%28Fan-made+Remake%29&url=' + encodeURIComponent(window.location.href);
+
+  // Copy link to clipboard
+  function copyLink(e) {
+    e.preventDefault();
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      const label = document.getElementById('copy-label');
+      label.textContent = 'Copied!';
+      setTimeout(() => label.textContent = 'Copy Link', 2000);
+    });
+  }
+</script>
+
+</body>
+</html>
